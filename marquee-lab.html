@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marquee Lab — Smaller Agency</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Archivo+Black&family=Pinyon+Script&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+<style>
+  .lab-head{padding:clamp(3rem,7vw,5rem) 0 clamp(2rem,4vw,3rem)}
+  .lab-sec{padding:clamp(2.5rem,5vw,4rem) 0}
+  .lab-note{margin-top:1.2rem;color:var(--mute);font-size:.9rem;max-width:44em}
+  .pick{display:inline-block;margin-left:.8rem;font-weight:800;font-size:.62rem;letter-spacing:.16em;
+    text-transform:uppercase;background:var(--butter);padding:.3rem .7rem;border-radius:999px}
+
+  /* ── option A: collision ── */
+  .mq-collide{transform:rotate(-2deg);margin:2.5rem -2rem;}
+  .mq-collide .marquee{border:none}
+  .mq-collide .marquee + .marquee{margin-top:-2px}
+  .mq-collide .marquee.rev .track{animation-direction:reverse}
+  .mq-collide .marquee.neonband{background:var(--neon);color:var(--ink)}
+  .mq-collide .marquee.neonband .track .sep{color:var(--ink)}
+
+  /* ── option B: chip ticker ── */
+  .mq-chips{background:var(--white);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+    overflow:hidden;white-space:nowrap}
+  .mq-chips .track{display:inline-block;padding:.9rem 0;animation:marquee 34s linear infinite}
+  .mq-chips .chip{display:inline-flex;align-items:center;gap:.6rem;margin:0 1.6rem;vertical-align:middle}
+  .mq-chips .chip i{display:inline-block;width:22px;height:22px;border:1px solid rgba(0,0,0,.12)}
+  .mq-chips .chip span{font-weight:700;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink)}
+  .mq-chips .chip span b{color:var(--mute);font-weight:700}
+
+  /* ── option C: outline shout ── */
+  .mq-shout{overflow:hidden;white-space:nowrap;background:var(--paper);
+    border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+  .mq-shout .track{display:inline-block;padding:1.2rem 0;animation:marquee 38s linear infinite;
+    font-family:var(--font-display);font-weight:900;
+    font-size:clamp(2.4rem,6vw,5rem);line-height:1;letter-spacing:-.02em;text-transform:lowercase}
+  .mq-shout .out{color:transparent;-webkit-text-stroke:2px var(--ink)}
+  .mq-shout .scriptword{font-family:var(--font-script);color:var(--coral);
+    -webkit-text-stroke:.022em currentColor;font-size:1.05em;margin:0 .25em}
+  .mq-shout .gap{display:inline-block;width:.6em}
+  .mq-shout:hover .track{animation-play-state:paused}
+
+  /* ── option D: sticker parade ── */
+  .mq-parade{background:var(--ink);color:var(--paper);overflow:hidden;white-space:nowrap}
+  .mq-parade .track{display:inline-block;padding:.7rem 0;animation:marquee 26s linear infinite;
+    font-family:var(--font-display);font-weight:900;font-size:clamp(1rem,2.2vw,1.5rem);text-transform:lowercase}
+  .mq-parade svg{vertical-align:middle;margin:0 1.1em;animation:spin 6s linear infinite;display:inline-block}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .mq-parade:hover .track{animation-duration:9s}
+
+  /* ── gen-z dial demos ── */
+  .grain{position:relative}
+  .grain::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E")}
+  .tilt-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;margin-top:1.5rem}
+  .tilt-cards .chip-card:nth-child(odd){transform:rotate(-1.6deg)}
+  .tilt-cards .chip-card:nth-child(even){transform:rotate(1.4deg)}
+  .tilt-cards .chip-card:hover{transform:rotate(0deg) scale(1.04);box-shadow:6px 6px 0 var(--ink)}
+  .hard-shadow:hover{box-shadow:6px 6px 0 var(--ink)!important}
+  .outline-demo{font-family:var(--font-display);font-weight:900;text-transform:lowercase;
+    font-size:clamp(2.2rem,5.4vw,4.4rem);line-height:.95;letter-spacing:-.02em}
+  .outline-demo .out{color:transparent;-webkit-text-stroke:2px var(--ink)}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="bar">
+    <a href="index.html" class="wordmark" aria-label="Smaller Agency"><img class="logo-mark" src="assets/logo-black.svg" alt="smaller agency."></a>
+    <nav class="site-nav">
+      <a href="index.html">← back to site</a>
+    </nav>
+  </div>
+</header>
+
+<section class="lab-head">
+  <div class="shell">
+    <div class="eyebrow coral">internal · design lab</div>
+    <h1 style="font-size:clamp(2.4rem,6vw,5rem)">marquee <span class="script">options.</span></h1>
+    <p class="lead">Four directions for the scrolling text, live. Hover each one — they react.</p>
+  </div>
+</section>
+
+<!-- A -->
+<section class="lab-sec">
+  <div class="shell">
+    <div class="runhead"><span class="n">a</span><span class="l">the collision — two tracks, opposite directions, tilted<span class="pick">most gen-z</span></span></div>
+  </div>
+  <div class="mq-collide">
+    <div class="marquee" aria-hidden="true">
+      <span class="track">brand building<span class="sep">✦</span>package design<span class="sep">✦</span>e-commerce<span class="sep">✦</span>digital marketing<span class="sep">✦</span>social media<span class="sep">✦</span>brand activation<span class="sep">✦</span>brand building<span class="sep">✦</span>package design<span class="sep">✦</span>e-commerce<span class="sep">✦</span>digital marketing<span class="sep">✦</span>social media<span class="sep">✦</span>brand activation<span class="sep">✦</span></span>
+    </div>
+    <div class="marquee neonband rev" aria-hidden="true">
+      <span class="track">boomer beige is cancelled<span class="sep">☻</span>dopamine, drama &amp; depth<span class="sep">☻</span>no shortcuts<span class="sep">☻</span>smaller + amazing<span class="sep">☻</span>boomer beige is cancelled<span class="sep">☻</span>dopamine, drama &amp; depth<span class="sep">☻</span>no shortcuts<span class="sep">☻</span>smaller + amazing<span class="sep">☻</span></span>
+    </div>
+  </div>
+  <div class="shell"><p class="lab-note">Zine energy. The tilt breaks the grid on purpose; the neon
+  counter-track carries attitude lines instead of services. Loudest option — use once per page, max.</p></div>
+</section>
+
+<!-- B -->
+<section class="lab-sec">
+  <div class="shell">
+    <div class="runhead"><span class="n">b</span><span class="l">the chip ticker — the pantone system, scrolling</span></div>
+  </div>
+  <div class="mq-chips" aria-hidden="true">
+    <span class="track">
+      <span class="chip"><i style="background:var(--red)"></i><span>smlr 001 <b>· main character red</b></span></span>
+      <span class="chip"><i style="background:var(--peri)"></i><span>smlr 002 <b>· digital dreams</b></span></span>
+      <span class="chip"><i style="background:var(--butter)"></i><span>smlr 003 <b>· butter pop</b></span></span>
+      <span class="chip"><i style="background:var(--neon)"></i><span>smlr 004 <b>· dopamine hit</b></span></span>
+      <span class="chip"><i style="background:var(--coral)"></i><span>smlr 005 <b>· coral, obviously</b></span></span>
+      <span class="chip"><i style="background:var(--sky)"></i><span>smlr 006 <b>· cloud control</b></span></span>
+      <span class="chip"><i style="background:var(--pink)"></i><span>smlr 008 <b>· pocket money pink</b></span></span>
+      <span class="chip"><i style="background:var(--mocha)"></i><span>boomer beige <b>· miss of the year</b></span></span>
+      <span class="chip"><i style="background:var(--red)"></i><span>smlr 001 <b>· main character red</b></span></span>
+      <span class="chip"><i style="background:var(--peri)"></i><span>smlr 002 <b>· digital dreams</b></span></span>
+      <span class="chip"><i style="background:var(--butter)"></i><span>smlr 003 <b>· butter pop</b></span></span>
+      <span class="chip"><i style="background:var(--neon)"></i><span>smlr 004 <b>· dopamine hit</b></span></span>
+      <span class="chip"><i style="background:var(--coral)"></i><span>smlr 005 <b>· coral, obviously</b></span></span>
+      <span class="chip"><i style="background:var(--sky)"></i><span>smlr 006 <b>· cloud control</b></span></span>
+      <span class="chip"><i style="background:var(--pink)"></i><span>smlr 008 <b>· pocket money pink</b></span></span>
+      <span class="chip"><i style="background:var(--mocha)"></i><span>boomer beige <b>· miss of the year</b></span></span>
+    </span>
+  </div>
+  <div class="shell"><p class="lab-note">Quietest and most "us" — it scrolls the actual brand system.
+  Works beautifully directly under the work grid. Note boomer beige riding along as the joke.</p></div>
+</section>
+
+<!-- C -->
+<section class="lab-sec">
+  <div class="shell">
+    <div class="runhead"><span class="n">c</span><span class="l">the outline shout — display-size, filled vs hollow, hover to pause</span></div>
+  </div>
+  <div class="mq-shout" aria-hidden="true">
+    <span class="track">
+      <span class="out">turning</span><span class="scriptword">culture</span>into brands<span class="gap"></span><span class="out">people can't</span><span class="scriptword">ignore.</span><span class="gap"></span><span class="out">turning</span><span class="scriptword">culture</span>into brands<span class="gap"></span><span class="out">people can't</span><span class="scriptword">ignore.</span><span class="gap"></span>
+    </span>
+  </div>
+  <div class="shell"><p class="lab-note">The headline itself becomes the moving object — hollow
+  words + script payoffs. Big fashion-week energy. Best used once, as a section divider mid-home.</p></div>
+</section>
+
+<!-- D -->
+<section class="lab-sec">
+  <div class="shell">
+    <div class="runhead"><span class="n">d</span><span class="l">the sticker parade — spinning smileys, speeds up on hover</span></div>
+  </div>
+  <div class="mq-parade" aria-hidden="true">
+    <span class="track">
+      smaller team, bigger results<svg width="26" height="26" viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="#E1FF3C"/><circle cx="35" cy="40" r="6" fill="#000"/><circle cx="65" cy="40" r="6" fill="#000"/><path d="M30 62q20 16 40 0" stroke="#000" stroke-width="6" fill="none" stroke-linecap="round"/></svg>design-driven<svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c1 7 5 11 12 12-7 1-11 5-12 12-1-7-5-11-12-12 7-1 11-5 12-12z" fill="#ED5A45"/></svg>human-centered<svg width="26" height="26" viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="#CDE3F9"/><circle cx="35" cy="40" r="6" fill="#000"/><circle cx="65" cy="40" r="6" fill="#000"/><path d="M30 62q20 16 40 0" stroke="#000" stroke-width="6" fill="none" stroke-linecap="round"/></svg>smaller + amazing<svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c1 7 5 11 12 12-7 1-11 5-12 12-1-7-5-11-12-12 7-1 11-5 12-12z" fill="#E1FF3C"/></svg>smaller team, bigger results<svg width="26" height="26" viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="#E1FF3C"/><circle cx="35" cy="40" r="6" fill="#000"/><circle cx="65" cy="40" r="6" fill="#000"/><path d="M30 62q20 16 40 0" stroke="#000" stroke-width="6" fill="none" stroke-linecap="round"/></svg>design-driven<svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c1 7 5 11 12 12-7 1-11 5-12 12-1-7-5-11-12-12 7-1 11-5 12-12z" fill="#ED5A45"/></svg>human-centered<svg width="26" height="26" viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="#CDE3F9"/><circle cx="35" cy="40" r="6" fill="#000"/><circle cx="65" cy="40" r="6" fill="#000"/><path d="M30 62q20 16 40 0" stroke="#000" stroke-width="6" fill="none" stroke-linecap="round"/></svg>smaller + amazing<svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c1 7 5 11 12 12-7 1-11 5-12 12-1-7-5-11-12-12 7-1 11-5 12-12z" fill="#E1FF3C"/></svg>
+    </span>
+  </div>
+  <div class="shell"><p class="lab-note">Playful without being sloppy — smileys spin slowly and the
+  whole band speeds up when hovered. The dopamine detail people screenshot.</p></div>
+</section>
+
+<!-- gen-z dial -->
+<section class="lab-sec grain" style="border-top:1px solid var(--rule)">
+  <div class="shell">
+    <div class="runhead"><span class="n">+</span><span class="l">the gen-z dial — five moves we can turn up</span></div>
+    <h2>make it feel <span class="script">alive.</span></h2>
+
+    <div class="value-rows" style="margin-top:2.5rem">
+      <div class="value-row">
+        <h3>01 · grain</h3>
+        <p>A film-grain texture over paper sections (this section has it on now). Kills the
+        "template" flatness instantly, invisible until you look.</p>
+      </div>
+      <div class="value-row">
+        <h3>02 · tilted stickers</h3>
+        <p>Work chips sit slightly rotated like slapped-on stickers, straightening on hover
+        with a hard ink shadow — see below.</p>
+      </div>
+      <div class="value-row">
+        <h3>03 · hollow type</h3>
+        <p class="outline-demo"><span class="out">loud</span> when it matters.</p>
+      </div>
+      <div class="value-row">
+        <h3>04 · reactive motion</h3>
+        <p>Marquees pause or speed up on hover, stickers wobble, smiley cursor on links —
+        already live, we push further with scroll-driven speed.</p>
+      </div>
+      <div class="value-row">
+        <h3>05 · the receipts</h3>
+        <p>Gen-Z trusts specifics: swatch codes, "smlr 001", founder quotes, real numbers.
+        We keep leaning into the system as content.</p>
+      </div>
+    </div>
+
+    <div class="tilt-cards">
+      <article class="chip-card">
+        <div class="photo"><div style="aspect-ratio:4/3;background:var(--red)"></div></div>
+        <div class="band" style="background:var(--red)"></div>
+        <div class="caption"><div class="name">tilted</div><div class="code">hover me</div></div>
+      </article>
+      <article class="chip-card">
+        <div class="photo"><div style="aspect-ratio:4/3;background:var(--peri)"></div></div>
+        <div class="band" style="background:var(--peri)"></div>
+        <div class="caption"><div class="name">straightens</div><div class="code">hover me</div></div>
+      </article>
+      <article class="chip-card">
+        <div class="photo"><div style="aspect-ratio:4/3;background:var(--butter)"></div></div>
+        <div class="band" style="background:var(--butter)"></div>
+        <div class="caption"><div class="name">hard shadow</div><div class="code">hover me</div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="shell">
+    <div class="legal" style="border-top:none;margin-top:0">
+      <span>internal lab — not linked from the live site</span>
+      <span class="no-beige">no boomer beige was used in the making of this lab</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BestDish — Case Study — Smaller Agency</title>
+<meta name="description" content="How Smaller Agency helped build BestDish: an entirely new food category — restaurant-quality meals from smart freezers inside residential buildings.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Archivo+Black&family=Pinyon+Script&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+<style>
+  :root{--cherry:#500008;--bd-orange:#E43C00;--bd-cream:#FCFCF4}
+  .cs-gallery{display:grid;gap:clamp(1rem,2vw,1.6rem);grid-template-columns:repeat(auto-fill,minmax(320px,1fr))}
+  .cs-cell{background:var(--white);border:1px solid var(--rule);overflow:hidden}
+  .cs-cell img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block}
+  .deliv{list-style:none;border-top:1px solid var(--rule);max-width:44em}
+  .deliv li{padding:.85rem 0;border-bottom:1px solid var(--rule);
+    font-size:.85rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+  .deliv li::before{content:"→";color:var(--coral);margin-right:.8em;font-weight:800}
+  /* cherry hero stage — no photo, pure brand */
+  .bd-stage{
+    position:absolute;inset:0;background:var(--cherry);
+    display:flex;align-items:center;justify-content:center;padding:0 var(--gutter);
+  }
+  .bd-stage .line{
+    font-family:var(--font-display);font-weight:900;text-transform:lowercase;
+    font-size:clamp(2rem,5.6vw,4.6rem);line-height:1.02;letter-spacing:-.02em;
+    color:var(--bd-cream);max-width:14em;text-align:center;
+  }
+  .bd-stage .line em{font-style:normal;color:var(--bd-orange)}
+  .cherry-rows .value-row{border-bottom-color:#3a0006}
+  /* new-category framing strip */
+  .not-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;margin-top:2.5rem}
+  .not-cell{border:1px solid var(--rule);background:var(--white);padding:1.4rem 1.5rem}
+  .not-cell .x{font-family:var(--font-display);font-weight:900;color:var(--coral);font-size:1.1rem}
+  .not-cell h3{margin-top:.5rem}
+  .not-cell p{margin-top:.5rem;font-size:.9rem;color:var(--mute)}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="bar">
+    <a href="index.html" class="wordmark" aria-label="Smaller Agency"><img class="logo-mark" src="assets/logo-black.svg" alt="smaller agency."></a>
+    <nav class="site-nav">
+      <a href="about.html">About</a>
+      <a href="work.html" class="active">Work</a>
+      <a href="contact.html">Contact</a>
+      <a class="cta" href="https://noahbarlow.work/scorecard">Score your brand</a>
+    </nav>
+  </div>
+</header>
+
+<!-- full-bleed cherry hero -->
+<section class="feature" aria-label="BestDish hero">
+  <div class="feature-stage">
+    <img src="assets/img/bestdish-hero.jpg" alt="BestDish smart-freezer mural — made in local restaurants, by the chefs you love">
+    <div class="feature-swatch" style="background:var(--bd-orange)"></div>
+    <div class="feature-caption">
+      <div class="eyebrow">case study · smlr 010 · cherry</div>
+      <div class="name">best<span class="script">dish.</span></div>
+      <div class="code">brand · packaging · digital · launch · go-to-market</div>
+    </div>
+  </div>
+</section>
+
+<!-- 01 the challenge -->
+<section class="section">
+  <div class="shell">
+    <div class="runhead reveal"><span class="n">01</span><span class="l">the challenge</span></div>
+    <div class="s-head reveal">
+      <div class="left">
+        <h2>building a food category from the ground <span class="script">up.</span></h2>
+      </div>
+      <div class="right">
+        <p>When Michael Summerfield approached Smaller, BestDish wasn't a company. It was an
+        idea. The challenge wasn't simply creating a brand — it was designing an entirely
+        new consumer behaviour: convincing someone to buy restaurant-quality meals from a
+        freezer inside their own condominium.</p>
+        <p>We needed a new brand, a new retail experience, a new customer journey, a new
+        trust model, and a completely new go-to-market strategy.</p>
+      </div>
+    </div>
+
+    <div class="not-list reveal">
+      <div class="not-cell">
+        <span class="x">✕</span>
+        <h3>not a delivery app</h3>
+        <p>The market understood those. BestDish fit the category anyway — expensive,
+        indifferent, margin-extracting.</p>
+      </div>
+      <div class="not-cell">
+        <span class="x">✕</span>
+        <h3>not frozen grocery</h3>
+        <p>Mass-produced, no chef, no story. Everything the packaging had to argue
+        against — from inside a freezer.</p>
+      </div>
+      <div class="not-cell">
+        <span class="x">✕</span>
+        <h3>not a vending machine</h3>
+        <p>Snacks-only convenience without quality. The nearest mental model, and the most
+        dangerous one.</p>
+      </div>
+    </div>
+
+    <div class="bigquote reveal">
+      <p class="q">every decision had to answer one question: how do you make something
+      unfamiliar feel immediately <span class="script">obvious?</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- 02 our role -->
+<section class="section inverse tight" style="background:var(--cherry)">
+  <div class="shell">
+    <div class="runhead reveal" style="border-bottom-color:#3a0006"><span class="n" style="color:#E43C00">02</span><span class="l" style="color:#FCFCF4">our role</span></div>
+    <h2 class="reveal" style="color:#FCFCF4">strategic brand partner, end to <span class="script" style="color:#E43C00">end.</span></h2>
+    <p class="lead reveal" style="margin-top:1.4rem;color:#e8d8ce;max-width:36em">Smaller shaped
+    virtually every customer-facing aspect of the business — Brand → Package → Demand, run
+    on a category that didn't exist yet.</p>
+    <div class="value-rows cherry-rows reveal" style="margin-top:2.5rem;border-top-color:#3a0006">
+      <div class="value-row">
+        <h3 style="color:#FCFCF4">brand strategy</h3>
+        <p style="color:#e8d8ce">Positioning BestDish around iconic restaurant meals rather
+        than frozen food. Core narrative, personality, messaging, tone of voice.</p>
+      </div>
+      <div class="value-row">
+        <h3 style="color:#FCFCF4">brand identity</h3>
+        <p style="color:#e8d8ce">Logo, typography, colour palette, photography direction,
+        illustration system, motion principles, brand guidelines.</p>
+      </div>
+      <div class="value-row">
+        <h3 style="color:#FCFCF4">packaging system</h3>
+        <p style="color:#e8d8ce">Packaging that communicates restaurant quality from inside
+        a freezer — premium on the shelf, functional inside a complex food manufacturing
+        process.</p>
+      </div>
+      <div class="value-row">
+        <h3 style="color:#FCFCF4">digital experience</h3>
+        <p style="color:#e8d8ce">Website strategy, UX and design. Information architecture,
+        storytelling, open-pricing visualizations, restaurant pages, producer pages, chef
+        profiles.</p>
+      </div>
+      <div class="value-row">
+        <h3 style="color:#FCFCF4">launch strategy</h3>
+        <p style="color:#e8d8ce">Not advertising — behaviour design. First-meal-free
+        strategy, resident onboarding, launch events, sampling, building signage, welcome
+        materials, referral concepts, loyalty thinking, the conversion journey.</p>
+      </div>
+      <div class="value-row">
+        <h3 style="color:#FCFCF4">social &amp; content</h3>
+        <p style="color:#e8d8ce">Visual direction, launch photography, restaurant and
+        producer storytelling, video concepts, resident education, brand voice, social
+        strategy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- the identity system -->
+<section class="section tight">
+  <div class="shell">
+    <div class="runhead reveal"><span class="n">✳</span><span class="l">the identity system</span></div>
+    <div class="cs-gallery reveal" style="grid-template-columns:repeat(auto-fill,minmax(360px,1fr))">
+      <div class="cs-cell"><img src="assets/img/bestdish-guide-01.jpg" alt="BestDish brand guide cover" loading="lazy" style="aspect-ratio:1430/1105"></div>
+      <div class="cs-cell"><img src="assets/img/bestdish-guide-03.jpg" alt="From farm, to chef, to you — brand promise spread" loading="lazy" style="aspect-ratio:1430/1105"></div>
+      <div class="cs-cell"><img src="assets/img/bestdish-guide-05.jpg" alt="BestDish colour system — cream, blueberry, orange, honeydew, pistachios, kale, shrimp, cherry, gravy" loading="lazy" style="aspect-ratio:1430/1105"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 the packaging brief -->
+<section class="section">
+  <div class="shell">
+    <div class="runhead reveal"><span class="n">03</span><span class="l">the packaging system</span></div>
+    <div class="s-head reveal">
+      <div class="left">
+        <h2>restaurant quality, argued from a <span class="script">freezer.</span></h2>
+      </div>
+      <div class="right">
+        <p>Each package had to look premium while functioning inside a complex food
+        manufacturing process — the pack as the brand's most-touched media buy, working
+        the three-second test through frosted glass.</p>
+      </div>
+    </div>
+    <ul class="deliv reveal">
+      <li>meal sleeves</li>
+      <li>labels &amp; nutritional layouts</li>
+      <li>information hierarchy</li>
+      <li>qr experience</li>
+      <li>shelf visibility</li>
+      <li>production system</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 04 go-to-market -->
+<section class="section tight">
+  <div class="shell">
+    <div class="runhead reveal"><span class="n">04</span><span class="l">go-to-market</span></div>
+    <div class="s-head reveal">
+      <div class="left">
+        <h2>building by <span class="script">building.</span></h2>
+      </div>
+      <div class="right">
+        <p>Rather than mass marketing, the strategy creates dense adoption inside individual
+        residential communities before expanding — messaging, launch sequencing, promo
+        assets and activation plans built to repeat across every future building.</p>
+        <p>Every touchpoint exists to turn curiosity into habit, because repeat purchase is
+        the true measure of success.</p>
+      </div>
+    </div>
+    <div class="hero-meta reveal" style="margin-top:1rem">
+      <div class="stat"><b>3</b><span>pilot buildings, toronto</span></div>
+      <div class="stat"><b>8–10</b><span>building proof footprint</span></div>
+      <div class="stat"><b>1</b><span>meal free — the first</span></div>
+      <div class="stat"><b>4</b><span>sides of the channel: restaurants, owners, producers, residents</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 the result -->
+<section class="section inverse">
+  <div class="shell">
+    <div class="runhead reveal"><span class="n">05</span><span class="l">the result</span></div>
+    <div class="s-head reveal">
+      <div class="left">
+        <h2 style="color:var(--paper)">not a frozen meal. a new retail <span class="script" style="color:var(--neon)">channel.</span></h2>
+      </div>
+      <div class="right">
+        <p style="color:#cfcabe">BestDish is preparing to launch its first buildings across
+        Toronto — curated restaurant partners, premium packaging, transparent pricing, and
+        a fully developed customer experience built to scale.</p>
+        <p style="color:#cfcabe">One integrated brand experience connecting restaurants,
+        property owners, producers and residents.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 the work -->
+<section class="section">
+  <div class="shell">
+    <div class="runhead reveal"><span class="n">06</span><span class="l">the work</span></div>
+    <div class="cs-gallery reveal">
+      <div class="cs-cell"><img src="assets/img/bestdish-01.jpg" alt="BestDish smart freezer — from farm, to chef, to you" loading="lazy"></div>
+      <div class="cs-cell"><img src="assets/img/bestdish-02.jpg" alt="Maple House launch — free gelato from Death in Venice" loading="lazy"></div>
+      <div class="cs-cell"><img src="assets/img/bestdish-03.jpg" alt="Le Grand Fromage pizza — best dish" loading="lazy"></div>
+      <div class="cs-cell"><img src="assets/img/bestdish-04.jpg" alt="Butter chicken — Pukka, Toronto" loading="lazy"></div>
+      <div class="cs-cell"><img src="assets/img/bestdish-05.jpg" alt="Death in Venice gelato pints" loading="lazy"></div>
+      <div class="cs-cell"><img src="assets/img/bestdish-06.jpg" alt="Nutella tiramisu — Piano Piano" loading="lazy"></div>
+      <div class="cs-cell"><img src="assets/img/bestdish-07.jpg" alt="Chocolate chip cookies — Le Gourmand" loading="lazy"></div>
+      <div class="cs-cell"><img src="assets/img/bestdish-08.jpg" alt="Chef Brett & Dan" loading="lazy"></div>
+      <div class="cs-cell"><img src="assets/img/bestdish-09.jpg" alt="Chef Dinesh Butola — Pukka" loading="lazy"></div>
+      <div class="cs-cell"><img src="assets/img/bestdish-10.jpg" alt="Chef Kaya Ogruce — Death in Venice" loading="lazy"></div>
+      <div class="cs-cell"><img src="assets/img/bestdish-11.jpg" alt="Chef Victor Barry — Piano Piano" loading="lazy"></div>
+      <div class="cs-cell"><img src="assets/img/bestdish-12.jpg" alt="The Nunes family — Le Gourmand" loading="lazy"></div>
+    </div>
+    <p class="body-copy" style="margin-top:2rem;color:var(--mute)">Restaurant partners at launch:
+    Piano Piano, Pukka, Le Gourmand, Death in Venice Gelato Co. — named dishes, named chefs,
+    every pack.</p>
+
+    <div class="svc-grid reveal" style="margin-top:3.5rem">
+      <div>
+        <div class="eyebrow">strategy</div>
+        <ul>
+          <li>brand strategy</li>
+          <li>naming &amp; positioning</li>
+          <li>go-to-market strategy</li>
+          <li>marketing strategy</li>
+          <li>ux strategy</li>
+        </ul>
+      </div>
+      <div>
+        <div class="eyebrow">design</div>
+        <ul>
+          <li>visual identity</li>
+          <li>packaging design</li>
+          <li>website design</li>
+          <li>art direction</li>
+          <li>brand guidelines</li>
+        </ul>
+      </div>
+      <div>
+        <div class="eyebrow">activation</div>
+        <ul>
+          <li>launch campaign</li>
+          <li>social strategy</li>
+          <li>creative direction</li>
+          <li>copywriting</li>
+          <li>customer experience design</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- closer -->
+<section class="section closer tight">
+  <div class="shell">
+    <hr class="rule" style="margin-bottom:clamp(3rem,7vw,5rem)">
+    <div class="eyebrow mute">next action</div>
+    <h2 style="margin-top:.8rem">your category doesn't exist yet?<br><span class="script">perfect.</span></h2>
+    <a class="btn hot" href="mailto:noah@smalleragency.com?subject=New%20category%2C%20who%20dis">let's design the behaviour</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="shell">
+    <div class="cols">
+      <div>
+        <img class="logo-mark" src="assets/logo-paper.svg" alt="smaller agency.">
+        <p style="margin-top:1rem;max-width:24em">An award-winning brand &amp; design studio
+        for challengers across Canada.</p>
+      </div>
+      <div>
+        <div class="eyebrow">toronto</div>
+        <p>507 King Street E.<br>Suite 322<br>Toronto, ON</p>
+      </div>
+      <div>
+        <div class="eyebrow">kelowna</div>
+        <p>1632 Dickson Ave.<br>Unit 520<br>Kelowna, BC</p>
+      </div>
+      <div>
+        <div class="eyebrow">say hi</div>
+        <a href="mailto:noah@smalleragency.com">noah@smalleragency.com</a><br>
+        <a href="tel:+16479889624">+1 647 988 9624</a><br>
+        <a href="https://www.instagram.com/smalleragencyltd">instagram</a><br>
+        <a href="https://www.linkedin.com/company/smalleragency">linkedin</a>
+      </div>
+    </div>
+    <img class="giant-logo" src="assets/logo-paper.svg" alt="" aria-hidden="true">
+    <div class="legal">
+      <span>© smaller agency ltd.</span>
+      <span class="no-beige">no boomer beige was used in the making of this site</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}});
+  },{threshold:.12});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+<script src="js/site.js"></script>
+</body>
+</html>

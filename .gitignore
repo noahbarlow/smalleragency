@@ -1,0 +1,8 @@
+.DS_Store
+# raw source folders — not part of the deployed site
+Clients/
+Home/
+Our Work/
+assets/img/BD_*
+assets/img/BestDish_BrandGuideline.pdf
+.fuse_hidden*
