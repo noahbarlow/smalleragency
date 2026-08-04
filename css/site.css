@@ -203,6 +203,14 @@ hr.rule{border:none;border-top:1px solid var(--rule);margin:0}
   animation:sticker-wobble 7s ease-in-out infinite;
 }
 .sticker.neon{background:var(--neon);color:var(--ink)}
+.sticker.heart{
+  border-radius:0;background:transparent;color:var(--ink);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 90'%3E%3Cpath d='M50 88 C20 64 2 46 2 27 C2 11 14 2 27 2 C37 2 46 8 50 17 C54 8 63 2 73 2 C86 2 98 11 98 27 C98 46 80 64 50 88 Z' fill='%23E1FF3C'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-size:100% 100%;
+  padding:2.2em 1.9em 2.4em;font-size:.6rem;
+  flex-direction:column;
+}
+.sticker.heart .bang{display:block;font-size:1.6em;margin-top:.15em;letter-spacing:0}
 .sticker.sky{background:var(--sky);color:var(--ink)}
 .sticker.coral{background:var(--coral);color:var(--white)}
 .sticker.butter{background:var(--butter);color:var(--ink)}
@@ -456,14 +464,24 @@ hr.rule{border:none;border-top:1px solid var(--rule);margin:0}
 
 /* ── awards pass: full-bleed featured work ── */
 .feature{height:220vh;position:relative;background:var(--ink)}
+.feature.frames{height:340vh} /* longer runway when multiple frames swap */
 .feature-stage{position:sticky;top:0;height:100vh;overflow:hidden}
 .feature-stage img{
   position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
-  transform:scale(1.08);will-change:transform;
+  transform:scale(1.08);will-change:transform,opacity;
+  opacity:0;transition:opacity .32s ease;
 }
-.feature-swatch{
-  position:absolute;inset:0;mix-blend-mode:multiply;opacity:1;will-change:opacity;
+.feature-stage img.on,
+.feature-stage img:only-of-type{opacity:1}
+.feature-swatch{display:none} /* colour tint retired — frames tell the story now */
+.fs-dots{
+  position:absolute;right:var(--gutter);bottom:8.5%;display:flex;gap:.55rem;z-index:2;
 }
+.fs-dots i{
+  width:9px;height:9px;border-radius:50%;background:rgba(240,235,232,.42);
+  transition:background .25s ease,transform .25s ease;
+}
+.fs-dots i.on{background:var(--neon);transform:scale(1.3)}
 .feature-caption{
   position:absolute;left:var(--gutter);bottom:8%;
   background:var(--white);padding:1.6rem 2rem 1.8rem;max-width:420px;
@@ -479,9 +497,9 @@ hr.rule{border:none;border-top:1px solid var(--rule);margin:0}
   letter-spacing:.16em;text-transform:uppercase;color:var(--mute);
 }
 @media(prefers-reduced-motion:reduce){
-  .feature{height:100vh}
+  .feature,.feature.frames{height:100vh}
   .feature-stage img{transform:none}
-  .feature-swatch{opacity:.25}
+  .fs-dots{display:none}
 }
 
 /* ── awards pass: pinned framework sequence ── */
@@ -573,6 +591,115 @@ body::after{
 @keyframes spin{to{transform:rotate(360deg)}}
 .mq-parade:hover .track{animation-duration:9s;animation-play-state:running}
 
+/* ── filmstrip: horizontal scroll-snap showcase ── */
+.filmstrip{
+  display:flex;gap:clamp(1rem,2vw,1.8rem);
+  overflow-x:auto;scroll-snap-type:x proximity;
+  padding:.5rem var(--gutter) 1.5rem;
+  scrollbar-width:none;cursor:grab;
+  margin:0 calc(-1 * var(--gutter));
+}
+.filmstrip::-webkit-scrollbar{display:none}
+.filmstrip.dragging{cursor:grabbing;scroll-snap-type:none}
+.filmstrip .cell{
+  flex:0 0 min(68vw,560px);scroll-snap-align:center;
+  background:var(--white);border:1px solid var(--rule);overflow:hidden;
+}
+.filmstrip .cell img{
+  width:100%;aspect-ratio:4/5;object-fit:cover;display:block;
+  pointer-events:none;
+}
+.filmstrip .cell.wide{flex-basis:min(80vw,660px)}
+.filmstrip .cell .fcap{
+  padding:.8rem 1rem;font-weight:700;font-size:.62rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--mute);
+}
+.strip-hint{
+  margin-top:.4rem;font-weight:600;font-size:.68rem;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--mute);
+}
+
+/* ── recent-work image ticker ── */
+.recent-ticker{
+  overflow:hidden;white-space:nowrap;
+  border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+  background:var(--white);
+}
+.recent-ticker .track{
+  display:inline-flex;gap:clamp(.8rem,1.5vw,1.4rem);
+  padding:clamp(1rem,2vw,1.6rem) 0;
+  animation:marquee 40s linear infinite;
+}
+.recent-ticker:hover .track{animation-play-state:paused}
+.recent-ticker .tile{
+  flex:0 0 auto;width:clamp(180px,22vw,280px);
+  border:1px solid var(--rule);overflow:hidden;background:var(--paper-2);
+}
+.recent-ticker .tile img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block}
+@media(prefers-reduced-motion:reduce){
+  .recent-ticker .track{animation:none}
+}
+
+/* ── launch polish: motion & ux layer ── */
+
+/* scroll progress hairline */
+.scroll-progress{
+  position:fixed;top:0;left:0;height:3px;width:100%;
+  transform:scaleX(0);transform-origin:0 50%;
+  background:var(--coral);z-index:200;pointer-events:none;
+}
+
+/* hero entrance choreography */
+.hero h1 .hline{display:block;overflow:hidden}
+.hero h1 .hline > span{display:block;transform:translateY(112%)}
+body.entered .hero h1 .hline > span{
+  animation:hero-rise .85s cubic-bezier(.22,1,.36,1) forwards;
+}
+.hero h1 .hline:nth-child(1) > span{animation-delay:.08s}
+.hero h1 .hline:nth-child(2) > span{animation-delay:.18s}
+.hero h1 .hline:nth-child(3) > span{animation-delay:.28s}
+@keyframes hero-rise{to{transform:translateY(0)}}
+.hero .fade-up{opacity:0;transform:translateY(22px)}
+body.entered .hero .fade-up{
+  animation:fade-rise .7s cubic-bezier(.22,1,.36,1) forwards;
+}
+body.entered .hero .fade-up.d1{animation-delay:.45s}
+body.entered .hero .fade-up.d2{animation-delay:.58s}
+body.entered .hero .fade-up.d3{animation-delay:.72s}
+@keyframes fade-rise{to{opacity:1;transform:none}}
+
+/* staggered grid reveals — children cascade after container enters */
+.reveal.stagger > *{opacity:0;transform:translateY(18px);
+  transition:opacity .55s ease,transform .55s ease}
+.reveal.stagger.in > *{opacity:1;transform:none}
+.reveal.stagger.in > *:nth-child(1){transition-delay:.05s}
+.reveal.stagger.in > *:nth-child(2){transition-delay:.12s}
+.reveal.stagger.in > *:nth-child(3){transition-delay:.19s}
+.reveal.stagger.in > *:nth-child(4){transition-delay:.26s}
+.reveal.stagger.in > *:nth-child(5){transition-delay:.33s}
+.reveal.stagger.in > *:nth-child(6){transition-delay:.4s}
+.reveal.stagger.in > *:nth-child(7){transition-delay:.47s}
+.reveal.stagger.in > *:nth-child(8){transition-delay:.54s}
+.reveal.stagger.in > *:nth-child(n+9){transition-delay:.6s}
+
+/* images fade in as they load */
+.chip-card .photo img,.cs-cell img{opacity:0;transition:opacity .6s ease}
+.chip-card .photo img.ldd,.cs-cell img.ldd{opacity:1}
+
+/* feature caption gets parallax + fade (JS-driven) */
+.feature-caption{will-change:transform,opacity}
+
+/* pinned framework progress hairline */
+.pin-progress{height:2px;background:var(--rule);margin-top:1.4rem;overflow:hidden}
+.pin-progress i{display:block;height:100%;width:0;background:var(--coral)}
+
+/* marquee containers skew with scroll velocity (JS-driven) */
+.marquee,.mq-parade,.mq-shout{will-change:transform}
+
+/* footer giant logo rises */
+.giant-logo.reveal{transform:translateY(46px)}
+.giant-logo.reveal.in{transform:none}
+
 /* reduce motion */
 @media(prefers-reduced-motion:reduce){
   .marquee .track,.mq-shout .track,.mq-parade .track{animation:none}
@@ -582,4 +709,10 @@ body::after{
   .chip-card,.btn,.dx-card{transition:none}
   .reveal{opacity:1;transform:none;transition:none}
   body::after{display:none}
+  .hero h1 .hline > span{transform:none;animation:none}
+  .hero .fade-up{opacity:1;transform:none;animation:none}
+  .reveal.stagger > *{opacity:1;transform:none;transition:none}
+  .chip-card .photo img,.cs-cell img{opacity:1;transition:none}
+  .scroll-progress{display:none}
+  .giant-logo.reveal{transform:none}
 }
