@@ -36,18 +36,6 @@
   prog.className = 'scroll-progress';
   document.body.appendChild(prog);
 
-  /* years-operating: a live clock, ticking since day one */
-  document.querySelectorAll('.yrs[data-since]').forEach(function (el) {
-    var t0 = new Date(el.getAttribute('data-since') + 'T00:00:00').getTime();
-    var tick = function () {
-      var y = (Date.now() - t0) / 3.15576e10;
-      var s = y.toFixed(8);
-      el.innerHTML = s.slice(0, s.indexOf('.')) + '<span class="dec">.' + s.slice(s.indexOf('.') + 1) + '</span>';
-      requestAnimationFrame(tick);
-    };
-    requestAnimationFrame(tick);
-  });
-
   /* count-up stats */
   var counters = document.querySelectorAll('[data-count]');
   if (counters.length && 'IntersectionObserver' in window) {
