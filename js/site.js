@@ -80,6 +80,25 @@
   /* magnetic buttons */
   var fine = window.matchMedia('(pointer: fine)').matches;
   if (fine) {
+    /* hover previews that follow the cursor */
+    var rows = document.querySelectorAll('[data-preview]');
+    if (rows.length) {
+      var pv = document.createElement('img');
+      pv.className = 'row-preview';
+      pv.alt = '';
+      document.body.appendChild(pv);
+      rows.forEach(function (row) {
+        row.addEventListener('mouseenter', function () {
+          pv.src = row.getAttribute('data-preview');
+          pv.classList.add('on');
+        });
+        row.addEventListener('mouseleave', function () { pv.classList.remove('on'); });
+        row.addEventListener('mousemove', function (e) {
+          pv.style.transform = 'translate(' + (e.clientX + 26) + 'px,' + (e.clientY - 100) + 'px) rotate(2.5deg)';
+        });
+      });
+    }
+
     document.querySelectorAll('.btn').forEach(function (btn) {
       btn.addEventListener('mousemove', function (e) {
         var r = btn.getBoundingClientRect();

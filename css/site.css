@@ -38,6 +38,7 @@
 
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
+html,body{overflow-x:clip}
 body{
   background:var(--paper);color:var(--ink);
   font-family:var(--font-body);font-size:1rem;line-height:1.55;
@@ -218,6 +219,9 @@ hr.rule{border:none;border-top:1px solid var(--rule);margin:0}
   flex-direction:column;
 }
 .sticker.heart .bang{display:block;font-size:1.6em;margin-top:.15em;letter-spacing:0}
+@media(max-width:720px){
+  .sticker.heart{width:104px!important;height:96px!important;top:-3.4rem!important;right:0!important;font-size:.44rem}
+}
 .sticker.sky{background:var(--sky);color:var(--ink)}
 .sticker.coral{background:var(--coral);color:var(--white)}
 .sticker.butter{background:var(--butter);color:var(--ink)}
@@ -504,6 +508,7 @@ hr.rule{border:none;border-top:1px solid var(--rule);margin:0}
   letter-spacing:.16em;text-transform:uppercase;color:var(--mute);
 }
 @media(prefers-reduced-motion:reduce){
+  @view-transition{navigation:none}
   .feature,.feature.frames{height:100vh}
   .feature-stage img{transform:none}
   .fs-dots{display:none}
@@ -531,6 +536,7 @@ hr.rule{border:none;border-top:1px solid var(--rule);margin:0}
   .pin-step{opacity:1;grid-template-columns:1fr;gap:.4rem}
 }
 @media(prefers-reduced-motion:reduce){
+  @view-transition{navigation:none}
   .pinwrap{height:auto}
   .pin{position:static;min-height:0}
   .pin-step{opacity:1}
@@ -542,6 +548,7 @@ body.js .chip-card:not(.dev) .swatch{opacity:.95}
 .chip-card.dev .swatch{opacity:.32}
 .chip-card.dev:hover .swatch{opacity:0}
 @media(prefers-reduced-motion:reduce){
+  @view-transition{navigation:none}
   body.js .chip-card:not(.dev) .swatch{opacity:.32}
 }
 
@@ -644,6 +651,7 @@ body::after{
 }
 .recent-ticker .tile img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block}
 @media(prefers-reduced-motion:reduce){
+  @view-transition{navigation:none}
   .recent-ticker .track{animation:none}
 }
 
@@ -707,13 +715,56 @@ body.entered .hero .fade-up.d3{animation-delay:.72s}
 .giant-logo.reveal{transform:translateY(46px)}
 .giant-logo.reveal.in{transform:none}
 
+/* ── client logo wall ── */
+.logo-wall{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));
+  gap:2.4rem 2.8rem;align-items:center;
+}
+.logo-wall img{
+  width:100%;max-width:130px;height:40px;object-fit:contain;margin:0 auto;
+  opacity:.8;transition:opacity .25s ease;
+}
+.logo-wall img:hover{opacity:1}
+@media(max-width:600px){.logo-wall{grid-template-columns:repeat(3,1fr);gap:1.8rem}}
+
+/* ── cursor-follow row preview ── */
+.row-preview{
+  position:fixed;top:0;left:0;width:280px;aspect-ratio:16/10;object-fit:cover;
+  pointer-events:none;opacity:0;z-index:80;border:1px solid var(--rule);
+  box-shadow:8px 10px 0 rgba(0,0,0,.28);transition:opacity .18s ease;
+}
+.row-preview.on{opacity:1}
+
+/* ── next case study strip ── */
+.next-case{display:block;background:var(--ink);position:relative;overflow:hidden}
+.next-case .wrap{max-width:var(--shell);margin:0 auto;padding:clamp(3.5rem,8vw,6rem) var(--gutter);
+  display:flex;align-items:center;justify-content:space-between;gap:2rem}
+.next-case .eyebrow{color:#9d988c;margin-bottom:.8rem}
+.next-case .big{font-family:var(--font-display);font-weight:900;text-transform:lowercase;
+  color:var(--paper);font-size:clamp(2.2rem,6vw,4.6rem);line-height:.95;letter-spacing:-.02em}
+.next-case .big .script{color:var(--nc,var(--coral))}
+.next-case .thumb{width:clamp(110px,18vw,240px);aspect-ratio:4/3;object-fit:cover;
+  border:1px solid #2a2a2a;transform:rotate(2deg);transition:transform .3s ease;flex-shrink:0}
+.next-case .arrow{font-family:var(--font-display);font-weight:900;color:var(--nc,var(--coral));
+  font-size:clamp(2rem,5vw,3.6rem);transition:transform .3s ease;flex-shrink:0}
+.next-case:hover .arrow{transform:translateX(12px)}
+.next-case:hover .thumb{transform:rotate(0) scale(1.05)}
+@media(max-width:600px){.next-case .thumb{display:none}}
+
+/* ── page transitions (progressive) ── */
+@view-transition{navigation:auto}
+::view-transition-old(root){animation-duration:.22s}
+::view-transition-new(root){animation-duration:.22s}
+
 /* reduce motion */
 @media(prefers-reduced-motion:reduce){
+  @view-transition{navigation:none}
   .marquee .track,.mq-shout .track,.mq-parade .track{animation:none}
   .sticker{animation:none}
   .sparkle{animation:none}
   .mq-parade svg{animation:none}
   .chip-card,.btn,.dx-card{transition:none}
+  .next-case .thumb,.next-case .arrow{transition:none}
   .reveal{opacity:1;transform:none;transition:none}
   body::after{display:none}
   .hero h1 .hline > span{transform:none;animation:none}
