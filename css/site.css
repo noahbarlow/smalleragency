@@ -106,21 +106,23 @@ h3,.h3{font-size:clamp(1.35rem,2vw,2rem);letter-spacing:-.035em;line-height:1.02
 .page-hero .sticker{display:none}
 .page-hero .contact-links{margin-top:clamp(2.5rem,4vw,4rem)}
 
-/* Featured project / scroll-led proof */
-.feature{height:145vh;position:relative;background:var(--ink)}
-.feature.frames{height:220vh}
-.feature.frames.short{height:145vh}
-.feature.frames.case-frames{height:165vh}
-.feature-stage{position:sticky;top:0;height:100svh;overflow:hidden;background:var(--ink)}
-.feature-stage>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.06);will-change:transform,opacity}
+/* Featured project / scroll-led proof
+   Single-image heroes move normally. Only multi-frame stories pin. */
+.feature{height:calc(100svh - var(--header-h));position:relative;background:var(--ink)}
+.feature.frames{height:190vh}
+.feature.frames.short{height:135vh}
+.feature.frames.case-frames{height:140vh}
+.feature-stage{position:relative;height:100%;overflow:hidden;background:var(--ink)}
+.feature.frames .feature-stage{position:sticky;top:var(--header-h);height:calc(100svh - var(--header-h))}
+.feature-stage>img{position:absolute;z-index:0;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.06);will-change:transform,clip-path}
 .feature-stage>img.on,.feature-stage>img:only-of-type{opacity:1}
 .feature-swatch{display:none}
-.feature-caption{position:absolute;z-index:3;left:var(--gutter);bottom:var(--gutter);width:min(31rem,calc(100% - var(--gutter)*2));background:var(--white);color:var(--ink);padding:clamp(1.15rem,2vw,1.65rem);border-top:5px solid var(--blue)}
+.feature-caption{position:absolute;z-index:10;left:var(--gutter);bottom:var(--gutter);width:min(31rem,calc(100% - var(--gutter)*2));background:var(--white);color:var(--ink);padding:clamp(1.15rem,2vw,1.65rem);border-top:5px solid var(--blue)}
 .feature-caption .eyebrow{margin-bottom:.8rem;color:var(--blue)}
 .feature-caption .name{font-size:clamp(2.3rem,4.5vw,4.6rem);text-transform:none;max-width:10em}
 .feature-caption .code{margin-top:1rem;color:var(--mute)}
 .feature-caption .btn{margin-top:1.4rem}
-.fs-dots{position:absolute;z-index:4;right:var(--gutter);bottom:var(--gutter);display:flex;gap:.4rem;padding:.5rem;background:rgba(17,17,15,.65)}
+.fs-dots{position:absolute;z-index:10;right:var(--gutter);bottom:var(--gutter);display:flex;gap:.4rem;padding:.5rem;background:rgba(17,17,15,.65)}
 .fs-dots i{display:block;width:1.6rem;height:3px;background:rgba(255,255,255,.35);transition:background .2s ease}
 .fs-dots i.on{background:var(--signal)}
 
@@ -347,8 +349,10 @@ body.entered .home-hero .d3{animation-delay:.36s}
   .hero-actions{grid-column:auto}
   .hero-proof{grid-column:auto;grid-row:auto;align-items:flex-start;text-align:left;padding-top:1.4rem;border-top:1px solid var(--rule)}
   .page-hero{padding-top:4.5rem}
-  .feature,.feature.frames,.feature.frames.short,.feature.frames.case-frames{height:115svh}
-  .feature-stage{height:100svh}
+  .feature{height:calc(100svh - var(--header-h))}
+  .feature.frames{height:200svh}
+  .feature.frames.short,.feature.frames.case-frames{height:135svh}
+  .feature.frames .feature-stage{height:calc(100svh - var(--header-h));top:var(--header-h)}
   .feature-caption{bottom:1rem;left:1rem;width:calc(100% - 2rem)}
   .fs-dots{right:1rem;top:1rem;bottom:auto}
   .section-intro,.s-head{grid-template-columns:1fr;gap:1.5rem}
@@ -398,7 +402,8 @@ body.entered .home-hero .d3{animation-delay:.36s}
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
-  .feature,.feature.frames,.feature.frames.short,.feature.frames.case-frames{height:100svh}
+  .feature,.feature.frames,.feature.frames.short,.feature.frames.case-frames{height:calc(100svh - var(--header-h))}
+  .feature.frames .feature-stage{position:relative;top:0;height:100%}
   .feature-stage>img{transform:none}
   .reveal,.reveal.stagger>*{opacity:1;transform:none}
   .scroll-progress,.fs-dots{display:none}

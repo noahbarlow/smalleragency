@@ -158,20 +158,30 @@
         m.style.transform = 'skewX(' + (-skew) + 'deg)';
       });
 
-      /* features: frame swaps + settle */
+      /* features: scroll-led proof wipes + settle.
+         The stage pins below the sticky header, so the page never jumps.
+         A clean wipe avoids the ghosted double-image feel of a crossfade. */
       features.forEach(function (feature) {
+        var stage = feature.querySelector('.feature-stage');
         var imgs = feature.querySelectorAll('.feature-stage img');
         var rect = feature.getBoundingClientRect();
-        var total = feature.offsetHeight - window.innerHeight;
+        var total = feature.offsetHeight - stage.offsetHeight;
         if (total <= 0) return;
-        var p = Math.min(1, Math.max(0, -rect.top / total));
-        var sc = 'scale(' + (1.08 - p * 0.08) + ')';
+        var stickyTop = parseFloat(window.getComputedStyle(stage).top) || 0;
+        var p = Math.min(1, Math.max(0, (stickyTop - rect.top) / total));
+        var sc = 'scale(' + (1.06 - p * 0.06) + ')';
         imgs.forEach(function (im) { im.style.transform = sc; });
         if (imgs.length > 1) {
-          var idx = Math.min(imgs.length - 1, Math.floor(p * imgs.length));
-          imgs.forEach(function (im, i) { im.classList.toggle('on', i === idx); });
+          var frame = p * (imgs.length - 1);
+          imgs.forEach(function (im, i) {
+            var reveal = i === 0 ? 1 : Math.min(1, Math.max(0, frame - (i - 1)));
+            reveal = reveal * reveal * (3 - 2 * reveal); /* smoothstep */
+            im.style.opacity = 1;
+            im.style.clipPath = 'inset(0 ' + ((1 - reveal) * 100) + '% 0 0)';
+            im.classList.toggle('on', i === Math.round(frame));
+          });
           var dots = feature.querySelectorAll('.fs-dots i');
-          dots.forEach(function (d, i) { d.classList.toggle('on', i === idx); });
+          dots.forEach(function (d, i) { d.classList.toggle('on', i === Math.round(frame)); });
         }
       });
 
