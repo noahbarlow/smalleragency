@@ -230,7 +230,7 @@ hr.rule{border:none;border-top:1px solid var(--rule);margin:0}
 }
 .sticker.heart .bang{display:block;font-size:1.6em;margin-top:.15em;letter-spacing:0}
 @media(max-width:720px){
-  .sticker.heart{display:none}
+  .sticker.heart,.page-hero .sticker{display:none}
 }
 .sticker.sky{background:var(--sky);color:var(--ink)}
 .sticker.coral{background:var(--coral);color:var(--white)}
