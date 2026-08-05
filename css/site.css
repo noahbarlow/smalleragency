@@ -186,10 +186,18 @@ a.chip-card:hover .caption .name{color:var(--blue)}
 .capability-list p{margin-top:1.2rem;max-width:25em}
 
 /* Operating model / founder */
-.we-are{border-top:1px solid var(--ink)}
-.we-are-row{display:grid;grid-template-columns:minmax(240px,1fr) minmax(0,1.4fr);gap:clamp(2rem,7vw,8rem);padding:clamp(2rem,4vw,3.5rem) 0;border-bottom:1px solid var(--rule)}
-.we-are-row p{max-width:39em;font-size:clamp(1rem,1.3vw,1.18rem)}
-.we-are-row .sub{margin-top:.8rem;color:var(--blue)}
+.operate-break{padding:clamp(4.5rem,8vw,8rem) 0}
+.operate-break .runhead{margin-bottom:clamp(3.5rem,7vw,7rem)}
+.operate-thesis{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(240px,.5fr);gap:clamp(2rem,7vw,8rem);align-items:end}
+.operate-thesis h2{color:var(--paper);max-width:11em}
+.operate-thesis p{font-family:var(--font-display);font-size:clamp(1.8rem,3.2vw,3.5rem);font-weight:780;font-variation-settings:"wdth" 112;letter-spacing:-.05em;line-height:.98;color:var(--signal);max-width:11em}
+.operate-list{background:var(--paper)}
+.operate-row{display:grid;grid-template-columns:clamp(4.5rem,8vw,8rem) minmax(240px,.8fr) minmax(0,1.2fr);gap:clamp(1.25rem,4vw,4rem);align-items:start;padding:clamp(2.5rem,5vw,5rem) 0;border-bottom:1px solid var(--ink);transition:background .25s ease}
+.operate-row:first-child{border-top:0}
+.operate-number{font-family:var(--font-display);font-size:clamp(2.5rem,5vw,5.5rem);font-weight:840;font-variation-settings:"wdth" 120;letter-spacing:-.07em;line-height:.8;color:var(--blue)}
+.operate-row h3{font-size:clamp(1.8rem,3.3vw,3.5rem);max-width:10em}
+.operate-row p{max-width:39em;font-size:clamp(1rem,1.3vw,1.18rem)}
+.operate-row .sub{margin-top:1rem;color:var(--blue)}
 .founder{display:grid;grid-template-columns:minmax(280px,.75fr) minmax(0,1.25fr);gap:clamp(3rem,8vw,9rem);align-items:center}
 .founder .portrait{position:relative}
 .founder .portrait img{width:100%;aspect-ratio:4/5;object-fit:cover;filter:none}
@@ -261,6 +269,7 @@ a.chip-card:hover .caption .name{color:var(--blue)}
 .office{padding:clamp(1.5rem,3vw,2.5rem);background:transparent;border:1px solid var(--ink)}
 .office p{margin-top:1rem;line-height:1.7}
 .dx-grid{display:grid;gap:1rem}
+.dx-grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
 .dx-card{display:block;max-width:34rem;padding:clamp(1.5rem,3vw,2.5rem);border:1px solid var(--ink);background:var(--white)}
 .dx-card .band{display:none}
 .dx-card h3{margin-top:1.4rem}
@@ -286,7 +295,7 @@ a.chip-card:hover .caption .name{color:var(--blue)}
 .footer-pitch h2 span{display:block;color:var(--signal)}
 .footer-pitch a{font-family:var(--font-utility);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;border-bottom:1px solid var(--paper);padding-bottom:.35rem}
 .footer-pitch a:hover{color:var(--signal);border-color:var(--signal)}
-.site-footer .cols{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:clamp(2rem,7vw,8rem);padding:clamp(2.5rem,5vw,4.5rem) 0}
+.site-footer .cols{display:grid;grid-template-columns:1.35fr 1fr 1fr 1fr;gap:clamp(2rem,5vw,6rem);padding:clamp(2.5rem,5vw,4.5rem) 0}
 .site-footer .eyebrow{color:#8f918a;margin-bottom:.8rem}
 .site-footer p,.site-footer a{font-size:.92rem;line-height:1.8;color:#d6d7d0}
 .site-footer a:hover{color:var(--signal)}
@@ -363,7 +372,10 @@ body.entered .home-hero .d3{animation-delay:.36s}
   .capability-list{grid-template-columns:1fr}
   .capability-list>div{padding:1.7rem 0;border-bottom:1px solid rgba(255,255,255,.5)}
   .capability-list>div+div{border-left:0;padding-left:0}
-  .we-are-row,.value-row{grid-template-columns:1fr;gap:1rem}
+  .operate-thesis{grid-template-columns:1fr;gap:2rem}
+  .operate-row{grid-template-columns:4rem 1fr;gap:1.25rem}
+  .operate-row p{grid-column:2}
+  .value-row{grid-template-columns:1fr;gap:1rem}
   .founder,.studio-note .founder{grid-template-columns:1fr;gap:2.5rem}
   .svc-grid.three{grid-template-columns:1fr}
   .cs-gallery{grid-template-columns:1fr!important}
@@ -374,6 +386,7 @@ body.entered .home-hero .d3{animation-delay:.36s}
   .hero-meta .stat{padding:1.5rem 0;border-right:0;border-bottom:1px solid var(--rule)}
   .hero-meta .stat:last-child{border-bottom:0}
   .project-prompts{grid-template-columns:1fr}
+  .dx-grid.three{grid-template-columns:1fr}
   .project-prompts span{min-height:0;padding:1.3rem 0;border-right:0;border-bottom:1px solid var(--rule)}
   .project-prompts span:last-child{border-bottom:0}
   .office-grid{grid-template-columns:1fr}
