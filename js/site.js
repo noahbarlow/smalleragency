@@ -128,7 +128,23 @@
   });
 
   /* unified scroll loop: features, progress bar, marquee velocity skew */
+  var deskFeature = window.matchMedia('(min-width: 721px)');
   var features = document.querySelectorAll('.feature');
+
+  /* mobile swipe: dots track horizontal position */
+  if (!deskFeature.matches) {
+    features.forEach(function (feature) {
+      var stage = feature.querySelector('.feature-stage');
+      var imgs = stage.querySelectorAll('img');
+      if (imgs.length < 2) return;
+      stage.addEventListener('scroll', function () {
+        var idx = Math.round(stage.scrollLeft / stage.clientWidth);
+        feature.querySelectorAll('.fs-dots i').forEach(function (d, i) {
+          d.classList.toggle('on', i === idx);
+        });
+      }, { passive: true });
+    });
+  }
   var marquees = document.querySelectorAll('.marquee, .mq-parade, .mq-shout');
   var lastY = window.scrollY, vel = 0;
   var ticking = false;
@@ -152,10 +168,9 @@
         m.style.transform = 'skewX(' + (-skew) + 'deg)';
       });
 
-      /* features: frame swaps + settle + caption parallax */
-      features.forEach(function (feature) {
+      /* features: frame swaps + settle (desktop only; mobile swipes) */
+      if (deskFeature.matches) features.forEach(function (feature) {
         var imgs = feature.querySelectorAll('.feature-stage img');
-        var cap = feature.querySelector('.feature-caption');
         var rect = feature.getBoundingClientRect();
         var total = feature.offsetHeight - window.innerHeight;
         if (total <= 0) return;
@@ -167,10 +182,6 @@
           imgs.forEach(function (im, i) { im.classList.toggle('on', i === idx); });
           var dots = feature.querySelectorAll('.fs-dots i');
           dots.forEach(function (d, i) { d.classList.toggle('on', i === idx); });
-        }
-        if (cap) {
-          cap.style.transform = 'translateY(' + (p * -26) + 'px)';
-          cap.style.opacity = String(Math.min(1, 0.35 + p * 2.2));
         }
       });
 
