@@ -1,25 +1,26 @@
-/*
-  Smaller Agency measurement layer.
-  Set GTM_ID once a Google Tag Manager web container exists (GTM-XXXXXXX).
-  Events are pushed now, so the site does not need another code pass later.
-*/
+/* Smaller Agency measurement layer — GA4 web stream. */
 (function () {
   'use strict';
 
-  var GTM_ID = '';
+  var GA4_ID = 'G-1CGPCW0ZTH';
   window.dataLayer = window.dataLayer || [];
-  window.smallerTrack = function (eventName, parameters) {
-    window.dataLayer.push(Object.assign({ event: eventName }, parameters || {}));
-  };
+  window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
 
-  if (GTM_ID) {
-    window.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-    var firstScript = document.getElementsByTagName('script')[0];
-    var tag = document.createElement('script');
-    tag.async = true;
-    tag.src = 'https://www.googletagmanager.com/gtm.js?id=' + encodeURIComponent(GTM_ID);
-    firstScript.parentNode.insertBefore(tag, firstScript);
-  }
+  window.gtag('js', new Date());
+  window.gtag('config', GA4_ID, {
+    send_page_view: true,
+    transport_type: 'beacon'
+  });
+
+  var firstScript = document.getElementsByTagName('script')[0];
+  var tag = document.createElement('script');
+  tag.async = true;
+  tag.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(GA4_ID);
+  firstScript.parentNode.insertBefore(tag, firstScript);
+
+  window.smallerTrack = function (eventName, parameters) {
+    window.gtag('event', eventName, parameters || {});
+  };
 
   document.addEventListener('click', function (event) {
     var link = event.target.closest('a[href]');
