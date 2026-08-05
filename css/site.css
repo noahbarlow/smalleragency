@@ -90,7 +90,8 @@ h3,.h3{font-size:clamp(1.35rem,2vw,2rem);letter-spacing:-.035em;line-height:1.02
 .hero-thesis{align-self:center;padding-block:clamp(3rem,7vw,7rem)}
 .hero-thesis h1{font-size:clamp(4.1rem,10.2vw,10.5rem);max-width:none;line-height:.83;letter-spacing:-.075em}
 .hero-thesis h1 span{display:block}
-.hero-thesis h1 .accent{color:var(--blue);font-variation-settings:"wdth" 125}
+.hero-thesis h1 .brand-line{white-space:nowrap}
+.hero-thesis h1 .accent{color:var(--blue);font-size:.74em;white-space:nowrap;font-variation-settings:"wdth" 92;letter-spacing:-.06em}
 .hero-bottom{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(240px,.65fr) auto;gap:clamp(2rem,5vw,5rem);align-items:end;padding-top:1.25rem;border-top:1px solid var(--ink)}
 .hero-bottom .lead{max-width:35em}
 .hero-actions{display:flex;gap:.75rem;flex-wrap:wrap}
@@ -353,7 +354,8 @@ body.entered .home-hero .d3{animation-delay:.36s}
   .home-hero{min-height:calc(100svh - var(--header-h))}
   .hero-kicker span:last-child{display:none}
   .hero-thesis h1{font-size:clamp(3.8rem,16.8vw,7rem);line-height:.86}
-  .hero-thesis h1 .accent{font-variation-settings:"wdth" 96}
+  .hero-thesis h1 .brand-line{font-size:.8em;font-variation-settings:"wdth" 82;letter-spacing:-.06em}
+  .hero-thesis h1 .accent{font-size:.66em;font-variation-settings:"wdth" 72}
   .hero-bottom{grid-template-columns:1fr;gap:1.7rem}
   .hero-actions{grid-column:auto}
   .hero-proof{grid-column:auto;grid-row:auto;align-items:flex-start;text-align:left;padding-top:1.4rem;border-top:1px solid var(--rule)}
