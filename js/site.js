@@ -26,6 +26,12 @@
     img.addEventListener('error', function () { img.classList.add('ldd'); });
   });
 
+  /* horizontal image rails remain usable by keyboard as well as touch */
+  document.querySelectorAll('.cs-gallery, .filmstrip').forEach(function (rail) {
+    rail.setAttribute('tabindex', '0');
+    if (!rail.getAttribute('aria-label')) rail.setAttribute('aria-label', 'Project images');
+  });
+
   if (reduced) { document.body.classList.add('entered'); return; }
 
   /* hero entrance */
@@ -128,23 +134,7 @@
   });
 
   /* unified scroll loop: features, progress bar, marquee velocity skew */
-  var deskFeature = window.matchMedia('(min-width: 721px)');
   var features = document.querySelectorAll('.feature');
-
-  /* mobile swipe: dots track horizontal position */
-  if (!deskFeature.matches) {
-    features.forEach(function (feature) {
-      var stage = feature.querySelector('.feature-stage');
-      var imgs = stage.querySelectorAll('img');
-      if (imgs.length < 2) return;
-      stage.addEventListener('scroll', function () {
-        var idx = Math.round(stage.scrollLeft / stage.clientWidth);
-        feature.querySelectorAll('.fs-dots i').forEach(function (d, i) {
-          d.classList.toggle('on', i === idx);
-        });
-      }, { passive: true });
-    });
-  }
   var marquees = document.querySelectorAll('.marquee, .mq-parade, .mq-shout');
   var lastY = window.scrollY, vel = 0;
   var ticking = false;
@@ -168,8 +158,8 @@
         m.style.transform = 'skewX(' + (-skew) + 'deg)';
       });
 
-      /* features: frame swaps + settle (desktop only; mobile swipes) */
-      if (deskFeature.matches) features.forEach(function (feature) {
+      /* features: frame swaps + settle */
+      features.forEach(function (feature) {
         var imgs = feature.querySelectorAll('.feature-stage img');
         var rect = feature.getBoundingClientRect();
         var total = feature.offsetHeight - window.innerHeight;

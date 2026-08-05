@@ -13,8 +13,8 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Archivo+Black&family=Pinyon+Script&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&amp;family=Archivo+Black&amp;family=Pinyon+Script&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css?v=9">
 <style>
   .cs-gallery{display:grid;gap:clamp(1rem,2vw,1.6rem);grid-template-columns:repeat(auto-fill,minmax(320px,1fr))}
   .cs-cell{background:var(--white);border:1px solid var(--rule);overflow:hidden}
@@ -42,6 +42,7 @@
     </nav>
   </div>
 </header>
+<main id="main">
 
 <!-- full-bleed hero -->
 <section class="feature" aria-label="Edwin County Farms hero">
@@ -141,8 +142,6 @@
       <div class="cs-cell wide"><img src="assets/img/ecf-guide-06.jpg" alt="Brand guidelines — typography spread" loading="lazy" width="1400" height="1081"></div>
       <div class="cs-cell wide"><img src="assets/img/ecf-guide-07.jpg" alt="Brand guidelines — colour system spread" loading="lazy" width="1400" height="1081"></div>
       <div class="cs-cell wide"><img src="assets/img/ecf-deck.jpg" alt="Edwin County Farms brand deck spreads" loading="lazy" width="1400" height="676"></div>
-      <div class="cs-cell"><img src="assets/img/ecf-field.jpg" alt="In the field at Edwin County Farms" loading="lazy" width="1600" height="1066"></div>
-      <div class="cs-cell"><img src="assets/img/ecf-cows.jpg" alt="The herd at golden hour" loading="lazy" width="1600" height="1064"></div>
     </div>
   </div>
 </section>
@@ -168,12 +167,13 @@
   </div>
 </a>
 
+</main>
+
 <footer class="site-footer">
   <div class="shell">
     <div class="cols">
       <div>
-        <p style="max-width:24em">An award-winning brand &amp; design studio
-        for challengers across Canada.</p>
+        <p style="max-width:24em">An independent brand and design studio for companies with something to prove.</p>
       </div>
       <div>
         <div class="eyebrow">toronto</div>
@@ -190,7 +190,7 @@
     <img class="giant-logo reveal" src="assets/logo-paper.svg" alt="" aria-hidden="true">
     <div class="legal">
       <span>© smaller agency ltd.</span>
-      <span class="no-beige">smaller team, bigger results</span>
+      <span class="footer-note">small team. senior people. direct answers.</span>
     </div>
   </div>
 </footer>
@@ -205,6 +205,6 @@
   els.forEach(function(e){io.observe(e)});
 })();
 </script>
-<script src="js/site.js"></script>
+<script src="js/site.js?v=9"></script>
 </body>
 </html>

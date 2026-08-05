@@ -139,7 +139,7 @@ hr.rule{border:none;border-top:1px solid var(--rule);margin:0}
   padding:.25rem 0;border-bottom:2px solid transparent;
 }
 .site-nav a:hover{border-bottom-color:var(--coral)}
-.site-nav a.active{border-bottom-color:var(--ink)}
+.site-nav a.active,.site-nav a[aria-current="page"]{border-bottom-color:var(--ink)}
 .site-nav a.cta{
   border:1px solid var(--ink);border-radius:999px;
   padding:.55rem 1.1rem;border-bottom-width:1px;
@@ -225,7 +225,7 @@ hr.rule{border:none;border-top:1px solid var(--rule);margin:0}
   border-radius:0;background:transparent;color:var(--ink);
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 90'%3E%3Cpath d='M50 88 C20 64 2 46 2 27 C2 11 14 2 27 2 C37 2 46 8 50 17 C54 8 63 2 73 2 C86 2 98 11 98 27 C98 46 80 64 50 88 Z' fill='%23E1FF3C'/%3E%3C/svg%3E");
   background-repeat:no-repeat;background-size:100% 100%;
-  padding:2.2em 1.9em 2.4em;font-size:.6rem;
+  padding:2.65em 1.9em 1.95em;font-size:.6rem;
   flex-direction:column;
 }
 .sticker.heart .bang{display:block;font-size:1.6em;margin-top:.15em;letter-spacing:0}
@@ -473,7 +473,7 @@ hr.rule{border:none;border-top:1px solid var(--rule);margin:0}
   display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;
   font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#9d988c;
 }
-.site-footer .legal .no-beige{color:var(--neon)}
+.site-footer .legal .footer-note{color:var(--neon)}
 
 /* ── page hero (interior) ── */
 .page-hero{padding:clamp(3.5rem,8vw,6rem) 0 clamp(2.5rem,5vw,4rem);position:relative;overflow:hidden}
@@ -484,14 +484,15 @@ hr.rule{border:none;border-top:1px solid var(--rule);margin:0}
 .reveal.in{opacity:1;transform:none}
 
 /* ── awards pass: full-bleed featured work ── */
-.feature{height:220vh;position:relative;background:var(--ink)}
-.feature.frames{height:340vh} /* longer runway when multiple frames swap */
-.feature.frames.short{height:180vh} /* two-frame reveal, tighter */
+.feature{height:150vh;position:relative;background:var(--ink)}
+.feature.frames{height:240vh} /* one deliberate scroll-led image sequence */
+.feature.frames.short{height:150vh} /* two-frame reveal, tighter */
+.feature.frames.case-frames{height:165vh}
 .feature-stage{position:sticky;top:0;height:100vh;overflow:hidden}
 .feature-stage img{
   position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
   transform:scale(1.08);will-change:transform,opacity;
-  opacity:0;transition:opacity .32s ease;
+  opacity:0;transition:none;
 }
 .feature-stage img.on,
 .feature-stage img:only-of-type{opacity:1}
@@ -526,7 +527,7 @@ hr.rule{border:none;border-top:1px solid var(--rule);margin:0}
 }
 
 /* ── awards pass: pinned framework sequence ── */
-.pinwrap{height:300vh;position:relative}
+.pinwrap{height:190vh;position:relative}
 .pin{position:sticky;top:0;min-height:100vh;display:flex;align-items:center;padding:4rem 0}
 .pin-steps{margin-top:clamp(2rem,4vw,3rem);border-top:1px solid var(--rule)}
 .pin-step{
@@ -613,6 +614,7 @@ body::after{
 .mq-parade .track{display:inline-block;padding:.7rem 0;animation:marquee 26s linear infinite;
   font-family:var(--font-display);font-weight:900;font-size:clamp(1rem,2.2vw,1.5rem);text-transform:lowercase}
 .mq-parade svg{vertical-align:middle;margin:0 1.1em;animation:spin 6s linear infinite;display:inline-block}
+.mq-parade.simple .track span{color:var(--neon);display:inline-block;margin:0 .9em}
 @keyframes spin{to{transform:rotate(360deg)}}
 .mq-parade:hover .track{animation-duration:9s;animation-play-state:running}
 
@@ -783,3 +785,36 @@ body.entered .hero .fade-up.d3{animation-delay:.72s}
   .scroll-progress{display:none}
   .giant-logo.reveal{transform:none}
 }
+
+
+/* Mobile keeps the image swaps, but removes the long desktop runway. */
+@media(max-width:720px){
+  .feature{height:100svh}
+  .feature.frames{height:180svh}
+  .feature.frames.short{height:115svh}
+  .feature.frames.case-frames{height:125svh}
+  .feature-stage{height:100svh}
+  .feature-caption{left:1.25rem;right:1.25rem;bottom:1.25rem;max-width:none;padding:1.25rem 1.35rem 1.4rem}
+  .feature-caption .name{font-size:2.15rem}
+  .fs-dots{right:1.5rem;top:1.5rem;bottom:auto}
+  .hero .sparkle{display:none}
+
+  /* Case-study image sets become swipeable rails instead of tall image dumps. */
+  .cs-gallery{
+    display:flex!important;overflow-x:auto;overflow-y:hidden;
+    gap:1rem!important;scroll-snap-type:x mandatory;overscroll-behavior-inline:contain;
+    padding-right:var(--gutter);margin-right:calc(var(--gutter) * -1);
+    scrollbar-width:none;-webkit-overflow-scrolling:touch;
+  }
+  .cs-gallery::-webkit-scrollbar{display:none}
+  .cs-gallery .cs-cell{
+    flex:0 0 82vw;scroll-snap-align:start;align-self:flex-start;
+    grid-column:auto!important;
+  }
+  .cs-gallery .cs-cell img{width:100%;height:auto;aspect-ratio:4/5!important;object-fit:contain}
+  .cs-gallery .cs-cell.wide img,
+  .cs-gallery .cs-cell.landscape img{aspect-ratio:16/10!important}
+}
+
+/* Final reduced-motion override comes after responsive feature sizing. */
+@media(prefers-reduced-motion:reduce){.feature,.feature.frames,.feature.frames.short,.feature.frames.case-frames{height:100svh}}

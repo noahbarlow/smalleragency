@@ -13,8 +13,8 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Archivo+Black&family=Pinyon+Script&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&amp;family=Archivo+Black&amp;family=Pinyon+Script&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css?v=9">
 <style>
   .cs-gallery{display:grid;gap:clamp(1rem,2vw,1.6rem);grid-template-columns:repeat(auto-fill,minmax(320px,1fr))}
   .cs-cell{background:var(--white);border:1px solid var(--rule);overflow:hidden}
@@ -42,9 +42,10 @@
     </nav>
   </div>
 </header>
+<main id="main">
 
 <!-- full-bleed hero, frames swap on scroll -->
-<section class="feature frames" aria-label="Grolsch hero">
+<section class="feature frames case-frames" aria-label="Grolsch hero">
   <div class="feature-stage">
     <img class="on" src="assets/img/grolsch-hero.jpg" alt="Grolsch CHARACTER billboard in downtown Toronto" width="2000" height="1335">
     <img src="assets/img/grolsch-tiff.jpg" alt="Grolsch swing-top bottle backstage at TIFF" loading="lazy" width="2000" height="2587">
@@ -67,8 +68,8 @@
       <div class="right">
         <p>Grolsch is a premium swing-top lager with centuries of heritage — and heritage
         alone doesn't sell a pint in Toronto. As the official beer of the Toronto
-        International Film Festival, the brand needed more than a logo on a step-and-repeat.
-        It needed a real presence at the festival.</p>
+        International Film Festival, a logo on a step-and-repeat wasn't going to do the job. Grolsch needed a real
+        presence at the festival.</p>
         <p>We ran the whole TIFF platform, from first exploration to on-premise activation —
         print, digital, social, out-of-home, retail and on-pack.</p>
       </div>
@@ -126,7 +127,7 @@
       <div class="value-row" style="border-bottom-color:#2a2a2a">
         <h3 style="color:var(--paper)">patio takeovers</h3>
         <p style="color:#cfcabe">Summer patios turned Grolsch-green — the brand poured
-        where Toronto actually drinks, not just where it advertises.</p>
+        where Toronto actually drinks.</p>
       </div>
     </div>
   </div>
@@ -178,12 +179,13 @@
   </div>
 </a>
 
+</main>
+
 <footer class="site-footer">
   <div class="shell">
     <div class="cols">
       <div>
-        <p style="max-width:24em">An award-winning brand &amp; design studio
-        for challengers across Canada.</p>
+        <p style="max-width:24em">An independent brand and design studio for companies with something to prove.</p>
       </div>
       <div>
         <div class="eyebrow">toronto</div>
@@ -200,7 +202,7 @@
     <img class="giant-logo reveal" src="assets/logo-paper.svg" alt="" aria-hidden="true">
     <div class="legal">
       <span>© smaller agency ltd.</span>
-      <span class="no-beige">smaller team, bigger results</span>
+      <span class="footer-note">small team. senior people. direct answers.</span>
     </div>
   </div>
 </footer>
@@ -215,6 +217,6 @@
   els.forEach(function(e){io.observe(e)});
 })();
 </script>
-<script src="js/site.js"></script>
+<script src="js/site.js?v=9"></script>
 </body>
 </html>
