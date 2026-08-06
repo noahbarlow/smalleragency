@@ -32,7 +32,7 @@
       window.smallerTrack('contact_email_clicked', { link_text: label, page_path: location.pathname });
       return;
     }
-    if (/diagnostics|scorecard|packaging-audit|modern-brand-os/.test(href)) {
+    if (/diagnostics|scorecard|packaging-audit|modern-brand-os|agency-economics/.test(href)) {
       window.smallerTrack('diagnostic_link_clicked', { link_url: href, link_text: label, page_path: location.pathname });
       return;
     }
