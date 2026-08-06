@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Toronto Agency Economics Index — Smaller Agency</title>
-<meta name="description" content="An evidence audit and interactive cost model for the people, space and operating overhead behind ten prominent Toronto agencies.">
+<title>Where Does the Agency Dollar Go? — Smaller Agency</title>
+<meta name="description" content="A simple model of how a Toronto agency spends $100—and three questions every client should ask before hiring one.">
 <link rel="canonical" href="https://smalleragency.com/agency-economics.html">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
@@ -15,7 +15,7 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Smaller Agency">
 <meta property="og:title" content="Where does your agency dollar go?">
-<meta property="og:description" content="An evidence audit and interactive cost model for ten prominent Toronto agencies.">
+<meta property="og:description" content="Roughly 61¢ pays delivery payroll. The other 39¢ pays for the agency around it.">
 <meta property="og:url" content="https://smalleragency.com/agency-economics.html">
 <meta property="og:image" content="https://smalleragency.com/assets/og-agency-economics.png">
 <meta property="og:image:type" content="image/png">
@@ -24,14 +24,14 @@
 <meta property="og:image:alt" content="Where does your agency dollar go? Toronto Agency Economics by Smaller Agency">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Where does your agency dollar go?">
-<meta name="twitter:description" content="What is public, what is modelled and what remains unknown about ten Toronto agencies.">
+<meta name="twitter:description" content="A simple model of what clients are paying an agency to carry.">
 <meta name="twitter:image" content="https://smalleragency.com/assets/og-agency-economics.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,300..900&amp;family=Instrument+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/site.css?v=24">
-<link rel="stylesheet" href="css/economics.css?v=3">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","name":"Toronto Agency Economics Index","description":"An evidence audit and normalized operating-cost model for ten prominent Toronto agencies.","url":"https://smalleragency.com/agency-economics.html","creator":{"@type":"Organization","name":"Smaller Agency","url":"https://smalleragency.com/"},"dateModified":"2026-08-06","spatialCoverage":"Toronto, Ontario, Canada","temporalCoverage":"2026","license":"https://creativecommons.org/licenses/by-nc/4.0/","isAccessibleForFree":true,"measurementTechnique":"Public-source review plus scenario ranges; no private payroll, lease, revenue or rate-card data."}</script>
+<link rel="stylesheet" href="css/economics.css?v=4">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Where Does the Agency Dollar Go?","description":"A normalized model of agency operating cost and a public scale comparison of ten prominent Toronto agencies.","url":"https://smalleragency.com/agency-economics.html","author":{"@type":"Organization","name":"Smaller Agency","url":"https://smalleragency.com/"},"dateModified":"2026-08-06","about":"Advertising agency operating economics"}</script>
 </head>
 <body>
 <a class="skip" href="#main">skip to content</a>
@@ -42,94 +42,96 @@
 </div></header>
 
 <main id="main">
-  <section class="page-hero economics-hero">
+  <section class="page-hero ae-hero">
     <div class="shell">
-      <div class="economics-kicker reveal"><span>Smaller Agency Research / Evidence beta 02</span><span>Checked 06 August 2026</span></div>
-      <div class="economics-title reveal">
-        <h1>what are you paying the agency to carry?</h1>
-        <p class="lead">We audited the public record around ten prominent Toronto agencies, then modelled only what the evidence can support. The ranges are wide on purpose. The unknowns are part of the finding.</p>
+      <div class="ae-kicker reveal"><span>Smaller Agency Research</span><span>Toronto · August 2026</span></div>
+      <div class="ae-hero-grid">
+        <div class="ae-hero-copy reveal">
+          <h1>how much of your agency dollar reaches the people doing the work?</h1>
+          <p class="lead">In our normalized model, roughly 61 cents pays delivery payroll. The other 39 cents pays for management, support, operations and space.</p>
+          <p>Bigger is not worse. But it is a different machine—and clients should know which parts of that machine they actually need.</p>
+          <a class="btn hot" href="#bill">See the $100 bill</a>
+        </div>
+
+        <aside class="ae-receipt reveal" id="bill" aria-label="A normalized one hundred dollar agency operating bill">
+          <div class="ae-receipt-head"><span>Agency operating bill</span><span>Model 01</span></div>
+          <p class="ae-receipt-date">One normalized operating dollar × 100</p>
+          <div class="ae-line primary"><span>Delivery payroll</span><b>$61</b><small>Strategy, creative, design, production and account delivery</small></div>
+          <div class="ae-line"><span>Support + leadership</span><b>$22</b><small>Management, finance, people, growth and administration</small></div>
+          <div class="ae-line"><span>Other operations</span><b>$13</b><small>Technology, insurance, travel, sales and shared costs</small></div>
+          <div class="ae-line"><span>Space</span><b>$04</b><small>Normalized Toronto office occupancy</small></div>
+          <div class="ae-total"><span>Total</span><b>$100</b></div>
+          <p class="ae-receipt-note">Operating-cost scenario—not an agency invoice, rate card or industry average.</p>
+        </aside>
       </div>
-      <div class="economics-jump reveal"><a class="btn hot" href="#index">Inspect the evidence</a><p>Five evidence fields. Dated sources. No private data. No point estimates pretending to be facts.</p></div>
     </div>
   </section>
 
-  <section class="economics-marquee" aria-label="Key findings"><div><span>10 agencies</span><i>·</i><span>40% average evidence coverage</span><i>·</i><span>1 primary-source price signal</span><i>·</i><span>ranges, not guesses</span></div></section>
+  <section class="ae-takeaway"><div class="shell">
+    <p class="reveal">the office is visible. <span>unused capacity and extra layers cost more.</span></p>
+    <div class="ae-pressure reveal">
+      <article><b>+14%</b><h2>when delivery share falls from 80% to 70%.</h2><p>The same operating cost is recovered through fewer people doing billable work.</p></article>
+      <article><b>≈ $2/hr</b><h2>when occupancy rises by $20 per square foot.</h2><p>Rent matters. In this model, people mix and utilization matter much more.</p></article>
+    </div>
+  </div></section>
 
-  <section class="section economics-question"><div class="shell">
-    <div class="runhead reveal"><span class="n">01</span><span class="l">The question</span></div>
+  <section class="section ae-scale" id="agencies"><div class="shell">
+    <div class="runhead reveal"><span class="n">Toronto field</span><span class="l">Ten prominent agencies · not a quality ranking</span></div>
     <div class="s-head reveal">
-      <h2>the most visible overhead isn't the biggest one.</h2>
-      <div class="right"><p class="lead">An expensive office is easy to picture. But in the normalized model, real estate is about four cents of the operating dollar. People mix, layers and unused capacity move the rate much more.</p><p class="method-note">This is not a claim about any agency's revenue, lease, payroll, rate card or profit. It is an evidence audit plus a scenario model built from public company signals and Toronto benchmarks.</p></div>
+      <h2>size changes what a client is buying.</h2>
+      <div class="right"><p class="lead">A 1,000-person agency and a 60-person agency are different operating systems. The right choice depends on how much infrastructure the problem actually needs.</p><p class="method-note">Toronto team ranges are modelled from public company bands, associated-profile counts and office structure. They are not claimed payroll data.</p></div>
     </div>
+
+    <div class="ae-scale-key reveal"><span>Smaller Toronto team</span><i></i><span>Larger Toronto team</span></div>
+    <div class="ae-agencies reveal">
+      <a href="https://uk.linkedin.com/company/klick-health" target="_blank" rel="noreferrer" style="--min:58%;--max:100%"><span><b>Klick</b><small>Health + commercialization</small></span><i></i><strong>700–1,200</strong></a>
+      <a href="https://www.linkedin.com/company/cossette/" target="_blank" rel="noreferrer" style="--min:25%;--max:43%"><span><b>Cossette</b><small>Integrated creative</small></span><i></i><strong>300–520</strong></a>
+      <a href="https://www.linkedin.com/company/sid-lee" target="_blank" rel="noreferrer" style="--min:13%;--max:25%"><span><b>Sid Lee</b><small>Creative + design</small></span><i></i><strong>160–300</strong></a>
+      <a href="https://www.linkedin.com/company/rethink" target="_blank" rel="noreferrer" style="--min:8%;--max:16%"><span><b>Rethink</b><small>Independent creative</small></span><i></i><strong>100–190</strong></a>
+      <a href="https://www.linkedin.com/company/no-fixed-address" target="_blank" rel="noreferrer" style="--min:7%;--max:13%"><span><b>No Fixed Address</b><small>Integrated creative</small></span><i></i><strong>85–150</strong></a>
+      <a href="https://ca.linkedin.com/company/lg2" target="_blank" rel="noreferrer" style="--min:6%;--max:11%"><span><b>LG2</b><small>Creative + design</small></span><i></i><strong>75–135</strong></a>
+      <a href="https://ca.linkedin.com/company/diamond-marketing-group" target="_blank" rel="noreferrer" style="--min:6%;--max:11%"><span><b>Diamond</b><small>Integrated + experiential</small></span><i></i><strong>75–135</strong></a>
+      <a href="https://www.linkedin.com/company/zulu-alpha-kilo-inc." target="_blank" rel="noreferrer" style="--min:5%;--max:10%"><span><b>Zulu Alpha Kilo</b><small>Independent creative</small></span><i></i><strong>65–115</strong></a>
+      <a href="https://ca.linkedin.com/company/broken-heart-love-affair" target="_blank" rel="noreferrer" style="--min:4%;--max:8%"><span><b>Broken Heart Love Affair</b><small>Independent creative</small></span><i></i><strong>50–95</strong></a>
+      <a href="https://ca.linkedin.com/company/juniper-park-tbwa" target="_blank" rel="noreferrer" style="--min:2.5%;--max:5.5%"><span><b>Juniper Park\TBWA</b><small>Network creative</small></span><i></i><strong>30–65</strong></a>
+    </div>
+    <p class="ae-link-note">Each agency name links to its primary public company signal. The range is the analysis; the link is the evidence.</p>
   </div></section>
 
-  <section class="economics-findings" aria-label="Model findings">
-    <article class="economics-finding signal reveal"><span class="meta">Space</span><b>4¢</b><h2>of the modelled operating dollar.</h2><p>At the default scenario. Office is visible overhead; payroll and capacity are the heavier burden.</p></article>
-    <article class="economics-finding blue reveal"><span class="meta">Utilization</span><b>14%</b><h2>rate-floor penalty.</h2><p>What happens when delivery share moves from 80% to 70%, with every other input held constant.</p></article>
-    <article class="economics-finding ink reveal"><span class="meta">Transparency</span><b>1/10</b><h2>with primary-source pricing evidence.</h2><p>A City record contains Cossette's 2017 blended rate. It is real, stale and not a 2026 rate card.</p></article>
-  </section>
-
-  <section class="section economics-calculator" id="calculator"><div class="shell">
-    <div class="runhead reveal"><span class="n">02</span><span class="l">Build the rate</span></div>
-    <div class="economics-calc-intro reveal">
-      <div><h2>move the cost yourself.</h2><p class="lead">This is a normalized agency, not any agency in the cohort. Change the assumptions to see which ones actually matter.</p></div>
-      <div class="economics-calc-output" aria-live="polite"><div><small>Operating floor</small><strong id="calc-floor">$153</strong><span>/ delivery hour</span></div><div><small>Sell target at <i id="calc-margin-label">20%</i> margin</small><strong id="calc-sell">$191</strong><span>/ delivery hour</span></div></div>
+  <section class="ae-opacity inverse"><div class="shell">
+    <div class="eyebrow reveal">What the audit actually found</div>
+    <h2 class="reveal">agencies show the work.<br>they rarely show the machine.</h2>
+    <div class="ae-opacity-grid reveal">
+      <article><b>0/10</b><p>publish a current primary-source commercial rate card.</p></article>
+      <article><b>0/10</b><p>publish an audited Toronto role mix or delivery ratio.</p></article>
+      <article><b>0/10</b><p>disclose enough lease detail to calculate exact office overhead.</p></article>
     </div>
-    <div class="economics-calc-grid reveal">
-      <div class="economics-sliders">
-        <label for="calc-pay"><span>Loaded people cost <i>salary + employer burden</i></span><output id="calc-pay-value">$132k</output><input id="calc-pay" type="range" min="90" max="170" value="132" step="1"></label>
-        <label for="calc-delivery"><span>Delivery share <i>people touching client work</i></span><output id="calc-delivery-value">73%</output><input id="calc-delivery" type="range" min="55" max="85" value="73" step="1"></label>
-        <label for="calc-hours"><span>Collected hours <i>per delivery person / year</i></span><output id="calc-hours-value">1,425</output><input id="calc-hours" type="range" min="1100" max="1650" value="1425" step="25"></label>
-        <label for="calc-density"><span>Space per employee <i>physical demand equivalent</i></span><output id="calc-density-value">100 sq. ft.</output><input id="calc-density" type="range" min="50" max="160" value="100" step="5"></label>
-        <label for="calc-rent"><span>Gross occupancy <i>per sq. ft. / year</i></span><output id="calc-rent-value">$68</output><input id="calc-rent" type="range" min="40" max="100" value="68" step="1"></label>
-        <label for="calc-ops"><span>Other operations <i>as % of people cost</i></span><output id="calc-ops-value">15%</output><input id="calc-ops" type="range" min="5" max="30" value="15" step="1"></label>
-        <label for="calc-margin"><span>Desired operating margin</span><output id="calc-margin-value">20%</output><input id="calc-margin" type="range" min="0" max="35" value="20" step="1"></label>
+    <p class="lead reveal">That means a precise agency-by-agency cost ranking would be theatre. The useful comparison is simpler: how large is the operating system, and how much of it does your problem need?</p>
+  </div></section>
+
+  <section class="section ae-questions"><div class="shell">
+    <div class="runhead reveal"><span class="n">Client use</span><span class="l">Three questions worth asking</span></div>
+    <h2 class="reveal">before you hire any agency, ask this.</h2>
+    <ol class="reveal">
+      <li><span>01</span><div><h3>Who will actually work on my business?</h3><p>Ask for the named delivery team—not only the senior people in the pitch.</p></div></li>
+      <li><span>02</span><div><h3>How many paid hours make the work?</h3><p>Separate strategy, creative and design time from coordination, reporting and layers of review.</p></div></li>
+      <li><span>03</span><div><h3>What changes if the team changes?</h3><p>A clear commercial model should explain what happens to the fee when scope, seniority or staffing moves.</p></div></li>
+    </ol>
+  </div></section>
+
+  <section class="ae-notes"><div class="shell">
+    <details>
+      <summary>Model and source notes <span aria-hidden="true">＋</span></summary>
+      <div class="ae-notes-grid">
+        <div><h3>The $100 bill</h3><p>The default scenario uses $132,000 in annual loaded people cost per employee, a 73% delivery share, 1,425 collected hours per delivery employee, 100 square feet per employee, $68 gross occupancy per square foot and other operating cost equal to 15% of people cost. Profit, media, production pass-through and tax are excluded.</p></div>
+        <div><h3>The Toronto ranges</h3><p>Ranges use public company bands, visible associated-profile counts, office structure and network allocation. They are intentionally broad. No agency supplied or verified the model.</p></div>
+        <div><h3>Benchmarks</h3><p><a href="https://www.collierscanada.com/-/media/files/canada/research/2025/q4/toronto-office-mr-2025q4-v2.ashx?sc_lang=en-ca" target="_blank" rel="noreferrer">Colliers Toronto Office Market · Q4 2025 ↗</a><br><a href="https://salaryguide-americas.hays.com/canada/en/" target="_blank" rel="noreferrer">Hays Canada Salary Guide · 2026 ↗</a><br><a href="https://www.roberthalf.com/ca/en/insights/research/marketing-and-creative-salary-guide-2026-trends" target="_blank" rel="noreferrer">Robert Half Marketing + Creative · 2026 ↗</a></p></div>
+        <div><h3>Price evidence</h3><p>The only primary-source price signal located was a <a href="https://www.toronto.ca/legdocs/mmis/2019/gl/bgrd/backgroundfile-131762.pdf" target="_blank" rel="noreferrer">City of Toronto record ↗</a> documenting Cossette's $179 blended rate in an original 2017 contract. It is historical—not current commercial pricing.</p></div>
       </div>
-      <div class="economics-dollar">
-        <div class="eyebrow">Where one operating dollar goes</div>
-        <div class="economics-dollar-bar" aria-hidden="true"><i id="bar-delivery"></i><i id="bar-support"></i><i id="bar-space"></i><i id="bar-ops"></i></div>
-        <div class="economics-dollar-key"><p><i class="delivery"></i><span>Delivery payroll</span><b id="cost-delivery">61¢</b></p><p><i class="support"></i><span>Support + leadership payroll</span><b id="cost-support">22¢</b></p><p><i class="space"></i><span>Space</span><b id="cost-space">4¢</b></p><p><i class="ops"></i><span>Other operations</span><b id="cost-ops">13¢</b></p></div>
-        <div class="economics-sensitivity"><p><b id="calc-hours-impact">+7.5%</b><span>if collected hours fall by 100</span></p><p><b id="calc-rent-impact">+$1.92</b><span>per hour if occupancy rises $20 / sq. ft.</span></p></div>
-      </div>
-    </div>
+    </details>
   </div></section>
 
-  <section class="section economics-index" id="index"><div class="shell">
-    <div class="runhead reveal"><span class="n">03</span><span class="l">The cohort</span></div>
-    <div class="economics-index-head reveal">
-      <div><h2>ten agencies. mostly incomplete records.</h2><p class="lead">Not a quality ranking. Open a row to see what was reported, what was observed, what was modelled—and what remains unknown.</p></div>
-      <div class="economics-controls" aria-label="Sort agencies"><span>Sort by</span><button class="active" data-sort="people">People range</button><button data-sort="rate">Cost floor</button><button data-sort="evidence">Evidence</button></div>
-    </div>
-    <div class="economics-table-head" aria-hidden="true"><span>Agency / operating model</span><span>Toronto people</span><span>Space need</span><span>Operating floor</span><span>Evidence</span><span></span></div>
-    <div class="economics-list" id="agency-list"></div>
-    <p class="method-note">Cohort selected for Toronto presence, industry recognition, scale variation and public-data availability. “Space need” is a workforce-equivalent range, not a claimed lease. “Operating floor” is a normalized cost-recovery range before profit, media, production pass-through and tax.</p>
-  </div></section>
-
-  <section class="economics-method inverse" id="method"><div class="shell">
-    <div class="runhead reveal"><span class="n">04</span><span class="l">The model</span></div>
-    <h2 class="reveal">no secret data.<br>no magic math.</h2>
-    <div class="economics-formula reveal" aria-label="Break-even rate formula"><span>people + space + operating overhead</span><b>÷</b><span>delivery team × collected hours</span><b>=</b><strong>break-even rate</strong></div>
-    <div class="economics-assumptions reveal stagger">
-      <article><span>01</span><h3>People range</h3><p>Toronto ranges use public company bands, visible associated-profile counts, office structure and network allocation. They are deliberately wide and never presented as payroll truth.</p></article>
-      <article><span>02</span><h3>Space need</h3><p>People range × 90–115 square feet. Occupancy uses a $58–$82 gross range informed by the <a href="https://www.collierscanada.com/-/media/files/canada/research/2025/q4/toronto-office-mr-2025q4-v2.ashx?sc_lang=en-ca" target="_blank" rel="noreferrer">Colliers Toronto benchmark ↗</a>. Address does not prove leased area.</p></article>
-      <article><span>03</span><h3>Operating floor</h3><p>$112k–$150k loaded people cost, 66%–79% delivery share, 1,325–1,500 collected hours and 12%–21% other operations. It is cost recovery—not a rate card.</p></article>
-      <article><span>04</span><h3>Pricing evidence</h3><p>Only a primary source counts as strong. Directory pricing is shown but discounted. The sole primary-source signal found is a <a href="https://www.toronto.ca/legdocs/mmis/2019/gl/bgrd/backgroundfile-131762.pdf" target="_blank" rel="noreferrer">City of Toronto record ↗</a> for Cossette's original 2017 contract.</p></article>
-    </div>
-  </div></section>
-
-  <section class="economics-principle"><div class="shell reveal"><p>precision is not the same thing as truth. a useful estimate shows its assumptions.</p><span>Smaller Agency research principle</span></div></section>
-
-  <section class="section economics-evidence"><div class="shell">
-    <div class="runhead reveal"><span class="n">05</span><span class="l">Evidence standard</span></div>
-    <div class="s-head reveal">
-      <h2>read the label before the number.</h2>
-      <div class="economics-legend"><p><i class="reported"></i><b>Reported</b><span>Published by the agency, government, landlord or another primary source.</span></p><p><i class="observed"></i><b>Observed</b><span>Visible in a public company profile or listing; useful, not audited.</span></p><p><i class="estimated"></i><b>Modelled</b><span>Calculated as a range from public signals and stated inputs.</span></p><p><i class="assumed"></i><b>Assumed</b><span>A normalized benchmark used to make unlike businesses comparable.</span></p></div>
-    </div>
-    <div class="economics-coverage reveal"><div><span>40%</span><h3>average public-evidence coverage.</h3></div><p>The score measures evidence found across entity and ownership (10 points), Toronto staffing (25), exact office footprint (20), role mix (20) and pricing (25). It is a completeness score—not a probability that an estimate is correct.</p></div>
-    <div class="economics-benchmarks reveal"><div class="eyebrow">Benchmark ledger / checked 06 August 2026</div><div><a href="https://www.collierscanada.com/-/media/files/canada/research/2025/q4/toronto-office-mr-2025q4-v2.ashx?sc_lang=en-ca" target="_blank" rel="noreferrer"><b>Toronto office market</b><span>Colliers · Q4 2025 ↗</span></a><a href="https://salaryguide-americas.hays.com/canada/en/" target="_blank" rel="noreferrer"><b>Canada salary guide</b><span>Hays · 2026 ↗</span></a><a href="https://www.roberthalf.com/ca/en/insights/research/marketing-and-creative-salary-guide-2026-trends" target="_blank" rel="noreferrer"><b>Marketing + creative salaries</b><span>Robert Half · 2026 ↗</span></a><a href="https://www.aaaa.org/resource/2025-financial-operational-benchmark-survey-report/" target="_blank" rel="noreferrer"><b>Agency operations</b><span>4As · 2025 metadata ↗</span></a></div></div>
-  </div></section>
-
-  <section class="section closer economics-closer"><div class="shell"><div class="eyebrow mute">The point</div><h2>buy the right machine for the problem.</h2><p class="lead">Large infrastructure is useful when the problem needs it. When it doesn't, fewer layers can mean better conversations—and a more sensible invoice.</p><div class="hero-actions"><a class="btn hot" href="contact.html">Talk to Noah</a><a class="btn" href="about.html">How smaller works</a></div></div></section>
+  <section class="section closer ae-closer"><div class="shell"><div class="eyebrow mute">The point</div><h2>buy the machine the problem needs.</h2><p class="lead">Large infrastructure is valuable when the assignment needs it. When it doesn't, a smaller team can put more of the conversation—and the budget—closer to the people making the work.</p><div class="hero-actions"><a class="btn hot" href="contact.html">Talk to Noah</a><a class="btn" href="about.html">How smaller works</a></div></div></section>
 </main>
 
 <footer class="site-footer"><div class="shell">
@@ -138,9 +140,7 @@
   <div class="legal"><span>© Smaller Agency Ltd.</span><span class="footer-note">Independent in Toronto.</span></div>
 </div></footer>
 
-<div class="economics-drawer" id="agency-drawer" aria-hidden="true"><button class="economics-scrim" data-close aria-label="Close agency profile"></button><article role="dialog" aria-modal="true" aria-labelledby="drawer-title"><button class="economics-close" data-close aria-label="Close">×</button><div class="eyebrow">Public-evidence coverage / <span id="drawer-confidence"></span></div><h2 id="drawer-title"></h2><p class="lead" id="drawer-kind"></p><div class="economics-coverage-strip" id="drawer-coverage"></div><div class="economics-drawer-grid" id="drawer-grid"></div><div class="economics-source-ledger"><div class="eyebrow">Source ledger / checked 06 August 2026</div><div id="drawer-sources"></div></div><p class="method-note">Ranges express model uncertainty; they are not claimed payroll, lease, revenue, margin or rate-card data. Public profiles can be incomplete or stale.</p></article></div>
-
 <script>(function(){var els=document.querySelectorAll('.reveal');if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}var io=new IntersectionObserver(function(entries){entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}})},{threshold:.1});els.forEach(function(e){io.observe(e)})})();</script>
-<script src="js/analytics.js?v=3"></script><script src="js/economics.js?v=2"></script><script src="js/site.js?v=19"></script>
+<script src="js/analytics.js?v=3"></script><script src="js/site.js?v=19"></script>
 </body>
 </html>
