@@ -1,24 +1,44 @@
-/* Smaller Agency measurement layer — GA4 web stream. */
+/* Smaller Agency measurement layer — GA4, kept off the critical render path. */
 (function () {
   'use strict';
 
   var GA4_ID = 'G-1CGPCW0ZTH';
+  var loaded = false;
   window.dataLayer = window.dataLayer || [];
   window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
 
-  window.gtag('js', new Date());
-  window.gtag('config', GA4_ID, {
-    send_page_view: true,
-    transport_type: 'beacon'
+  function loadAnalytics() {
+    if (loaded) return;
+    loaded = true;
+    window.gtag('js', new Date());
+    window.gtag('config', GA4_ID, { send_page_view: true, transport_type: 'beacon' });
+
+    var tag = document.createElement('script');
+    tag.async = true;
+    tag.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(GA4_ID);
+    document.head.appendChild(tag);
+    interactionEvents.forEach(function (name) {
+      window.removeEventListener(name, loadAnalytics, interactionOptions);
+    });
+  }
+
+  var interactionEvents = ['pointerdown', 'keydown', 'touchstart'];
+  var interactionOptions = { passive: true, once: true };
+  interactionEvents.forEach(function (name) {
+    window.addEventListener(name, loadAnalytics, interactionOptions);
   });
 
-  var firstScript = document.getElementsByTagName('script')[0];
-  var tag = document.createElement('script');
-  tag.async = true;
-  tag.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(GA4_ID);
-  firstScript.parentNode.insertBefore(tag, firstScript);
+  /* Keep passive visits measurable, but wait until the page is fully quiet. */
+  window.addEventListener('load', function () {
+    if ('requestIdleCallback' in window) {
+      window.requestIdleCallback(loadAnalytics, { timeout: 6500 });
+    } else {
+      window.setTimeout(loadAnalytics, 6500);
+    }
+  }, { once: true });
 
   window.smallerTrack = function (eventName, parameters) {
+    loadAnalytics();
     window.gtag('event', eventName, parameters || {});
   };
 
@@ -34,6 +54,10 @@
     }
     if (/diagnostics|scorecard|packaging-audit|modern-brand-os|agency-economics/.test(href)) {
       window.smallerTrack('diagnostic_link_clicked', { link_url: href, link_text: label, page_path: location.pathname });
+      return;
+    }
+    if (/services|toronto-branding-agency|packaging-design-agency-toronto|brand-strategy-agency-toronto|cpg-branding-agency|food-beverage-branding-agency|challenger-brand-strategy|consumer-brand-packaging-design/.test(href)) {
+      window.smallerTrack('service_link_clicked', { service_page: href.replace('.html', ''), page_path: location.pathname });
       return;
     }
     if (/supa-power|bestdish|grolsch|edwin-county-farms|lob/.test(href)) {

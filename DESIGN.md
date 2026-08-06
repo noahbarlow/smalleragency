@@ -138,11 +138,14 @@ Typography carries most of the identity. It should feel designed, not decorated.
 | Body | **Instrument Sans** | Paragraphs, captions, buttons, labels and navigation |
 | Utility | **Instrument Sans** | Eyebrows, metadata, tables and interface language |
 
-Google Fonts:
+Production font loading:
 
 ```html
-<link href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,300..900&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" href="assets/fonts/anybody-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/instrument-sans-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
 ```
+
+Both families are self-hosted. Declare their variable ranges with `@font-face` in the primary stylesheet and use `font-display: swap`. Do not add Google Fonts back to the render path.
 
 ### Display settings
 
@@ -489,6 +492,7 @@ The personal site should feel like the founder’s desk inside the same studio, 
 - [ ] Correct Smaller logo asset; no duplicate logo?
 - [ ] Paper, Ink, Blue and Signal used in their proper roles?
 - [ ] Anybody for display and Instrument Sans for everything else?
+- [ ] Both variable fonts self-hosted and preloaded, with no third-party font request?
 - [ ] Display type readable without extreme width compression?
 - [ ] Headline wrapping naturally rather than forced with decorative breaks?
 - [ ] One clear visual idea per section?
@@ -496,6 +500,9 @@ The personal site should feel like the founder’s desk inside the same studio, 
 - [ ] No filler cards, stock imagery, gradients, shadows or tilted tiles?
 - [ ] Copy sounds like Noah and names the actual work?
 - [ ] Mobile spacing and crop checked independently?
+- [ ] Primary images served as responsive AVIF/WebP with intrinsic dimensions?
+- [ ] The main headline renders immediately; only supporting elements animate?
+- [ ] Analytics waits for first interaction or browser idle time?
 - [ ] Keyboard, contrast, alt text and reduced motion checked?
 
 ---

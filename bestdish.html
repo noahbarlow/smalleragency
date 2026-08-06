@@ -27,10 +27,10 @@
 <meta name="twitter:title" content="BestDish Brand, Packaging &amp; Launch Case Study — Smaller Agency">
 <meta name="twitter:description" content="How Smaller Agency built BestDish: a new food retail category connecting restaurants, residents and smart freezers in Toronto.">
 <meta name="twitter:image" content="https://smalleragency.com/assets/og-smaller-2026-2.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,300..900&amp;family=Instrument+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css?v=24">
+<link rel="preload" href="assets/fonts/anybody-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/instrument-sans-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" href="assets/img/modern/bestdish-hero-1440.avif" imagesrcset="assets/img/modern/bestdish-hero-640.avif 640w, assets/img/modern/bestdish-hero-960.avif 960w, assets/img/modern/bestdish-hero-1440.avif 1440w, assets/img/modern/bestdish-hero-2000.avif 2000w" imagesizes="100vw" type="image/avif" fetchpriority="high">
+<link rel="stylesheet" href="css/site.css?v=25">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"CreativeWork","headline":"BestDish Brand, Packaging & Launch","description":"A new food retail category connecting restaurants, residents and smart freezers.","url":"https://smalleragency.com/bestdish.html","image":"https://smalleragency.com/assets/img/bestdish-hero.jpg","creator":{"@id":"https://smalleragency.com/#organization","@type":"Organization","name":"Smaller Agency","url":"https://smalleragency.com/"},"inLanguage":"en-CA"}</script>
 </head>
 <body>
@@ -38,7 +38,7 @@
 
 <header class="site-header">
   <div class="bar">
-    <a href="index.html" class="wordmark" aria-label="Smaller Agency home"><img class="logo-mark" src="assets/logo-black.svg" alt="Smaller Agency"></a>
+    <a href="index.html" class="wordmark" aria-label="Smaller Agency home"><img class="logo-mark" src="assets/logo-black.svg" width="2075" height="965" alt="Smaller Agency"></a>
     <nav class="site-nav" aria-label="Primary navigation">
       <a href="work.html" class="active" aria-current="page">Work</a>
       <a href="about.html">Studio</a>
@@ -52,7 +52,7 @@
 <!-- full-bleed cherry hero -->
 <section class="feature" aria-label="BestDish hero">
   <div class="feature-stage">
-    <img src="assets/img/bestdish-hero.jpg" alt="BestDish smart-freezer mural — made in local restaurants, by the chefs you love" width="2000" height="1816">
+    <picture class="feature-frame"><source type="image/avif" srcset="assets/img/modern/bestdish-hero-640.avif 640w, assets/img/modern/bestdish-hero-960.avif 960w, assets/img/modern/bestdish-hero-1440.avif 1440w, assets/img/modern/bestdish-hero-2000.avif 2000w" sizes="100vw"><source type="image/webp" srcset="assets/img/modern/bestdish-hero-640.webp 640w, assets/img/modern/bestdish-hero-960.webp 960w, assets/img/modern/bestdish-hero-1440.webp 1440w, assets/img/modern/bestdish-hero-2000.webp 2000w" sizes="100vw"><img src="assets/img/bestdish-hero.jpg" alt="BestDish smart-freezer mural — made in local restaurants, by the chefs you love" width="2000" height="1816" fetchpriority="high"></picture>
     <div class="feature-swatch" style="background:var(--bd-orange)"></div>
     <div class="feature-caption">
       <div class="eyebrow">case study</div>
@@ -266,7 +266,8 @@
         <p>507 King Street E.<br>Suite 322<br>Toronto, ON</p>
       </div>
       <div>
-        <div class="eyebrow">Tools</div>
+        <div class="eyebrow">Explore</div>
+        <a href="services.html">Services</a><br>
         <a href="diagnostics.html">All diagnostics</a><br>
         <a href="agency-economics.html">Agency Economics</a><br>
         <a href="packaging-audit.html">Packaging Audit</a><br>
@@ -296,7 +297,7 @@
   els.forEach(function(e){io.observe(e)});
 })();
 </script>
-<script src="js/analytics.js?v=2"></script>
-<script src="js/site.js?v=19"></script>
+<script src="js/analytics.js?v=3"></script>
+<script src="js/site.js?v=20"></script>
 </body>
 </html>

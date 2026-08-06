@@ -120,7 +120,7 @@
 
   /* features with multiple frames get an indicator dot per frame */
   document.querySelectorAll('.feature').forEach(function (feature) {
-    var imgs = feature.querySelectorAll('.feature-stage img');
+    var imgs = feature.querySelectorAll('.feature-stage > .feature-frame, .feature-stage > img');
     if (imgs.length < 2) return;
     var dots = document.createElement('div');
     dots.className = 'fs-dots';
@@ -163,7 +163,7 @@
          A clean wipe avoids the ghosted double-image feel of a crossfade. */
       features.forEach(function (feature) {
         var stage = feature.querySelector('.feature-stage');
-        var imgs = feature.querySelectorAll('.feature-stage img');
+        var imgs = feature.querySelectorAll('.feature-stage > .feature-frame, .feature-stage > img');
         var rect = feature.getBoundingClientRect();
         var total = feature.offsetHeight - stage.offsetHeight;
         if (total <= 0) return;

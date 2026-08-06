@@ -27,17 +27,17 @@
 <meta name="twitter:title" content="Lob Brand Identity Case Study — Smaller Agency">
 <meta name="twitter:description" content="Brand strategy, identity, illustration, website and venue graphics for Lob, a social bocce club built from scratch.">
 <meta name="twitter:image" content="https://smalleragency.com/assets/og-smaller-2026-2.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,300..900&amp;family=Instrument+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css?v=24">
+<link rel="preload" href="assets/fonts/anybody-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/instrument-sans-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" href="assets/img/modern/lob-hero-1440.avif" imagesrcset="assets/img/modern/lob-hero-640.avif 640w, assets/img/modern/lob-hero-960.avif 960w, assets/img/modern/lob-hero-1440.avif 1440w, assets/img/modern/lob-hero-2000.avif 2000w" imagesizes="100vw" type="image/avif" fetchpriority="high">
+<link rel="stylesheet" href="css/site.css?v=25">
 </head>
 <body>
 <a class="skip" href="#main">skip to content</a>
 
 <header class="site-header">
   <div class="bar">
-    <a href="index.html" class="wordmark" aria-label="Smaller Agency home"><img class="logo-mark" src="assets/logo-black.svg" alt="Smaller Agency"></a>
+    <a href="index.html" class="wordmark" aria-label="Smaller Agency home"><img class="logo-mark" src="assets/logo-black.svg" width="2075" height="965" alt="Smaller Agency"></a>
     <nav class="site-nav" aria-label="Primary navigation">
       <a href="work.html" class="active" aria-current="page">Work</a>
       <a href="about.html">Studio</a>
@@ -51,8 +51,8 @@
 <!-- full-bleed hero, frames swap on scroll -->
 <section class="feature frames case-frames" aria-label="Lob hero">
   <div class="feature-stage">
-    <img class="on" src="assets/img/lob-hero.jpg" alt="Lob — illustrated bocce player mid-throw" width="2000" height="1125">
-    <img src="assets/img/lob-web-home.jpg" alt="Lob website — illustrated crowd around the court" loading="lazy" width="1600" height="900">
+    <picture class="feature-frame on"><source type="image/avif" srcset="assets/img/modern/lob-hero-640.avif 640w, assets/img/modern/lob-hero-960.avif 960w, assets/img/modern/lob-hero-1440.avif 1440w, assets/img/modern/lob-hero-2000.avif 2000w" sizes="100vw"><source type="image/webp" srcset="assets/img/modern/lob-hero-640.webp 640w, assets/img/modern/lob-hero-960.webp 960w, assets/img/modern/lob-hero-1440.webp 1440w, assets/img/modern/lob-hero-2000.webp 2000w" sizes="100vw"><img src="assets/img/lob-hero.jpg" alt="Lob — illustrated bocce player mid-throw" width="2000" height="1125" fetchpriority="high"></picture>
+    <picture class="feature-frame"><source type="image/avif" srcset="assets/img/modern/lob-web-home-640.avif 640w, assets/img/modern/lob-web-home-960.avif 960w, assets/img/modern/lob-web-home-1440.avif 1440w, assets/img/modern/lob-web-home-1600.avif 1600w" sizes="100vw"><source type="image/webp" srcset="assets/img/modern/lob-web-home-640.webp 640w, assets/img/modern/lob-web-home-960.webp 960w, assets/img/modern/lob-web-home-1440.webp 1440w, assets/img/modern/lob-web-home-1600.webp 1600w" sizes="100vw"><img src="assets/img/lob-web-home.jpg" alt="Lob website — illustrated crowd around the court" width="1600" height="900" loading="lazy"></picture>
     <div class="feature-caption">
       <div class="eyebrow">case study</div>
       <h1 class="name">lob<span class="script">.</span></h1>
@@ -192,7 +192,8 @@
         <p>507 King Street E.<br>Suite 322<br>Toronto, ON</p>
       </div>
       <div>
-        <div class="eyebrow">Tools</div>
+        <div class="eyebrow">Explore</div>
+        <a href="services.html">Services</a><br>
         <a href="diagnostics.html">All diagnostics</a><br>
         <a href="agency-economics.html">Agency Economics</a><br>
         <a href="packaging-audit.html">Packaging Audit</a><br>
@@ -222,7 +223,7 @@
   els.forEach(function(e){io.observe(e)});
 })();
 </script>
-<script src="js/analytics.js?v=2"></script>
-<script src="js/site.js?v=19"></script>
+<script src="js/analytics.js?v=3"></script>
+<script src="js/site.js?v=20"></script>
 </body>
 </html>
