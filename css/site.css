@@ -92,6 +92,7 @@ h3,.h3{font-size:clamp(1.35rem,2vw,2rem);letter-spacing:-.035em;line-height:1.02
 .hero-thesis h1 span{display:block}
 .hero-thesis h1 .brand-line{white-space:nowrap}
 .hero-thesis h1 .accent{color:var(--blue);font-size:.74em;white-space:nowrap;font-variation-settings:"wdth" 92;letter-spacing:-.06em}
+.hero-thesis h1 .accent .accent-line{display:inline}
 .hero-bottom{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(240px,.65fr) auto;gap:clamp(2rem,5vw,5rem);align-items:end;padding-top:1.25rem;border-top:1px solid var(--ink)}
 .hero-bottom .lead{max-width:35em}
 .hero-actions{display:flex;gap:.75rem;flex-wrap:wrap}
@@ -260,7 +261,7 @@ a.chip-card:hover .caption .name{color:var(--blue)}
 
 /* Contact */
 .contact-links{display:flex;flex-direction:column;align-items:flex-start;gap:.4rem}
-.contact-links a{font-family:var(--font-display);font-size:clamp(1.35rem,2.5vw,2.5rem);font-weight:760;font-variation-settings:"wdth" 108;letter-spacing:-.04em;line-height:1.12;border-bottom:2px solid var(--ink)}
+.contact-links a{max-width:100%;overflow-wrap:anywhere;font-family:var(--font-display);font-size:clamp(1.35rem,2.5vw,2.5rem);font-weight:760;font-variation-settings:"wdth" 108;letter-spacing:-.04em;line-height:1.12;border-bottom:2px solid var(--ink)}
 .contact-links a:hover{color:var(--blue);border-color:var(--blue)}
 .project-prompts{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}
 .project-prompts span{display:flex;align-items:center;min-height:8rem;padding:1.5rem clamp(1.25rem,2vw,2rem);border-right:1px solid var(--rule);font-family:var(--font-utility);font-size:.68rem;line-height:1.45;letter-spacing:.06em;text-transform:uppercase}
@@ -351,14 +352,18 @@ body.entered .home-hero .d3{animation-delay:.36s}
   .header-brief{display:none}
   .site-nav{gap:1rem}
   .site-nav a{font-size:.6rem;min-height:40px}
-  .home-hero{min-height:calc(100svh - var(--header-h))}
+  .home-hero{min-height:0;display:block}
+  .home-hero .shell{display:block;padding-top:1.6rem;padding-bottom:2.25rem}
   .hero-kicker span:last-child{display:none}
-  .hero-thesis h1{font-size:clamp(3.8rem,16.8vw,7rem);line-height:.86}
-  .hero-thesis h1 .brand-line{font-size:.8em;font-variation-settings:"wdth" 82;letter-spacing:-.06em}
-  .hero-thesis h1 .accent{font-size:.66em;font-variation-settings:"wdth" 72}
+  .hero-thesis{padding-block:clamp(4.25rem,18vw,5.75rem) clamp(3rem,11vw,4rem)}
+  .hero-thesis h1{font-size:clamp(4rem,17.25vw,5rem);line-height:.82}
+  .hero-thesis h1 .brand-line{font-size:.83em;font-variation-settings:"wdth" 98;letter-spacing:-.065em}
+  .hero-thesis h1 .accent{font-size:.78em;white-space:normal;font-variation-settings:"wdth" 98;line-height:.8;letter-spacing:-.065em;margin-top:.16em}
+  .hero-thesis h1 .accent .accent-line{display:block}
   .hero-bottom{grid-template-columns:1fr;gap:1.7rem}
   .hero-actions{grid-column:auto}
-  .hero-proof{grid-column:auto;grid-row:auto;align-items:flex-start;text-align:left;padding-top:1.4rem;border-top:1px solid var(--rule)}
+  .hero-proof{grid-column:auto;grid-row:auto;display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:center;justify-content:start;text-align:left;padding-top:1.4rem;border-top:1px solid var(--rule)}
+  .hero-proof span{margin-top:0}
   .page-hero{padding-top:4.5rem}
   .feature{height:calc(100svh - var(--header-h))}
   .feature.frames{height:200svh}
@@ -375,8 +380,10 @@ body.entered .home-hero .d3{animation-delay:.36s}
   .capability-list>div{padding:1.7rem 0;border-bottom:1px solid rgba(255,255,255,.5)}
   .capability-list>div+div{border-left:0;padding-left:0}
   .operate-thesis{grid-template-columns:1fr;gap:2rem}
-  .operate-row{grid-template-columns:4rem 1fr;gap:1.25rem}
-  .operate-row p{grid-column:2}
+  .operate-row{grid-template-columns:1fr;gap:1rem;padding-block:3rem}
+  .operate-number{font-family:var(--font-utility);font-size:.68rem;font-weight:700;font-variation-settings:normal;letter-spacing:.1em;line-height:1}
+  .operate-row h3{max-width:12em}
+  .operate-row p{grid-column:1;margin-top:.5rem}
   .value-row{grid-template-columns:1fr;gap:1rem}
   .founder,.studio-note .founder{grid-template-columns:1fr;gap:2.5rem}
   .svc-grid.three{grid-template-columns:1fr}
@@ -395,6 +402,8 @@ body.entered .home-hero .d3{animation-delay:.36s}
   .next-case .wrap{grid-template-columns:1fr auto;gap:1.5rem}
   .next-case .thumb{grid-column:1/-1;grid-row:1}
   .next-case .arrow{grid-column:2;grid-row:2}
+  .proof-label{grid-template-columns:1fr;gap:.5rem}
+  .proof-label .scope{text-align:left;max-width:none}
   .footer-pitch{grid-template-columns:1fr;align-items:start}
   .site-footer .cols{grid-template-columns:1fr 1fr}
   .site-footer .cols>div:first-child{grid-column:1/-1}
@@ -407,7 +416,9 @@ body.entered .home-hero .d3{animation-delay:.36s}
   .site-nav a{font-size:.56rem}
   .logo-mark{height:2.35rem}
   .btn{width:100%}
-  .hero-thesis h1{font-size:16vw}
+  .hero-thesis h1{font-size:17vw}
+  .contact-links a{font-size:1.25rem;font-variation-settings:"wdth" 100}
+  .contact-links a[href^="mailto:"]{white-space:nowrap}
   .footer-pitch h2{font-size:12vw}
   .site-footer .cols{grid-template-columns:1fr}
   .site-footer .cols>div:first-child{grid-column:auto}
