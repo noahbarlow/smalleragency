@@ -628,3 +628,11 @@ h1,h2,h3,p,a,li{overflow-wrap:break-word}
  .capability-list>a+a{border-left:0;padding-left:0}
 }
 @media(prefers-reduced-motion:reduce){.feature-stage>.feature-frame{transform:none!important}}
+
+/* Capability band optical fit: size to the column, never split a service name. */
+@media(min-width:761px){
+  .capability-list b{
+    font-size:clamp(2.3rem,3.55vw,4.25rem);
+    white-space:nowrap;
+  }
+}
