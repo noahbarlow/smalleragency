@@ -30,7 +30,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,300..900&amp;family=Instrument+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/site.css?v=24">
-<link rel="stylesheet" href="css/economics.css?v=6">
+<link rel="stylesheet" href="css/economics.css?v=7">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"The $250 Agency Hour Test","description":"A practical model for comparing agency rates, team composition and overhead using a fixed client budget.","url":"https://smalleragency.com/agency-economics.html","author":{"@type":"Organization","name":"Smaller Agency","url":"https://smalleragency.com/"},"dateModified":"2026-08-06","about":"Advertising agency rates and operating economics"}</script>
 </head>
 <body>
@@ -56,8 +56,8 @@
         <aside class="ae-receipt reveal" id="bill" aria-label="A normalized two hundred dollar agency hour">
           <div class="ae-receipt-head"><span>One billable agency hour</span><span>Assumed rate</span></div>
           <p class="ae-receipt-date">Assumed planning rate: $200 / hour</p>
-          <div class="ae-line primary"><span>Delivery payroll</span><b>$93</b><small>Strategy, creative, design, production and account delivery</small></div>
-          <div class="ae-line"><span>Support + leadership</span><b>$34</b><small>Management, finance, people, growth and administration</small></div>
+          <div class="ae-line primary"><span>People doing the work</span><b>$93</b><small>Strategy, creative, design, production and account delivery</small></div>
+          <div class="ae-line"><span>Management + support</span><b>$34</b><small>Leadership, finance, people, growth and administration</small></div>
           <div class="ae-line"><span>Other operations</span><b>$19</b><small>Technology, insurance, travel, sales and shared costs</small></div>
           <div class="ae-line"><span>Space</span><b>$07</b><small>Normalized Toronto office occupancy</small></div>
           <div class="ae-line margin"><span>Margin room</span><b>$47</b><small>Before tax, write-offs, uncollected time or scope leakage</small></div>
@@ -92,13 +92,19 @@
     <p class="ae-budget-note reveal">The arithmetic is simply budget ÷ rate. Outcomes are not. The scenario labels interpret publicly visible rate-card patterns; they are not rates assigned to the Toronto agencies below.</p>
   </div></section>
 
-  <section class="ae-takeaway"><div class="shell">
-    <p class="reveal">don't negotiate the rent. <span>interrogate the team.</span></p>
-    <div class="ae-pressure reveal">
-      <article><b>≈ $21/hr</b><h2>when delivery share falls from 80% to 70%.</h2><p>The same operating cost is recovered through fewer people doing billable work.</p></article>
-      <article><b>≈ $2/hr</b><h2>when occupancy rises by $20 per square foot.</h2><p>Rent matters. In this model, people mix and utilization matter much more.</p></article>
+  <section class="ae-maker-test" id="maker-test"><div class="shell">
+    <div class="runhead reveal"><span class="n">The useful comparison</span><span class="l">Two illustrative $100,000 proposals</span></div>
+    <div class="ae-maker-intro reveal">
+      <h2>rate-card gap: $50.<br><span>maker-hour gap: $8.</span></h2>
+      <p class="lead">The cheaper hourly rate does not automatically buy more work. Layers can consume the advantage before anyone starts making.</p>
     </div>
-    <p class="ae-pressure-point reveal">Team mix moves the hourly cost floor ≈10× more than this rent swing.</p>
+    <div class="ae-maker-table reveal" role="table" aria-label="Comparison of two illustrative one hundred thousand dollar agency proposals">
+      <div class="ae-maker-head" role="row"><span>Illustrative proposal</span><span>Blended rate</span><span>Paid hours</span><span>Coordination + review</span><span>Maker hours</span><span>Effective maker hour</span></div>
+      <div class="ae-maker-row layered" role="row"><span><b>Layered team</b><small>70% of time makes the work</small></span><strong>$200</strong><strong>500</strong><strong>150</strong><strong>350</strong><strong>$286</strong></div>
+      <div class="ae-maker-row lean" role="row"><span><b>Lean senior team</b><small>85% of time makes the work</small></span><strong>$250</strong><strong>400</strong><strong>60</strong><strong>340</strong><strong>$294</strong></div>
+    </div>
+    <div class="ae-maker-result reveal"><b>Only 10 fewer maker hours.</b><p>The $250 team sells 100 fewer total hours, but removes 90 hours of coordination and review. The two proposals land just 3% apart on hands-on time.</p></div>
+    <p class="ae-maker-note reveal"><b>Maker hours</b> = strategy, creative, writing, design and production. <b>Coordination + review</b> = account management, project management and executive approval. <b>Effective maker hour</b> = professional fee ÷ maker hours. These are hypothetical scopes, not data attributed to a named agency.</p>
   </div></section>
 
   <section class="section ae-scale" id="agencies"><div class="shell">
@@ -121,27 +127,16 @@
       <a href="https://ca.linkedin.com/company/broken-heart-love-affair" target="_blank" rel="noreferrer"><span class="ae-agency-name"><b>Broken Heart Love Affair</b><small>Independent creative</small></span><span class="ae-team"><b>50–95</b><small>modelled people</small></span><span class="ae-cost"><b>$8–15m</b><small>annual operating cost</small></span></a>
       <a href="https://ca.linkedin.com/company/juniper-park-tbwa" target="_blank" rel="noreferrer"><span class="ae-agency-name"><b>Juniper Park\TBWA</b><small>Network creative</small></span><span class="ae-team"><b>30–65</b><small>modelled people</small></span><span class="ae-cost"><b>$5–10m</b><small>annual operating cost</small></span></a>
     </div>
-    <p class="ae-link-note">Each row links to the agency's primary public company signal. Operating cost includes loaded people cost, normalized space and other operations. It excludes profit, media, production pass-through and tax.</p>
-  </div></section>
-
-  <section class="ae-opacity inverse"><div class="shell">
-    <div class="eyebrow reveal">What the audit actually found</div>
-    <h2 class="reveal">agencies show the work.<br>they rarely show the machine.</h2>
-    <div class="ae-opacity-grid reveal">
-      <article><b>0/10</b><p>publish a current primary-source commercial rate card.</p></article>
-      <article><b>0/10</b><p>publish an audited Toronto role mix or delivery ratio.</p></article>
-      <article><b>0/10</b><p>disclose enough lease detail to calculate exact office overhead.</p></article>
-    </div>
-    <p class="lead reveal">That means a precise agency-by-agency cost ranking would be theatre. The useful comparison is simpler: how large is the operating system, and how much of it does your problem need?</p>
+    <p class="ae-link-note">Each row links to the agency's primary public company signal. Operating cost includes loaded people cost, normalized space and other operations. It excludes profit, media, production pass-through and tax. Public company data cannot reveal the maker hours in a proposal; ask the agency for those directly.</p>
   </div></section>
 
   <section class="section ae-questions"><div class="shell">
-    <div class="runhead reveal"><span class="n">Client use</span><span class="l">Turn the rate card into a team plan</span></div>
-    <h2 class="reveal">make the premium prove itself.</h2>
+    <div class="runhead reveal"><span class="n">Client use</span><span class="l">Three numbers every proposal should show</span></div>
+    <h2 class="reveal">turn the fee into something comparable.</h2>
     <ol class="reveal">
-      <li><span>01</span><div><h3>Turn the fee into hours by role.</h3><p>A $250 rate can be good value. Show how many strategy, creative, design, production and account hours the budget actually buys.</p></div></li>
-      <li><span>02</span><div><h3>Name the people doing those hours.</h3><p>Separate hands-on makers from reviewers, coordinators and senior people who only appeared in the pitch.</p></div></li>
-      <li><span>03</span><div><h3>Explain what the premium removes.</h3><p>A higher rate should buy better judgment, faster decisions, less rework or lower risk—not simply another layer.</p></div></li>
+      <li><span>01</span><div><h3>Hours by role.</h3><p>Ask how many strategy, creative, writing, design, production, account and project-management hours the fee contains.</p></div></li>
+      <li><span>02</span><div><h3>Maker share.</h3><p>Label each role as making, coordinating or approving. Divide maker hours by total paid hours. Higher is not always better—but unexplained layers are not value.</p></div></li>
+      <li><span>03</span><div><h3>Effective maker rate.</h3><p>Divide the professional fee by maker hours. This puts a $200 layered proposal and a $250 lean proposal on comparable ground.</p></div></li>
     </ol>
   </div></section>
 
@@ -149,7 +144,7 @@
     <details>
       <summary>Model and source notes <span aria-hidden="true">＋</span></summary>
       <div class="ae-notes-grid">
-        <div><h3>The $200 hour</h3><p>The default scenario uses a round $200 planning rate—not a claimed market average—plus $132,000 in annual loaded people cost per employee, a 73% delivery share, 1,425 collected hours per delivery employee, 100 square feet per employee, $68 gross occupancy per square foot and other operating cost equal to 15% of people cost. The modelled cost floor is $153 per delivery hour.</p></div>
+        <div><h3>The two models</h3><p>The $200 receipt models internal agency cost using $132,000 in annual loaded people cost per employee, 73% of staff in roles that perform client work, 1,425 collected hours per person in those roles and normalized operating costs. Separately, the proposal comparison assumes 70% maker time in one hypothetical scope and 85% in another. Neither model describes a named agency.</p></div>
         <div><h3>The Toronto ranges</h3><p>Ranges use public company bands, visible associated-profile counts, office structure and network allocation. They are intentionally broad. No agency supplied or verified the model.</p></div>
         <div><h3>Benchmarks</h3><p><a href="https://www.collierscanada.com/-/media/files/canada/research/2025/q4/toronto-office-mr-2025q4-v2.ashx?sc_lang=en-ca" target="_blank" rel="noreferrer">Colliers Toronto Office Market · Q4 2025 ↗</a><br><a href="https://salaryguide-americas.hays.com/canada/en/" target="_blank" rel="noreferrer">Hays Canada Salary Guide · 2026 ↗</a><br><a href="https://www.roberthalf.com/ca/en/insights/research/marketing-and-creative-salary-guide-2026-trends" target="_blank" rel="noreferrer">Robert Half Marketing + Creative · 2026 ↗</a></p></div>
         <div><h3>Price evidence</h3><p>The Toronto-specific signal is a <a href="https://www.toronto.ca/legdocs/mmis/2019/gl/bgrd/backgroundfile-131762.pdf" target="_blank" rel="noreferrer">City record ↗</a> documenting Cossette's $179 blended rate in a 2017 contract. Current public cards outside the cohort show the role premium: <a href="https://crownsocial.com/pricing" target="_blank" rel="noreferrer">Crown Social ↗</a> publishes $200 blended and $250 for strategy/creative direction; <a href="https://sketchdeck.com/blog/rate-card/" target="_blank" rel="noreferrer">SketchDeck ↗</a> publishes $250–$313 for Creative Director and $300–$375 for Senior Strategist. Several sources do not label currency, so these show rate architecture—not Toronto pricing.</p></div>
