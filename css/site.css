@@ -88,11 +88,10 @@ h3,.h3{font-size:clamp(1.35rem,2vw,2rem);letter-spacing:-.035em;line-height:1.02
 .home-hero .shell{display:grid;grid-template-rows:auto 1fr auto;padding-top:clamp(2rem,4vw,3.5rem);padding-bottom:clamp(2rem,3vw,3rem)}
 .hero-kicker{display:flex;justify-content:space-between;align-items:center;padding-bottom:1.1rem;border-bottom:1px solid var(--rule);font-family:var(--font-utility);font-size:.64rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
 .hero-thesis{align-self:center;padding-block:clamp(3rem,7vw,7rem)}
-.hero-thesis h1{font-size:clamp(4.1rem,10.2vw,10.5rem);max-width:none;line-height:.83;letter-spacing:-.075em}
-.hero-thesis h1 span{display:block}
-.hero-thesis h1 .brand-line{white-space:nowrap}
-.hero-thesis h1 .accent{color:var(--blue);font-size:.74em;white-space:nowrap;font-variation-settings:"wdth" 92;letter-spacing:-.06em}
-.hero-thesis h1 .accent .accent-line{display:inline}
+.hero-thesis h1{font-size:clamp(4.1rem,9.4vw,9.6rem);max-width:none;line-height:.88;letter-spacing:-.055em;font-variation-settings:"wdth" 104}
+.hero-thesis h1>span{display:block}
+.hero-thesis h1 .hero-main{text-wrap:balance}
+.hero-thesis h1 .accent{color:var(--blue);font-size:.58em;font-weight:760;white-space:nowrap;font-variation-settings:"wdth" 112;line-height:.95;letter-spacing:-.035em;margin-top:.2em}
 .hero-bottom{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(240px,.65fr) auto;gap:clamp(2rem,5vw,5rem);align-items:end;padding-top:1.25rem;border-top:1px solid var(--ink)}
 .hero-bottom .lead{max-width:35em}
 .hero-actions{display:flex;gap:.75rem;flex-wrap:wrap}
@@ -356,11 +355,9 @@ body.entered .home-hero .d3{animation-delay:.36s}
   .home-hero .shell{display:block;padding-top:1.6rem;padding-bottom:2.25rem}
   .hero-kicker span:last-child{display:none}
   .hero-thesis{padding-block:clamp(4.25rem,18vw,5.75rem) clamp(3rem,11vw,4rem)}
-  .hero-thesis h1{font-size:clamp(3.85rem,16.6vw,4.85rem);line-height:.88;letter-spacing:-.065em}
-  .hero-thesis h1 .brand-line{font-size:.8em;font-variation-settings:"wdth" 105;letter-spacing:-.055em;margin-top:.04em}
-  .hero-thesis h1 .accent{font-size:.68em;font-weight:760;white-space:normal;font-variation-settings:"wdth" 112;line-height:.9;letter-spacing:-.045em;margin-top:.28em}
-  .hero-thesis h1 .accent .accent-line{display:block}
-  .hero-thesis h1 .accent .accent-line+.accent-line{margin-top:.04em}
+  .hero-thesis h1{font-size:clamp(3.8rem,16.2vw,4.75rem);line-height:.9;letter-spacing:-.05em;font-variation-settings:"wdth" 104}
+  .hero-thesis h1 .hero-main{font-size:.82em;line-height:.94;text-wrap:wrap}
+  .hero-thesis h1 .accent{font-size:.68em;white-space:normal;line-height:.92;letter-spacing:-.035em;margin-top:.3em}
   .hero-bottom{grid-template-columns:1fr;gap:1.7rem}
   .hero-actions{grid-column:auto}
   .hero-proof{grid-column:auto;grid-row:auto;display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:center;justify-content:start;text-align:left;padding-top:1.4rem;border-top:1px solid var(--rule)}
@@ -417,7 +414,7 @@ body.entered .home-hero .d3{animation-delay:.36s}
   .site-nav a{font-size:.56rem}
   .logo-mark{height:2.35rem}
   .btn{width:100%}
-  .hero-thesis h1{font-size:16.6vw}
+  .hero-thesis h1{font-size:16.2vw}
   .contact-links a{font-size:1.25rem;font-variation-settings:"wdth" 100}
   .contact-links a[href^="mailto:"]{white-space:nowrap}
   .footer-pitch h2{font-size:12vw}
