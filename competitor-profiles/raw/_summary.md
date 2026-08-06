@@ -35,7 +35,11 @@ Space need is not claimed leased area. It is the headcount range multiplied by 9
 
 1. People and utilization dominate the model. At the default scenario, office cost is about four cents of each operating dollar.
 2. Cutting collected hours from 1,425 to 1,325 raises the hourly floor by about 7.5%, while adding $20 per square foot to occupancy changes it by roughly $2 per delivery hour.
-3. Actual rate cards are almost entirely private. The strongest public rate found is a City of Toronto record stating a $179 blended hourly rate in Cossette's original 2017 contract; it is real but stale and not comparable to a 2026 commercial scope.
+3. Current Toronto rate cards are almost entirely private. The strongest Toronto-specific public rate found is a City record stating a $179 blended hourly rate in Cossette's original 2017 contract; it is real but stale and not comparable to a 2026 commercial scope.
 4. Exact office square footage was not found for most agencies. Addresses are evidence of presence, not proof of leased area.
+
+## Public rate-card context
+
+Openly published cards outside the Toronto cohort confirm that $250+ hourly rates exist, especially for senior strategy, creative direction, specialist work and ad hoc engagements. Crown Social publishes a $200 blended rate and says strategy/creative direction is closer to $250. Good Hause lists $250 for branding and production and $350 for digital products. SketchDeck lists Creative Director rates of $250–$313 and Senior Strategist rates of $300–$375 across engagement types. Parakeeto's illustrative Canadian guidance uses $250 for a Creative Director and $200 for a Strategist. These examples explain the rate architecture; they are not evidence that a named Toronto agency charges those rates, and several source pages do not label their currency.
 
 The cohort ranges sum to 1,640–2,905 modelled Toronto people and 147,600–334,075 square feet of workforce-equivalent space need. These totals communicate uncertainty; they are not a combined staff or lease claim.
