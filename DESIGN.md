@@ -165,6 +165,8 @@ Use the variable width deliberately:
 - `"wdth" 116` — short numbers and compact proof statements;
 - use `"wdth" 100` only for a deliberate mobile optical correction, never to force copy into a box;
 - if copy does not fit, reduce scale, edit the line or let it wrap naturally.
+- never use `overflow-wrap: break-word`, `word-break: break-all` or automatic hyphenation on display type; a headline may wrap only at real spaces;
+- test every display style at 320, 375, 430 and 630 pixels. Reduce the responsive type scale before allowing a word to overflow.
 
 ### Body settings
 

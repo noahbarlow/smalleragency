@@ -133,3 +133,8 @@ body.diagnostic-page{background:var(--paper);color:var(--ink)}
   .diagnostic-step{animation:none}
   .diagnostic-cover img,.diagnostic-option{transition:none}
 }
+
+/* Never use emergency word wrapping for diagnostic display type. */
+@media(max-width:430px){
+  .diagnostic-intro h1,.result-step>h1{font-size:clamp(2.1rem,11vw,3rem)}
+}
