@@ -151,16 +151,16 @@ Default display treatment:
 ```css
 font-family: "Anybody", Arial, sans-serif;
 font-weight: 820;
-font-variation-settings: "wdth" 108;
-letter-spacing: -0.055em;
-line-height: 0.94;
+font-variation-settings: "wdth" 106;
+letter-spacing: -0.034em;
+line-height: 0.95;
 ```
 
 Use the variable width deliberately:
 
 - `"wdth" 104–112` — primary headlines and project names;
-- `"wdth" 118–125` — short numbers and compact proof statements;
-- never go below `"wdth" 100` to force copy into a box;
+- `"wdth" 116` — short numbers and compact proof statements;
+- use `"wdth" 100` only for a deliberate mobile optical correction, never to force copy into a box;
 - if copy does not fit, reduce scale, edit the line or let it wrap naturally.
 
 ### Body settings
@@ -168,8 +168,8 @@ Use the variable width deliberately:
 ```css
 font-family: "Instrument Sans", Arial, sans-serif;
 font-weight: 400;
-line-height: 1.55–1.65;
-letter-spacing: -0.012em;
+line-height: 1.55–1.68;
+letter-spacing: -0.008em;
 ```
 
 ### Utility settings
@@ -178,7 +178,7 @@ letter-spacing: -0.012em;
 font-family: "Instrument Sans", Arial, sans-serif;
 font-size: 0.62–0.72rem;
 font-weight: 600;
-letter-spacing: 0.08–0.12em;
+letter-spacing: 0.085em;
 text-transform: uppercase;
 ```
 
@@ -207,13 +207,28 @@ The black phrase is one natural sentence. The blue phrase is the only typographi
 
 | Role | Suggested range |
 |---|---|
-| Hero | `clamp(3.8rem, 9.4vw, 9.6rem)` |
+| Hero | `clamp(4rem, 9.15vw, 9.25rem)` |
 | Page H1 | `clamp(3.5rem, 9vw, 9rem)` |
 | H2 | `clamp(2.5rem, 5.7vw, 5.75rem)` |
 | H3 | `clamp(1.35rem, 2vw, 2rem)` |
 | Lead | `clamp(1.1rem, 1.6vw, 1.45rem)` |
 | Body | `1rem` |
 | Utility | `0.62–0.72rem` |
+
+### Optical spacing scale
+
+Negative tracking is not a house effect. It changes with scale:
+
+| Role | Tracking | Line height | Width axis |
+|---|---:|---:|---:|
+| Hero | `-0.042em` | `0.91` | `104` |
+| H1 | `-0.040em` | `0.92` | `106` |
+| H2 | `-0.034em` | `0.95` | `106` |
+| H3 / project name | `-0.025em` to `-0.030em` | `1.01–1.02` | `106` |
+| Utility | `0.085em` | `1.35` | normal |
+| Body | `-0.008em` | `1.55–1.68` | normal |
+
+On screens at 760px and below, loosen display tracking by roughly `0.007em`, keep the main hero line at `0.98` line height and reduce scale before reducing width. Test at 360, 390, 768, 1024 and 1440px. Text must also survive the WCAG text-spacing override without clipping, overlap or lost content.
 
 ---
 
@@ -509,6 +524,16 @@ The personal site should feel like the founder’s desk inside the same studio, 
   --gutter: clamp(1.25rem, 3vw, 3rem);
   --section-y: clamp(5rem, 9vw, 9rem);
   --header-h: 5.25rem;
+
+  --display-width: 106;
+  --display-width-wide: 112;
+  --display-track-hero: -0.042em;
+  --display-track-xl: -0.040em;
+  --display-track-lg: -0.034em;
+  --display-track-md: -0.025em;
+  --utility-track: 0.085em;
+  --measure-body: 38rem;
+  --measure-lead: 36rem;
 }
 ```
 

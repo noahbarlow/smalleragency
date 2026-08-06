@@ -113,6 +113,15 @@ body.diagnostic-page{background:var(--paper);color:var(--ink)}
   .diagnostic-how-grid{grid-template-columns:1fr}
   .diagnostic-how-grid>div,.diagnostic-how-grid>div+div{padding:1.5rem 0;border-left:0;border-bottom:1px solid rgba(255,255,255,.5)}
 }
+
+/* Keep diagnostic typography inside the same optical system as the studio. */
+.diagnostic-question,.diagnostic-card h2,.diagnostic-how-grid b,.result-score{
+  letter-spacing:var(--display-track-md);
+  font-variation-settings:"wdth" var(--display-width);
+}
+@media(max-width:760px){
+  .diagnostics-hero h1{font-size:clamp(3.35rem,14.35vw,3.75rem);line-height:.94}
+}
 @media(max-width:430px){
   .diagnostic-exit{font-size:.56rem}
   .diagnostic-question{font-size:clamp(2.15rem,11vw,3.1rem)}
