@@ -32,6 +32,21 @@
     if (!rail.getAttribute('aria-label')) rail.setAttribute('aria-label', 'Project images');
   });
 
+  /* reveal only supporting content; the primary headline is always immediate */
+  var reveals = document.querySelectorAll('.reveal');
+  if (reduced || !('IntersectionObserver' in window)) {
+    reveals.forEach(function (item) { item.classList.add('in'); });
+  } else {
+    var revealObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('in');
+        revealObserver.unobserve(entry.target);
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    reveals.forEach(function (item) { revealObserver.observe(item); });
+  }
+
   if (reduced) { document.body.classList.add('entered'); return; }
 
   /* hero entrance */

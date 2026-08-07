@@ -556,13 +556,6 @@ a{overflow-wrap:normal}
 
 
 /* Homepage economics teaser — critical subset folded from economics.css */
-.economics-teaser{background:var(--signal);border-block:1px solid var(--ink);padding:clamp(4.5rem,8vw,8rem) 0}
-.economics-teaser-grid{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(260px,.6fr);gap:clamp(2rem,7vw,8rem);align-items:end}
-.economics-teaser h2{max-width:10em;margin-top:1.2rem;font-size:clamp(3.2rem,7vw,7rem)}
-.economics-teaser-side{padding-top:1rem;border-top:1px solid var(--ink)}
-.economics-teaser-side p{font-size:1.05rem;line-height:1.55}
-.economics-teaser-side .btn{margin-top:2rem}
-@media(max-width:720px){.economics-teaser-grid{grid-template-columns:1fr}}
 
 /* High-intent service pages */
 .service-hero{padding:clamp(5rem,9vw,9rem) 0 clamp(4rem,7vw,7rem);border-bottom:1px solid var(--ink)}
