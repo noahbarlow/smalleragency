@@ -889,6 +889,9 @@ a{overflow-wrap:normal}
 .bevp-archive-image img{width:100%;height:100%;object-fit:cover}
 .bevp-archive-image--wide{grid-row:span 2}
 .bevp-archive-image--wide img{object-position:65% 50%}
+.bevp-red-wash{position:relative;isolation:isolate}
+.bevp-red-wash img{filter:grayscale(1) contrast(1.18) brightness(1.06)}
+.bevp-red-wash::after{content:"";position:absolute;inset:0;z-index:1;background:var(--bevp-orange);mix-blend-mode:multiply;opacity:.55;pointer-events:none}
 .bevp-archive-index{padding:clamp(1.5rem,3vw,2.5rem);background:var(--blue);color:#fff;display:flex;flex-direction:column;justify-content:space-between;gap:2.5rem}
 .bevp-archive-index ul{list-style:none;padding:0;border-top:1px solid rgba(255,255,255,.45)}
 .bevp-archive-index li{padding:.8rem 0;border-bottom:1px solid rgba(255,255,255,.28);font-family:var(--font-utility);font-size:.68rem;line-height:1.35;letter-spacing:.065em;text-transform:uppercase}
