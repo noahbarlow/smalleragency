@@ -30,7 +30,7 @@
 <link rel="preload" href="assets/fonts/anybody-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/instrument-sans-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" as="image" href="assets/img/bevp/bevp-hero-1440.avif" imagesrcset="assets/img/bevp/bevp-hero-640.avif 640w, assets/img/bevp/bevp-hero-960.avif 960w, assets/img/bevp/bevp-hero-1440.avif 1440w, assets/img/bevp/bevp-hero-2000.avif 2000w" imagesizes="100vw" type="image/avif" fetchpriority="high">
-<link rel="stylesheet" href="css/site.css?v=32">
+<link rel="stylesheet" href="css/site.css?v=33">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"CreativeWork","headline":"Birds Eye View Project Brand and Digital System","description":"A decade of programs, events and stories reorganized into one clear mission, flagship program and digital system.","url":"https://smalleragency.com/birds-eye-view-project.html","image":"https://smalleragency.com/assets/img/bevp/bevp-hero-2000.jpg","creator":{"@id":"https://smalleragency.com/#organization","@type":"Organization","name":"Smaller Agency","url":"https://smalleragency.com/"},"about":{"@type":"Organization","name":"Birds Eye View Project","url":"https://birdseyeviewproject.org/"},"inLanguage":"en-CA"}</script>
 </head>
 <body>
@@ -191,9 +191,22 @@
       </div>
     </div>
 
-    <figure class="bevp-digital-frame reveal">
-      <img src="assets/img/bevp/bevp-digital-desktop.png" alt="Birds Eye View website showing separate participant and supporter paths" loading="lazy" width="1440" height="1100">
-      <figcaption><span>birdseyeviewproject.org</span><span>participant and supporter paths from the first visit</span></figcaption>
+    <figure class="bevp-compare-figure reveal">
+      <div class="bevp-compare" data-before-after style="--split:50%">
+        <picture class="bevp-compare-layer bevp-compare-before">
+          <source type="image/avif" srcset="assets/img/bevp/bevp-before-2023.avif">
+          <img src="assets/img/bevp/bevp-before-2023.jpg" alt="The activity-led Birds Eye View Project homepage in November 2023" loading="lazy" width="1440" height="1050">
+        </picture>
+        <picture class="bevp-compare-layer bevp-compare-after">
+          <source type="image/avif" srcset="assets/img/bevp/bevp-after-homepage.avif">
+          <img src="assets/img/bevp/bevp-digital-desktop.png" alt="The redesigned Birds Eye View homepage with clear participant and supporter paths" loading="lazy" width="1440" height="1100">
+        </picture>
+        <span class="bevp-compare-label bevp-compare-label--before" aria-hidden="true">before · activity-led</span>
+        <span class="bevp-compare-label bevp-compare-label--after" aria-hidden="true">after · mission-led</span>
+        <input class="bevp-compare-range" type="range" min="0" max="100" value="50" aria-label="Compare the 2023 and redesigned Birds Eye View websites" aria-valuetext="50% before, 50% after">
+        <span class="bevp-compare-rail" aria-hidden="true"><i>↔</i></span>
+      </div>
+      <figcaption class="bevp-compare-caption"><span>before / archived November 2023</span><span class="bevp-compare-instruction">drag the line to compare</span><span>after / redesigned system</span></figcaption>
     </figure>
 
     <div class="bevp-system-list reveal" aria-label="Birds Eye View digital system components">
@@ -295,6 +308,20 @@
     entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}});
   },{threshold:.12});
   els.forEach(function(e){io.observe(e)});
+})();
+</script>
+<script>
+(function(){
+  document.querySelectorAll('[data-before-after]').forEach(function(compare){
+    var range=compare.querySelector('.bevp-compare-range');
+    function update(){
+      var before=Number(range.value);
+      compare.style.setProperty('--split',before+'%');
+      range.setAttribute('aria-valuetext',before+'% before, '+(100-before)+'% after');
+    }
+    range.addEventListener('input',update);
+    update();
+  });
 })();
 </script>
 <script src="js/analytics.js?v=4"></script>
