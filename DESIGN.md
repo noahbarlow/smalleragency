@@ -359,6 +359,19 @@ The portfolio is the colour and texture of the site. Treat it as evidence, not d
 - apply a global colour overlay that hides the work;
 - place every available image at the bottom of a page.
 
+### Service and capability pages
+
+Service pages are proof pages, not generic landing-page templates.
+
+- Lead with a sharp point of view, then show finished work before explaining the process.
+- Organize the studio around three core moves: position, identity and package.
+- Treat specialist categories as useful paths into the same system, not seven equal cards.
+- Let project imagery become page structure: one dominant field image, supporting framed details and a changing method image.
+- Use one orchestrated interaction per section. A sticky image swap is enough; do not stack parallax, colour shifts and decorative animation.
+- Change composition between desktop, tablet and mobile. Never squeeze a three-column desktop layout into an intermediate viewport.
+- Keep proof captions factual: client, object, service or outcome. Avoid decorative project language.
+- End with a clear next step to work, a relevant case study or contact. Remove any section that only repeats the page title.
+
 ---
 
 ## 9. Motion

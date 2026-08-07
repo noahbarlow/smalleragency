@@ -236,4 +236,47 @@
   } else if (pinwrap) {
     pinwrap.querySelectorAll('.pin-step').forEach(function (s) { s.classList.add('active'); });
   }
+
+  /* Services hub: the specialist list changes one deliberate proof image. */
+  var specialistRows = document.querySelectorAll('.specialist-row');
+  if (specialistRows.length) {
+    var specialistImages = document.querySelectorAll('.specialist-preview > img');
+    var specialistCount = document.querySelector('.specialist-index b');
+    var setSpecialist = function (index) {
+      specialistRows.forEach(function (row, i) { row.classList.toggle('on', i === index); });
+      specialistImages.forEach(function (img, i) { img.classList.toggle('on', i === index); });
+      if (specialistCount) specialistCount.textContent = '0' + (index + 1) + ' / 04';
+    };
+    specialistRows.forEach(function (row, index) {
+      row.addEventListener('mouseenter', function () { setSpecialist(index); });
+      row.addEventListener('focus', function () { setSpecialist(index); });
+    });
+    setSpecialist(0);
+  }
+
+  /* Service methods: project proof follows the step currently being read. */
+  document.querySelectorAll('.service-method').forEach(function (method) {
+    var rows = method.querySelectorAll('[data-method-step]');
+    var images = method.querySelectorAll('.service-method-visual > img');
+    var count = method.querySelector('.service-method-visual figcaption b');
+    if (!rows.length || !images.length) return;
+    var activate = function (index) {
+      rows.forEach(function (row, i) { row.classList.toggle('on', i === index); });
+      images.forEach(function (img, i) { img.classList.toggle('on', i === index); });
+      if (count) count.textContent = '0' + (index + 1) + ' / 03';
+    };
+    rows.forEach(function (row, index) {
+      row.addEventListener('mouseenter', function () { activate(index); });
+      row.addEventListener('focusin', function () { activate(index); });
+    });
+    if ('IntersectionObserver' in window) {
+      var methodObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) activate(parseInt(entry.target.getAttribute('data-method-step'), 10));
+        });
+      }, { rootMargin: '-38% 0px -38% 0px', threshold: 0 });
+      rows.forEach(function (row) { methodObserver.observe(row); });
+    }
+    activate(0);
+  });
 })();

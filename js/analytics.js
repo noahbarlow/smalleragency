@@ -31,9 +31,9 @@
   /* Keep passive visits measurable, but wait until the page is fully quiet. */
   window.addEventListener('load', function () {
     if ('requestIdleCallback' in window) {
-      window.requestIdleCallback(loadAnalytics, { timeout: 6500 });
+      window.requestIdleCallback(loadAnalytics, { timeout: 9000 });
     } else {
-      window.setTimeout(loadAnalytics, 6500);
+      window.setTimeout(loadAnalytics, 9000);
     }
   }, { once: true });
 
