@@ -47,6 +47,33 @@
     reveals.forEach(function (item) { revealObserver.observe(item); });
   }
 
+  /* Real project motion loads only when it is about to be seen. */
+  var motionVideos = document.querySelectorAll('video.lazy-motion');
+  if (!reduced && motionVideos.length) {
+    var loadMotion = function (video) {
+      if (video.dataset.loaded) return;
+      video.querySelectorAll('source[data-src]').forEach(function (source) {
+        source.src = source.getAttribute('data-src');
+      });
+      video.dataset.loaded = 'true';
+      video.load();
+      var playing = video.play();
+      if (playing && typeof playing.catch === 'function') playing.catch(function () {});
+    };
+    if ('IntersectionObserver' in window) {
+      var motionObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          loadMotion(entry.target);
+          motionObserver.unobserve(entry.target);
+        });
+      }, { rootMargin: '80px 0px', threshold: 0.01 });
+      motionVideos.forEach(function (video) { motionObserver.observe(video); });
+    } else {
+      motionVideos.forEach(loadMotion);
+    }
+  }
+
   if (reduced) { document.body.classList.add('entered'); return; }
 
   /* hero entrance */

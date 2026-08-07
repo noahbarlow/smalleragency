@@ -4,7 +4,7 @@
 >
 > **Source of truth:** [smalleragency.com](https://smalleragency.com)  
 > **System line:** **Serious brand work. Small-team overhead.**  
-> **Last updated:** 2026-08-06
+> **Last updated:** 2026-08-07
 
 ---
 
@@ -322,6 +322,10 @@ Avoid vague labels like `OUR APPROACH` when a more specific label exists.
 - Hover: Blue field; Signal may be used for an especially important state.
 - Button copy names the action: `See the work`, `Start a project`, `View case study`.
 
+### Contact handoff
+
+The contact page removes uncertainty instead of adding a long intake form. Put the direct email and phone first, then explain the next step in one human sentence: Noah replies, a short call follows if the fit is right, and the scope is shaped together. Do not promise an automated response time or make a founder complete a questionnaire before speaking to a person.
+
 ### Project cards
 
 - Image first.
@@ -329,6 +333,28 @@ Avoid vague labels like `OUR APPROACH` when a more specific label exists.
 - Project name in Anybody, scope in utility type.
 - One rule separates image and caption.
 - Hover is a subtle image scale and Blue title shift. No tilt, flip or shadow.
+
+### Portfolio composition
+
+The Work page is edited like a publication, not filled like a CMS grid.
+
+- Keep each chapter to **three projects**: one lead project and two supporting projects.
+- The lead project occupies roughly two-thirds of the desktop grid and the full first row on tablet.
+- Alternate the lead edge from chapter to chapter so the page has rhythm without becoming unpredictable.
+- Supporting projects are smaller because hierarchy is the point; they are not lesser work.
+- On mobile, return to one clear vertical sequence. Do not preserve desktop asymmetry at the expense of image size or reading order.
+- Never add a fourth card simply to fill a row. Start a new chapter or leave it out.
+
+### Case-study proof strip
+
+Every full case study opens with four fast facts before the long narrative:
+
+1. **the problem** — the commercial or behavioural obstacle;
+2. **the move** — the useful strategic decision;
+3. **what shipped** — the tangible system or set of deliverables;
+4. **what changed** — a verified outcome or operational change.
+
+Keep each answer to one plain sentence. Never invent a metric to make the last cell feel more impressive. If a quantified result is not available, name the change the work made possible.
 
 ---
 
@@ -387,6 +413,17 @@ Motion should reveal scope and improve orientation. It should never be the conce
 - horizontal filmstrips when there is a real sequence to explore;
 - a single clear progress signal in long interactive tools.
 
+### Project motion proof
+
+Use real project motion when it demonstrates a system better than another still image.
+
+- Keep loops short, muted, inline and free of controls.
+- Use an intentional poster frame so the composition works before playback and with reduced motion enabled.
+- Lazy-load video only as it approaches the viewport; do not make motion part of the critical render path.
+- Caption the proof with the client and what is being demonstrated. Avoid calling attention to the technique itself.
+- Preserve the original aspect ratio when it is meaningful. Art-direct a mobile crop only when the source becomes illegible.
+- One motion moment per case study is normally enough.
+
 ### Timing
 
 - Interface transitions: `180–250ms`.
@@ -403,6 +440,17 @@ Motion should reveal scope and improve orientation. It should never be the conce
 - animation that leaves blank space before content arrives.
 
 Always support `prefers-reduced-motion` and preserve the complete reading experience without animation.
+
+### Social share cards
+
+Every major page and full case study needs its own **1200 × 630 px** Open Graph image.
+
+- Agency pages use the core Paper, Ink, Blue and Signal system.
+- Case studies use real project imagery and the project's own colour world.
+- Keep the Smaller logo to one clear appearance.
+- Include the page or project name and one short line of context; do not rebuild the webpage in miniature.
+- Set `og:image`, `og:image:secure_url`, `og:image:alt`, `twitter:image` and the image MIME type.
+- Check the card at small preview size. Important type and marks must stay inside generous safe margins.
 
 ---
 
