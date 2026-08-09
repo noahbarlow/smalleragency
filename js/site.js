@@ -32,6 +32,19 @@
     if (!rail.getAttribute('aria-label')) rail.setAttribute('aria-label', 'Project images');
   });
 
+  /* Accessible before/after comparisons shared by case studies and homepage proof. */
+  document.querySelectorAll('[data-before-after]').forEach(function (compare) {
+    var range = compare.querySelector('.bevp-compare-range');
+    if (!range) return;
+    var updateCompare = function () {
+      var before = Number(range.value);
+      compare.style.setProperty('--split', before + '%');
+      range.setAttribute('aria-valuetext', before + '% before, ' + (100 - before) + '% after');
+    };
+    range.addEventListener('input', updateCompare);
+    updateCompare();
+  });
+
   /* reveal only supporting content; the primary headline is always immediate */
   var reveals = document.querySelectorAll('.reveal');
   if (reduced || !('IntersectionObserver' in window)) {
