@@ -30,7 +30,7 @@
 <link rel="preload" href="assets/fonts/anybody-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/instrument-sans-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" as="image" href="assets/img/bevp/bevp-hero-1440.avif" imagesrcset="assets/img/bevp/bevp-hero-640.avif 640w, assets/img/bevp/bevp-hero-960.avif 960w, assets/img/bevp/bevp-hero-1440.avif 1440w, assets/img/bevp/bevp-hero-2000.avif 2000w" imagesizes="100vw" type="image/avif" fetchpriority="high">
-<link rel="stylesheet" href="css/site.css?v=34">
+<link rel="stylesheet" href="css/site.css?v=35">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"CreativeWork","headline":"Birds Eye View Project Brand and Digital System","description":"A decade of programs, events and stories reorganized into one clear mission, flagship program and digital system.","url":"https://smalleragency.com/birds-eye-view-project.html","image":"https://smalleragency.com/assets/img/bevp/bevp-hero-2000.jpg","creator":{"@id":"https://smalleragency.com/#organization","@type":"Organization","name":"Smaller Agency","url":"https://smalleragency.com/"},"about":{"@type":"Organization","name":"Birds Eye View Project","url":"https://birdseyeviewproject.org/"},"inLanguage":"en-CA"}</script>
 </head>
 <body>
@@ -310,21 +310,7 @@
   els.forEach(function(e){io.observe(e)});
 })();
 </script>
-<script>
-(function(){
-  document.querySelectorAll('[data-before-after]').forEach(function(compare){
-    var range=compare.querySelector('.bevp-compare-range');
-    function update(){
-      var before=Number(range.value);
-      compare.style.setProperty('--split',before+'%');
-      range.setAttribute('aria-valuetext',before+'% before, '+(100-before)+'% after');
-    }
-    range.addEventListener('input',update);
-    update();
-  });
-})();
-</script>
 <script src="js/analytics.js?v=4"></script>
-<script src="js/site.js?v=24"></script>
+<script src="js/site.js?v=25"></script>
 </body>
 </html>
