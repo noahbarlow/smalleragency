@@ -4,9 +4,20 @@
   "description": "Toronto brand strategy, identity and packaging studio.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#f2f3ef",
-  "theme_color": "#3f4dff",
+  "background_color": "#171B54",
+  "theme_color": "#171B54",
   "icons": [
-    {"src": "/assets/icon-512.png", "sizes": "512x512", "type": "image/png"}
+    {
+      "src": "/assets/icon-192.png?v=2",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/icon-512.png?v=2",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
   ]
 }
