@@ -1,614 +1,506 @@
-# Smaller Agency — Design System
+# Smaller Agency — active design language
 
-> Canonical visual and verbal system for Smaller Agency, Noah Barlow, agency-owned diagnostics, proposals, decks, reports, social content and future digital products.
->
-> **Source of truth:** [smalleragency.com](https://smalleragency.com)  
-> **System line:** **Serious brand work. Small-team overhead.**  
-> **Last updated:** 2026-08-07
+**Version:** 2026-09-14  
+**Status:** approved direction  
+**Authority:** the 2026 Smaller Agency website concept and the supplied Smaller Agency wordmark  
+**Use:** Smaller-owned websites, proposals, scopes, reports, capabilities decks, case studies, diagnostics, playbooks, social content and internal templates
+
+This system replaces the previous Anybody + Instrument Sans + electric-blue document system and the earlier coral/script system. Do not mix those systems into new Smaller work unless reproducing an archived artifact.
 
 ---
 
 ## 1. The idea
 
-Smaller is a Toronto brand and packaging studio built around a simple advantage: the people in the first meeting stay close to the work.
+**Serious brand work. Small-team overhead.**
 
-The identity should feel:
+Smaller is a Toronto brand, identity and packaging studio. The work is rigorous. The studio model is direct. The design language should make both points without looking corporate, precious or over-produced.
 
-- **serious about the work** — exact typography, useful hierarchy, strong case-study proof;
-- **small by design** — direct, human and free of corporate agency theatre;
-- **visually alert** — one sharp colour decision, deliberate scale and confident cropping;
-- **expensive in judgement, not overhead** — refined without looking precious or overproduced.
+It should feel:
 
-The design is not minimal because there is little to say. It is edited because every element should earn its place.
+- editorial rather than templated;
+- exact without becoming sterile;
+- confident without agency chest-beating;
+- playful in the choices, not in added decoration;
+- expensive in judgement, not in overhead.
 
-### The recurring contrast
-
-**Serious brand work.** is the promise.  
-**Small-team overhead.** is the operating advantage.
-
-Use the contrast as a writing and layout principle, not as a slogan that must appear everywhere.
+The system lives in the contrast between a highly expressive serif and a very clear geometric sans. One brings taste and humanity. The other brings force, utility and commercial clarity.
 
 ---
 
-## 2. Scope
-
-This system governs agency-owned work:
-
-- smalleragency.com and future Smaller digital properties;
-- noahbarlow.work and Noah Barlow thought leadership;
-- diagnostics, scorecards and interactive tools;
-- proposals, scopes, capabilities decks and case studies;
-- Smaller-authored reports, audits and research;
-- Smaller social and launch content;
-- email graphics, event materials and internal templates.
-
-### Brand ownership rule
-
-The **Smaller Agency logo** appears only when Smaller is the sender. Noah’s personal work uses his name, but shares this design language. Client deliverables use the client’s identity; the Smaller system belongs on the cover, colophon or presentation shell, not over the client brand.
-
----
-
-## 3. Logo
+## 2. Logo
 
 The supplied Smaller Agency wordmark is the only authoritative logo. Never rebuild it with live type.
 
-### Primary files
+### Rules
 
-- `assets/logo-black.svg` — ink wordmark on Paper, Paper 2, Signal or white.
-- `assets/logo-paper.svg` — light wordmark on Ink or photography with sufficient contrast.
-
-### Clear space
-
-Keep clear space equal to the height of the wordmark’s lowercase **s** on every side. More is encouraged in editorial layouts.
-
-### Minimum size
-
-- Digital: **96 px wide** minimum.
-- Print: **25 mm wide** minimum.
-- Header use: size by optical presence, not by matching neighbouring type.
-
-### Placement
-
-Preferred positions are upper-left and lower-left. The wordmark should feel anchored to the grid, never floated as decoration.
+- Use the black logo on Paper, Powder, Acid or white.
+- Use the paper/white logo on Ink, Indigo, Indigo Deep, Olive, Cherry or Green.
+- Keep clear space equal to the height of the lowercase **s** on every side.
+- Minimum width: 96 px digital or 25 mm print.
+- Prefer upper-left or lower-left placement, anchored to the grid.
+- Use the logo once per surface or view.
 
 ### Never
 
-- retype, redraw, stretch, condense or rotate the logo;
-- recolour individual letters;
-- use gradients, outlines, shadows or effects;
+- retype, redraw, stretch, condense or rotate it;
 - place it in a holding shape;
-- repeat it in the same view;
-- use the logo as both header and oversized footer decoration on one page.
+- add a rule directly above it;
+- use it in the header and again as an oversized footer decoration in the same view;
+- recolour individual letters or add effects.
 
 ---
 
-## 4. Colour
+## 3. Colour
 
-The core palette is disciplined. **Blue carries identity. Signal carries action.** Project imagery supplies most of the remaining colour.
+The palette is broad enough to create rhythm, but every surface still needs one dominant condition.
 
-| Token | Hex | Role |
+### Core palette
+
+| Token | Hex | Job |
 |---|---:|---|
-| `--ink` | `#11110F` | Primary text, rules, dark fields and dark CTAs |
-| `--paper` | `#F2F3EF` | Default background |
-| `--paper-2` | `#E5E7E1` | Quiet section change, image placeholder, table band |
-| `--white` | `#FFFFFF` | Cards over photography and reversed text support |
-| `--blue` | `#3F4DFF` | Brand signature, links, active states and one key phrase |
-| `--signal` | `#F0FF58` | Action, selection, progress and high-attention moments |
-| `--rule` | `#CFD2CA` | Secondary dividers and quiet structure |
-| `--mute` | `#686A64` | Metadata, notes and captions |
+| `ink` | `#080909` | Primary text, dark fields, rules and high-contrast actions |
+| `white` | `#FBFBF7` | Clean image stages, reversed text and occasional quiet fields |
+| `paper` | `#E1D4C7` | Default warm background |
+| `indigo` | `#404885` | Primary brand colour and editorial emphasis |
+| `indigo-deep` | `#171B54` | Immersive hero and section fields |
+| `powder` | `#B8C7EB` | Quiet contrast and supporting fields |
+| `acid` | `#E2FF08` | Action, proof and moments that must be noticed |
 
-### Supporting project colours
+### Supporting fields
 
-These colours may appear when a project, chart or proof moment needs them. They do not compete with Blue as the agency signature.
-
-| Token | Hex | Use |
+| Token | Hex | Job |
 |---|---:|---|
-| `--red` | `#FF4B2F` | Warnings, specific client fields, evidence coding |
-| `--pink` | `#FF89BA` | Client-led accent or evidence coding |
-| `--sky` | `#A8C8FF` | Client-led accent or quiet data field |
+| `olive` | `#8F9103` | Culture, beverage and secondary chapter field |
+| `orange` | `#EF3D00` | High-energy work, warning or project-led chapter field |
+| `cherry` | `#290506` | Rich dark field for food, hospitality and project-led proof |
+| `green` | `#073D25` | Deep supporting field for beverage and environmental work |
+| `rule` | `#C4B8AB` | Quiet structural divider on Paper |
+| `mute` | `#666058` | Secondary copy and metadata on light fields |
 
-### Colour rules
+### Colour behaviour
 
-1. Use **Paper + Ink** as the default condition.
-2. Use **Blue once with intent**: a hero phrase, active nav, project title or primary interaction.
-3. Use **Signal for behaviour**, not decoration: hover, progress, selection, callout or result.
-4. Full Blue and Signal fields are allowed, but body copy must remain accessible.
-5. Let project photography keep its own colour. Do not wash every image into the agency palette.
-6. No gradients unless they are part of client work being shown.
-7. Avoid the old coral/script system. Coral is no longer an agency signature.
+1. **Paper + Ink** is the default reading condition.
+2. **Indigo Deep + white** is the primary immersive condition.
+3. **Acid is a signal.** Use it for action, proof, selection or a decisive phrase. It should not decorate every page.
+4. Olive, Orange, Cherry and Green create chapters or let client work lead. Use one at a time.
+5. White on Paper can look accidental. If a light panel needs to stand out, use Acid, Indigo, an image or a clearly structured rule system instead.
+6. Flat fields are the document default. A restrained Indigo gradient is reserved for digital hero moments, where it creates depth behind real work.
+7. Client work keeps its own colour. Do not force every project through a Smaller colour wash.
 
 ### Accessible pairings
 
-- Ink on Paper, Paper 2, White or Signal.
-- White on Ink or Blue.
-- Paper on Ink.
-- Blue on Paper or White for display text and controls; use Ink for long reading.
+- Ink on Paper, White, Powder or Acid.
+- White on Ink, Indigo Deep, Indigo, Olive, Cherry or Green.
+- Acid on Indigo Deep, Ink or Green for large display type and markers.
+- Use Ink, not Indigo, for long reading on light backgrounds.
 
 ---
 
-## 5. Typography
+## 4. Typography
 
-Typography carries most of the identity. It should feel designed, not decorated.
+Typography is the identity. It must be loaded correctly, spaced optically and tested at the final size.
 
-### Families
+### Instrument Serif — editorial display
 
-| Role | Family | Use |
-|---|---|---|
-| Display | **Anybody Variable** | Headlines, project names, large numbers and statements |
-| Body | **Instrument Sans** | Paragraphs, captions, buttons, labels and navigation |
-| Utility | **Instrument Sans** | Eyebrows, metadata, tables and interface language |
+Use Regular and Italic for:
 
-Production font loading:
+- hero statements;
+- section openings;
+- article titles and pull quotes;
+- expressive project names;
+- the human or provocative half of a paired headline.
 
-```html
-<link rel="preload" href="assets/fonts/anybody-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="assets/fonts/instrument-sans-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
-```
+Recommended settings:
 
-Both families are self-hosted. Declare their variable ranges with `@font-face` in the primary stylesheet and use `font-display: swap`. Do not add Google Fonts back to the render path.
-
-### Display settings
-
-Default display treatment:
-
-```css
-font-family: "Anybody", Arial, sans-serif;
-font-weight: 820;
-font-variation-settings: "wdth" 106;
-letter-spacing: -0.034em;
-line-height: 0.95;
-```
-
-Use the variable width deliberately:
-
-- `"wdth" 104–112` — primary headlines and project names;
-- `"wdth" 116` — short numbers and compact proof statements;
-- use `"wdth" 100` only for a deliberate mobile optical correction, never to force copy into a box;
-- if copy does not fit, reduce scale, edit the line or let it wrap naturally.
-- never use `overflow-wrap: break-word`, `word-break: break-all` or automatic hyphenation on display type; a headline may wrap only at real spaces;
-- test every display style at 320, 375, 430 and 630 pixels. Reduce the responsive type scale before allowing a word to overflow.
-
-### Body settings
-
-```css
-font-family: "Instrument Sans", Arial, sans-serif;
-font-weight: 400;
-line-height: 1.55–1.68;
-letter-spacing: -0.008em;
-```
-
-### Utility settings
-
-```css
-font-family: "Instrument Sans", Arial, sans-serif;
-font-size: 0.62–0.72rem;
-font-weight: 600;
-letter-spacing: 0.085em;
-text-transform: uppercase;
-```
-
-### Headline rules
-
-- Use lowercase or sentence case. Do not use Title Case display copy.
-- Keep the writing short enough to retain shape.
-- Prefer natural wrapping. **Do not insert a manual `<br>` simply to imitate a comp.**
-- One phrase may use Blue to create contrast. It should keep a readable width and relaxed tracking.
-- Do not assign different widths to adjacent lines of the same phrase.
-- No script font, outlined type, gradient type or decorative italics.
-- Large type may touch the edge optically, but must never clip.
-
-### Current hero recipe
-
-```html
-<h1>
-  <span class="hero-main">serious brand work.</span>
-  <span class="accent">small-team overhead.</span>
-</h1>
-```
-
-The black phrase is one natural sentence. The blue phrase is the only typographic contrast. On mobile, both wrap according to available width; no forced line breaks.
-
-### Fluid scale
-
-| Role | Suggested range |
-|---|---|
-| Hero | `clamp(4rem, 9.15vw, 9.25rem)` |
-| Page H1 | `clamp(3.5rem, 9vw, 9rem)` |
-| H2 | `clamp(2.5rem, 5.7vw, 5.75rem)` |
-| H3 | `clamp(1.35rem, 2vw, 2rem)` |
-| Lead | `clamp(1.1rem, 1.6vw, 1.45rem)` |
-| Body | `1rem` |
-| Utility | `0.62–0.72rem` |
-
-### Optical spacing scale
-
-Negative tracking is not a house effect. It changes with scale:
-
-| Role | Tracking | Line height | Width axis |
+| Use | Size | Leading | Tracking |
 |---|---:|---:|---:|
-| Hero | `-0.042em` | `0.91` | `104` |
-| H1 | `-0.040em` | `0.92` | `106` |
-| H2 | `-0.034em` | `0.95` | `106` |
-| H3 / project name | `-0.025em` to `-0.030em` | `1.01–1.02` | `106` |
-| Utility | `0.085em` | `1.35` | normal |
-| Body | `-0.008em` | `1.55–1.68` | normal |
+| Web hero | `clamp(5.5rem, 10vw, 12rem)` | `0.74–0.82` | `-0.045em` |
+| Web H1 | `clamp(4.5rem, 8vw, 9rem)` | `0.78–0.86` | `-0.04em` |
+| Web H2 | `clamp(3.2rem, 6vw, 7rem)` | `0.82–0.92` | `-0.035em` |
+| Print cover | `58–76 pt` | `0.78–0.86` | `-0.035em` |
+| Print section | `34–50 pt` | `0.84–0.92` | `-0.025em` |
 
-On screens at 760px and below, loosen display tracking by roughly `0.007em`, keep the main hero line at `0.98` line height and reduce scale before reducing width. Test at 360, 390, 768, 1024 and 1440px. Text must also survive the WCAG text-spacing override without clipping, overlap or lost content.
+The italic is an editorial voice, not a script flourish. It can carry a second thought or human counterpoint, but it remains large, legible and structurally aligned.
+
+### Objectivity — force, body and utility
+
+Use Objectivity Regular, Medium and Bold for:
+
+- bold display lines;
+- body copy;
+- captions, folios and metadata;
+- navigation and buttons;
+- tables and practical information;
+- large proof numbers.
+
+Recommended settings:
+
+| Use | Weight | Leading | Tracking |
+|---|---:|---:|---:|
+| Sans display | Bold | `0.78–0.90` | `-0.065em` to `-0.08em` |
+| Body | Regular | `1.45–1.58` | `-0.01em` to `0` |
+| Lead/deck | Regular | `1.35–1.48` | `-0.012em` |
+| Utility | Medium/Bold | `1.3–1.4` | `0.07em–0.11em` |
+| Large number | Bold | `0.70–0.78` | `-0.075em` |
+
+### Pairing logic
+
+The strongest Smaller headlines use the two families as a conversation:
+
+```text
+Instrument Serif:  Serious
+Objectivity Bold:  brand work.
+Instrument Italic: Small-team
+Objectivity Bold:  overhead.
+```
+
+Do not apply this recipe to every page. A single-family headline is often the more confident choice. The contrast must support meaning, not prove that two fonts were installed.
+
+### Type safeguards
+
+- Never allow a word to break mid-word.
+- Disable automatic hyphenation on display type.
+- Do not condense, scale or transform type to force a fit.
+- Edit the copy or reduce the responsive size before compromising the letterforms.
+- Keep display lines optically separated. Tight is good; collision is not.
+- Keep body measures around 55–75 characters.
+- Avoid widows and accidental one-word final lines when they damage the shape.
+- Test critical typography at 320, 390, 768, 1024 and 1440 px, plus the final print size.
+- Both fonts must be embedded or packaged with final documents. A fallback render is not final.
 
 ---
 
-## 6. Layout
+## 5. Layout
 
-The system is an editorial proof wall: large statements, visible structure and client work allowed to take over the frame.
+The layout is an edited wall of arguments and proof. It is not a component library filled with identical cards.
 
-### Core tokens
+### Core principles
+
+- Give each page or section one dominant idea.
+- Alternate **argument** and **proof**: claim, work, explanation, evidence.
+- Use large type and real project imagery as the graphic devices.
+- Build asymmetry on a clear grid. Do not build accidental overlap.
+- Let some images fill the frame; show tall packaging and documents in full when cropping would hide the work.
+- Empty space creates pace, but it must feel measured rather than unfinished.
+- Change composition between desktop, tablet and mobile. Never squeeze the desktop arrangement into a narrow viewport.
+
+### Digital tokens
 
 ```css
---shell: 92rem;
---gutter: clamp(1.25rem, 3vw, 3rem);
---section-y: clamp(5rem, 9vw, 9rem);
---header-h: 5.25rem;
+:root {
+  --ink: #080909;
+  --white: #fbfbf7;
+  --paper: #e1d4c7;
+  --indigo: #404885;
+  --indigo-deep: #171b54;
+  --powder: #b8c7eb;
+  --acid: #e2ff08;
+  --olive: #8f9103;
+  --orange: #ef3d00;
+  --cherry: #290506;
+  --green: #073d25;
+
+  --font-serif: "Instrument Serif", Georgia, serif;
+  --font-sans: "Objectivity", "Helvetica Neue", Arial, sans-serif;
+
+  --pad: clamp(1.25rem, 4.2vw, 5rem);
+  --section-y: clamp(6.5rem, 10vw, 11.5rem);
+  --measure: 42rem;
+}
 ```
-
-### Principles
-
-- Use a wide shell and meaningful margins.
-- Alternate between **argument** and **proof**: statement, image, explanation, work.
-- Hairline rules encode structure. They are not decoration.
-- Use asymmetry with a clear reason: copy beside proof, label beside result, image beside role.
-- Let one image go full-bleed before introducing a dense grid.
-- Fewer, larger project moments beat a wall of equal cards.
-- Empty space is active pacing. It must still feel intentional on mobile.
 
 ### Preferred structures
 
 **Editorial split**
 
 ```text
-[ large argument 7/12 ]   [ explanation 5/12 ]
+[ expressive claim 5/12 ]  [ explanation or proof 7/12 ]
 ```
 
-**Proof split**
+**Work feature**
 
 ```text
-[ large image 7/12 ]      [ secondary image 5/12 ]
-[ project + scope ]        [ project + scope ]
+[ project story 5/12 ]      [ dominant image 7/12 ]
+[ scope + action ]          [ secondary proof only if needed ]
 ```
 
-**Full-bleed feature**
+**Reading page**
 
 ```text
-[ client work fills viewport ]
-[ compact white caption anchored lower-left ]
+[ sticky short context 4/12 ]  [ article measure 8/12 ]
+```
+
+**Document cover**
+
+```text
+[ logo ]                          [ document / date ]
+
+[ one decisive headline ]
+[ optional serif/sans contrast ]
+
+[ prepared for ]                  [ Smaller / Toronto ]
 ```
 
 ### Avoid
 
-- repetitive three-card rows used only because they are easy;
-- rounded SaaS cards, pills and soft shadows;
+- rounded SaaS cards, pills, soft shadows or glass effects;
 - tilted “creative agency” tiles;
-- text boxed into arbitrary fixed heights;
-- crowded transitions between sections;
-- duplicated logos or oversized decorative footer marks.
+- three identical cards simply because three fit;
+- decorative lines, doodles or squiggles;
+- a white rectangle floating on Paper without a structural reason;
+- stacked image collages that obscure the work;
+- repeated labels above every heading;
+- duplicated logos;
+- fixed-height text boxes that create clipping or awkward gaps.
 
 ---
 
-## 7. Rules, labels and components
+## 6. Structural devices
 
 ### Rules
 
-- Primary boundary: `1px solid var(--ink)`.
-- Secondary divider: `1px solid var(--rule)`.
-- Use borders to clarify groups, not to frame every object.
+Rules explain relationships. They are not decoration.
 
-### Eyebrows
+- Primary: 1 px/pt in current text colour.
+- Secondary: 0.5–1 px/pt in `rule` or 30–45% white on dark fields.
+- Use a rule to start a table, separate a caption or define a chapter.
+- Do not place a rule directly against a large number, logo or headline. Give it enough breathing room to read as structure.
 
-Small, uppercase Instrument Sans. They orient the reader: location, section, role or project status. Keep them factual.
+### Labels
+
+Small uppercase Objectivity may identify a real category, status, chapter, date or source.
 
 Good:
 
-- `SMALLER AGENCY / TORONTO`
-- `FEATURED PROOF / SUPA POWER`
-- `SELECTED WORK / NOT THE ATTIC`
+- `FIELD NOTE / PACKAGING`
+- `61 PAGES / CHALLENGER BRANDS`
+- `507 KING STREET E / TORONTO`
 
-Avoid vague labels like `OUR APPROACH` when a more specific label exists.
+Avoid labels that merely narrate the layout, such as `OUR APPROACH`, `THE SOLUTION` or `A THING WE HAVE BEEN THINKING ABOUT`.
 
-### Buttons
+### Proof numbers
 
-- Rectangular, never pill-shaped.
-- Minimum target: 44 × 44 px.
-- Utility type with an outbound arrow `↗`.
-- Primary: Ink field with white type.
-- Hover: Blue field; Signal may be used for an especially important state.
-- Button copy names the action: `See the work`, `Start a project`, `View case study`.
+Large numbers use Objectivity Bold. Pair the number with one short label, optically centred on both axes.
 
-### Contact handoff
+- Prefer an Acid or Indigo field when the proof needs emphasis.
+- Do not place a small white card on Paper; it reads like an export error.
+- Keep enough inner padding that the number has room to breathe.
+- Never invent a metric to improve the composition.
 
-The contact page removes uncertainty instead of adding a long intake form. Put the direct email and phone first, then explain the next step in one human sentence: Noah replies, a short call follows if the fit is right, and the scope is shaped together. Do not promise an automated response time or make a founder complete a questionnaire before speaking to a person.
+### Actions
 
-### Project cards
-
-- Image first.
-- Straight edges and consistent aspect ratios.
-- Project name in Anybody, scope in utility type.
-- One rule separates image and caption.
-- Hover is a subtle image scale and Blue title shift. No tilt, flip or shadow.
-
-### Portfolio composition
-
-The Work page is edited like a publication, not filled like a CMS grid.
-
-- Keep each chapter to **three projects**: one lead project and two supporting projects.
-- The lead project occupies roughly two-thirds of the desktop grid and the full first row on tablet.
-- Alternate the lead edge from chapter to chapter so the page has rhythm without becoming unpredictable.
-- Supporting projects are smaller because hierarchy is the point; they are not lesser work.
-- On mobile, return to one clear vertical sequence. Do not preserve desktop asymmetry at the expense of image size or reading order.
-- Never add a fourth card simply to fill a row. Start a new chapter or leave it out.
-
-### Case-study proof strip
-
-Every full case study opens with four fast facts before the long narrative:
-
-1. **the problem** — the commercial or behavioural obstacle;
-2. **the move** — the useful strategic decision;
-3. **what shipped** — the tangible system or set of deliverables;
-4. **what changed** — a verified outcome or operational change.
-
-Keep each answer to one plain sentence. Never invent a metric to make the last cell feel more impressive. If a quantified result is not available, name the change the work made possible.
+- Square corners.
+- Minimum digital target: 44 × 44 px.
+- Objectivity Medium/Bold utility type.
+- Use a simple arrow only when it clarifies direction: `↗` external, `↓` down, `↘` download.
+- Name what happens: `View the case study`, `Download the playbook`, `Start a project`.
 
 ---
 
-## 8. Photography and work imagery
+## 7. Imagery
 
-The portfolio is the colour and texture of the site. Treat it as evidence, not decoration.
+Real work carries the colour and credibility of the system.
 
-### Direction
+### Use
 
-- Show the designed object clearly: package, system, retail moment, identity or interface.
-- Mix establishing shots with close detail.
-- Prefer real project photography and finished executions over mood imagery.
-- Crop confidently, but do not obscure the work to make a dramatic composition.
-- Sequence case studies to show scope: identity → package → content → channel → result.
-- Use full-bleed images for marquee work and grids for supporting proof.
+- finished packaging, identity systems, retail environments and live campaign work;
+- a mix of wide context, clear hero product and close detail;
+- full-bleed images for marquee proof;
+- contained image stages for tall packages, books and document covers;
+- project-specific backgrounds when they help explain the system.
 
-### Image preparation
+### Cropping
 
-- Web: modern JPEG/WebP, usually 1600–2400 px on the long edge.
-- Social and packaging text must remain legible after responsive cropping.
-- Remove export seams, accidental horizontal lines and montage artifacts.
-- Supply an intentional mobile crop when the desktop crop fails.
+- Crop boldly only when the principal object remains clear.
+- Use `object-fit: contain` for tall packaging, books, posters and work where the full composition matters.
+- Use `object-fit: cover` for environmental photography and immersive feature moments.
+- Art-direct mobile crops rather than accepting accidental truncation.
+- Remove seams, stray horizontal lines, low-resolution video and export artifacts before use.
 
 ### Never
 
-- substitute a related brand or competitor for the actual client;
-- add generic stock images to “fill” a case study;
-- apply a global colour overlay that hides the work;
-- place every available image at the bottom of a page.
-
-### Service and capability pages
-
-Service pages are proof pages, not generic landing-page templates.
-
-- Lead with a sharp point of view, then show finished work before explaining the process.
-- Organize the studio around three core moves: position, identity and package.
-- Treat specialist categories as useful paths into the same system, not seven equal cards.
-- Let project imagery become page structure: one dominant field image, supporting framed details and a changing method image.
-- Use one orchestrated interaction per section. A sticky image swap is enough; do not stack parallax, colour shifts and decorative animation.
-- Change composition between desktop, tablet and mobile. Never squeeze a three-column desktop layout into an intermediate viewport.
-- Keep proof captions factual: client, object, service or outcome. Avoid decorative project language.
-- End with a clear next step to work, a relevant case study or contact. Remove any section that only repeats the page title.
+- substitute a competitor or related brand for the actual client;
+- use generic agency stock photography as proof;
+- put every available image in a gallery at the bottom;
+- colour-shift project work to manufacture motion;
+- overlap images simply to signal “creative.”
 
 ---
 
-## 9. Motion
+## 8. Motion and interaction
 
-Motion should reveal scope and improve orientation. It should never be the concept by itself.
+Motion reveals scope or helps orientation. It is never the idea by itself.
 
-### Approved behaviour
+### Approved
 
-- restrained page entrance for the hero;
-- image swaps in a pinned feature to show a system, not a colour filter;
-- subtle image scale on hover;
+- one restrained hero entrance;
+- image swaps that show a real system or range;
+- subtle scale on hover;
 - short caption or rule reveals;
-- horizontal filmstrips when there is a real sequence to explore;
-- a single clear progress signal in long interactive tools.
-
-### Project motion proof
-
-Use real project motion when it demonstrates a system better than another still image.
-
-- Keep loops short, muted, inline and free of controls.
-- Use an intentional poster frame so the composition works before playback and with reduced motion enabled.
-- Lazy-load video only as it approaches the viewport; do not make motion part of the critical render path.
-- Caption the proof with the client and what is being demonstrated. Avoid calling attention to the technique itself.
-- Preserve the original aspect ratio when it is meaningful. Art-direct a mobile crop only when the source becomes illegible.
-- One motion moment per case study is normally enough.
-
-### Timing
-
-- Interface transitions: `180–250ms`.
-- Image transitions: `450–700ms` with an ease-out curve.
-- Orchestrated hero entrance: under `700ms` total.
+- horizontal filmstrips for genuine sequences;
+- clear progress in long tools.
 
 ### Avoid
 
-- colour-shifting full-bleed imagery on scroll;
-- multiple competing scroll effects in one viewport;
-- perpetual marquee movement without a content reason;
-- velocity distortion that hurts reading;
 - scroll-jacking;
-- animation that leaves blank space before content arrives.
+- perpetual movement without a content reason;
+- colour filters changing on scroll;
+- several competing effects in one viewport;
+- animation that delays the headline or leaves blank space;
+- low-resolution video used where a still is stronger.
 
-Always support `prefers-reduced-motion` and preserve the complete reading experience without animation.
-
-### Social share cards
-
-Every major page and full case study needs its own **1200 × 630 px** Open Graph image.
-
-- Agency pages use the core Paper, Ink, Blue and Signal system.
-- Case studies use real project imagery and the project's own colour world.
-- Keep the Smaller logo to one clear appearance.
-- Include the page or project name and one short line of context; do not rebuild the webpage in miniature.
-- Set `og:image`, `og:image:secure_url`, `og:image:alt`, `twitter:image` and the image MIME type.
-- Check the card at small preview size. Important type and marks must stay inside generous safe margins.
+Always preserve the complete experience with `prefers-reduced-motion`.
 
 ---
 
-## 10. Voice
+## 9. Voice
 
-The writing should sound like a person who has made the work, defended it and watched it reach the shelf.
+The writing should sound like someone who has made the work, defended it and watched it hit the shelf.
 
 ### Tone
 
 - direct, observant and lightly playful;
-- confident without agency chest-beating;
-- specific about the work and consequences;
-- conversational enough to use contractions;
-- concise, but not clipped into slogan fragments everywhere.
+- commercially literate;
+- human enough to use contractions;
+- confident without sounding inflated;
+- specific about the brand, object, constraint and consequence.
 
-### Use
+### Write this way
 
-- concrete verbs: make, name, package, launch, fix, choose, sell;
-- real categories, brands, channels and constraints;
-- plain explanations of what Smaller did;
-- occasional humour when it sounds like Noah, not a copywriter trying to be disruptive;
-- short CTAs that tell the reader what happens next.
+- Lead with the point.
+- Use short paragraphs and concrete verbs: make, name, fix, package, launch, choose, sell.
+- Name the real tension: the pack disappears, the category asks too much, the system will not scale.
+- Let one memorable line do the work instead of stacking slogans.
+- Use humour when Noah would actually say it across a table.
+- End with a clear next move.
 
 ### Avoid AI tells
 
 - three parallel claims in identical sentence shapes;
-- “not just X, but Y” constructions repeated across a page;
-- empty declarations such as “This matters” or “There is no shortcut”;
-- em-dashes in every paragraph;
-- abstract stacks: strategy, storytelling, culture, impact;
+- repeated “not just X, but Y” constructions;
+- em dashes in every paragraph;
+- abstract stacks like “strategy, culture, storytelling and impact”;
+- generic agency language: bold ideas, meaningful connections, at the intersection of;
 - fortune-cookie closers;
-- generic agency phrases: bold ideas, meaningful connections, at the intersection of;
-- explaining the cleverness of the copy.
+- copy that explains how clever it is;
+- a factual eyebrow above every headline;
+- overusing the brand line until it becomes wallpaper.
 
-### A useful test
-
-Read it aloud. If Noah would not say it to a founder across a table, rewrite it.
-
----
-
-## 11. Noah Barlow application
-
-Noah’s personal work uses the same typography, colour, grid and writing discipline so the relationship to Smaller is obvious.
-
-Differences:
-
-- use `NOAH BARLOW / TORONTO` instead of the Smaller logo when Noah is the sender;
-- first person is appropriate;
-- long-form pieces may be denser, but retain the same section rhythm and proof-first logic;
-- Blue remains the signature; Signal marks tools, scores and actions;
-- Instrument Serif and the lime highlighter are retired from the primary personal system.
-
-The personal site should feel like the founder’s desk inside the same studio, not a separate brand universe.
+Read it aloud. If Noah would not say it to a founder, rewrite it.
 
 ---
 
-## 12. Documents, decks and reports
+## 10. Smaller documents
+
+All Smaller-owned PDFs, proposals, reports, playbooks and decks use this system.
+
+### Default print condition
+
+- US Letter unless another format is requested.
+- Paper background with Ink text.
+- 0.58–0.65 in outer margins.
+- Instrument Serif for main arguments.
+- Objectivity for body, utility, tables, proof and decisive display lines.
+- One argument per page or spread.
+- One full Indigo Deep, Indigo, Olive or Acid field at a meaningful chapter change.
+- Use client imagery whenever it is real proof.
 
 ### Cover
 
-- Paper background.
-- Smaller logo or Noah name in the upper-left.
-- One oversized Anybody title.
-- Blue may carry one phrase only.
-- Small factual metadata along a rule.
+- Logo upper-left.
+- Document type/date upper-right.
+- One large title, usually two to five lines.
+- Use the serif/sans pairing only when the contrast adds meaning.
+- Prepared-for information sits low and quiet.
+- Do not put a decorative rule against the logo.
 
 ### Content pages
 
-- One argument per page or spread.
-- Instrument Sans body, short measure.
-- Use rules, labels and large numbers instead of decorative shapes.
-- Client imagery should dominate whenever it is available.
-- Signal is reserved for decisions, next steps and selected data.
+- Claim first, then the minimum explanation required.
+- Keep body copy to 55–75 characters per line.
+- Use open space and alignment before adding containers.
+- Use a flat colour field for a decision, assumption, proof or next action.
+- If a page feels crowded, edit before shrinking type.
 
-### Tables and diagnostics
+### Tables and scopes
 
-- Prefer open tables with horizontal rules.
-- Align numbers and labels precisely.
-- Use colour only to encode a real state.
-- Explain methodology in plain language.
-- Never turn every result into a card.
+- Objectivity throughout.
+- Open tables with strong horizontal rules and restrained vertical rules.
+- Align numbers, currencies, dates and labels precisely.
+- Lead with the client-useful category: workstream, commercial job, owner, timing, investment or decision.
+- Separate professional fees from media, production, apps and pass-through costs.
+
+### Playbooks and thinking
+
+- Use editorial covers with one strong promise.
+- Structure the sequence as an argument, not a list of inspirational cards.
+- Give frameworks a real order and show how to use them.
+- Cite outside evidence; distinguish fact, interpretation and opinion.
+- No email gate is required when the purpose is to demonstrate useful thinking.
+
+---
+
+## 11. Social and carousels
+
+- Default master: 1080 × 1350 px, 4:5.
+- Keep essential content at least 72 px from each edge.
+- The cover must work at thumbnail size.
+- One idea per card, one argument per sequence.
+- Alternate serif-led claims, sans-led conclusions, real work and quiet evidence pages.
+- Use the palette to pace the story; do not repeat the same layout in five colours.
+- Keep the logo once, usually on the cover or closer.
+- Review at approximately 270 × 338 px before release.
+
+---
+
+## 12. Social sharing
+
+Every major page and case study needs its own 1200 × 630 px Open Graph image.
+
+- Use real project imagery for case studies.
+- Use Indigo Deep, Paper and Acid for Smaller-owned pages.
+- Keep the logo to one clear appearance.
+- Use one short title and generous safe margins.
+- Do not recreate the whole webpage in miniature.
+- Check the card at small preview size.
 
 ---
 
 ## 13. Accessibility and production
 
-- Meet WCAG AA contrast for body copy and controls.
-- Minimum interactive target: 44 px.
-- Every image needs useful alt text; decorative images use empty alt text.
+- Meet WCAG AA for body copy and controls.
 - Provide visible keyboard focus.
-- Maintain logical heading order.
-- Do not rely on colour alone for state.
-- Mobile layouts are designed independently, not compressed desktop comps.
-- Test at 360, 390, 768, 1024 and 1440 px.
-- Check for clipping at browser zoom 200%.
-- Respect reduced-motion preferences.
+- Use useful alt text; decorative images use empty alt text.
+- Do not rely on colour alone for meaning.
+- Respect reduced motion.
+- Include intrinsic image dimensions and responsive formats on the web.
+- Embed fonts in PDFs and package them with editable source when licensing allows.
+- Test print exports at 100% and digital layouts at 320, 390, 768, 1024 and 1440 px.
+- Check browser zoom at 200% for clipping and lost content.
 
 ---
 
-## 14. Quick shipping checklist
+## 14. Release check
 
-- [ ] Correct Smaller logo asset; no duplicate logo?
-- [ ] Paper, Ink, Blue and Signal used in their proper roles?
-- [ ] Anybody for display and Instrument Sans for everything else?
-- [ ] Both variable fonts self-hosted and preloaded, with no third-party font request?
-- [ ] Display type readable without extreme width compression?
-- [ ] Headline wrapping naturally rather than forced with decorative breaks?
-- [ ] One clear visual idea per section?
-- [ ] Real client work doing most of the visual work?
-- [ ] No filler cards, stock imagery, gradients, shadows or tilted tiles?
-- [ ] Copy sounds like Noah and names the actual work?
-- [ ] Mobile spacing and crop checked independently?
-- [ ] Primary images served as responsive AVIF/WebP with intrinsic dimensions?
-- [ ] The main headline renders immediately; only supporting elements animate?
-- [ ] Analytics waits for first interaction or browser idle time?
-- [ ] Keyboard, contrast, alt text and reduced motion checked?
+- [ ] Correct supplied logo, used once per surface?
+- [ ] Instrument Serif and Objectivity loaded and embedded?
+- [ ] Palette matches the tokens in this file?
+- [ ] One dominant visual idea per page or section?
+- [ ] Display type has no collisions, clipping, mid-word breaks or accidental orphans?
+- [ ] Body copy is comfortably readable?
+- [ ] White panels on Paper have a real reason to exist?
+- [ ] Tall work is shown in full when cropping would hide the design?
+- [ ] Real proof replaces filler imagery and generic claims?
+- [ ] Copy sounds like a person and names the actual issue?
+- [ ] Mobile composition was designed, not compressed?
+- [ ] Final exports were reviewed at actual size?
 
 ---
 
-## 15. Copy-paste tokens
+## 15. Canonical assets
 
-```css
-:root {
-  --ink: #11110f;
-  --paper: #f2f3ef;
-  --paper-2: #e5e7e1;
-  --white: #ffffff;
-  --blue: #3f4dff;
-  --signal: #f0ff58;
-  --rule: #cfd2ca;
-  --mute: #686a64;
-  --red: #ff4b2f;
-  --pink: #ff89ba;
-  --sky: #a8c8ff;
+- Logo: the supplied Smaller Agency SVG wordmark.
+- Instrument Serif Regular and Italic: use the licensed files in the active Smaller asset library.
+- Objectivity Regular, Medium and Bold: use the licensed files in the active Smaller asset library.
+- Current digital reference: the approved 2026 Smaller Agency website concept.
 
-  --font-display: "Anybody", Arial, sans-serif;
-  --font-body: "Instrument Sans", Arial, sans-serif;
-  --font-utility: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
-
-  --shell: 92rem;
-  --gutter: clamp(1.25rem, 3vw, 3rem);
-  --section-y: clamp(5rem, 9vw, 9rem);
-  --header-h: 5.25rem;
-
-  --display-width: 106;
-  --display-width-wide: 112;
-  --display-track-hero: -0.042em;
-  --display-track-xl: -0.040em;
-  --display-track-lg: -0.034em;
-  --display-track-md: -0.025em;
-  --utility-track: 0.085em;
-  --measure-body: 38rem;
-  --measure-lead: 36rem;
-}
-```
-
----
-
-## 16. Superseded system
-
-This document replaces the earlier Objectivity + Snell/Pinyon + Coral system and the separate Instrument Serif + lime Noah Barlow system. Do not mix those systems into new Smaller or Noah-owned work unless reproducing an archived artifact.
