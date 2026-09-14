@@ -259,7 +259,7 @@ em{font-weight:400}
   .hero-intro{width:74vw;margin-top:2.3rem;font-size:.94rem}
   .hero-scroll{display:none}
   .hero-art{inset:61% var(--pad) 2rem;grid-template-columns:1.05fr .95fr;gap:.55rem}
-  .hero-art-label{top:-2rem;right:0;font-size:.49rem;padding:.55rem .65rem}
+  .hero-art-label{top:-2rem;right:0;font-size:.56rem;padding:.55rem .65rem}
 
   .hello{grid-template-columns:1fr;gap:4.5rem;padding:7rem var(--pad) 8rem}
   .hello-head{min-height:15rem}
@@ -327,8 +327,21 @@ em{font-weight:400}
 
   .studio{min-height:860px;grid-template-columns:1fr;align-content:space-between;padding:7rem var(--pad) 3rem}
   .studio-copy h2{font-size:4.55rem}
-  .studio-proof{justify-self:start;align-self:end;width:100%;max-width:none;display:grid;grid-template-columns:6.2rem 1fr;gap:1rem;margin-top:6rem;transform:rotate(-1deg)}
-  .studio-proof span{max-width:14rem}
+  .studio-proof{
+    justify-self:start;
+    align-self:end;
+    width:100%;
+    max-width:none;
+    display:grid;
+    grid-template-columns:auto minmax(0,1fr);
+    align-items:center;
+    column-gap:clamp(1.5rem,6vw,2.25rem);
+    margin-top:6rem;
+    padding:1.4rem 1.25rem 1.55rem;
+    transform:rotate(-.65deg)
+  }
+  .studio-proof strong{white-space:nowrap}
+  .studio-proof span{max-width:16rem}
 
   .contact{min-height:870px;padding:2rem var(--pad)}
   .contact-copy{max-width:100%}
@@ -349,6 +362,11 @@ em{font-weight:400}
   .case h2{font-size:6.7rem}
   .contact h2,.services h2,.shelf h2,.thinking h2{font-size:4.5rem}
   .studio-copy h2{font-size:4rem}
+}
+
+@media (max-width:340px){
+  .studio-proof{grid-template-columns:1fr;row-gap:.9rem;align-items:start}
+  .studio-proof span{max-width:17rem}
 }
 
 @media (prefers-reduced-motion:reduce){
