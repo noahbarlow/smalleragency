@@ -104,6 +104,16 @@
 .work-index h3{font-family:var(--serif);font-size:clamp(1.8rem,2.4vw,2.8rem);font-weight:400;line-height:.95}
 .work-index p{max-width:11rem;text-align:right;font-size:.57rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase}
 
+.work-archive{padding:clamp(4.5rem,7vw,8rem) var(--pad);background:var(--white)}
+.work-archive-head{display:grid;grid-template-columns:.45fr 1.05fr .5fr;gap:clamp(2rem,5vw,6rem);align-items:end;margin-bottom:clamp(2.5rem,4vw,4.5rem)}
+.work-archive-head h2{font-family:var(--serif);font-size:clamp(3.7rem,6vw,7rem);font-weight:400;line-height:.82;letter-spacing:-.04em}
+.work-archive-head p:last-child{max-width:22rem;font-size:.88rem}
+.work-archive-list{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid currentColor;border-left:1px solid currentColor}
+.work-archive-list a{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2rem;align-items:center;min-height:6rem;padding:1.15rem 1.25rem;border-right:1px solid currentColor;border-bottom:1px solid currentColor}
+.work-archive-list strong{font-family:var(--serif);font-size:clamp(1.55rem,2.3vw,2.65rem);font-weight:400;line-height:.95}
+.work-archive-list span{max-width:12rem;text-align:right;font-size:.56rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase}
+.work-archive-list a:hover,.work-archive-list a:focus-visible{background:var(--indigo-deep);color:var(--acid)}
+
 .principles{border-top:1px solid currentColor}
 .principle{display:grid;grid-template-columns:4rem .72fr 1.28fr;gap:clamp(1.5rem,5vw,6rem);align-items:start;padding:clamp(2.75rem,5vw,5.5rem) 0;border-bottom:1px solid currentColor}
 .principle>span{font-size:.61rem;font-weight:700;letter-spacing:.09em}
@@ -275,6 +285,9 @@
   .work-index::-webkit-scrollbar{display:none}
   .work-index article{flex:0 0 82vw;scroll-snap-align:start}
   .work-index img{height:82vw}
+  .work-archive-head{grid-template-columns:1fr;gap:2rem}
+  .work-archive-list{grid-template-columns:1fr}
+  .work-archive-list a{min-height:5.5rem}
   .principle,.service-row{grid-template-columns:2.5rem 1fr;gap:1rem;padding:2.8rem 0}
   .principle h3,.service-row h2{font-size:3.35rem}
   .principle p,.service-row-copy{grid-column:2}
@@ -416,6 +429,57 @@
 .article-next h2{max-width:12ch;font-family:var(--serif);font-size:clamp(3.8rem,6.5vw,7.5rem);font-weight:400;line-height:.82;letter-spacing:-.04em}
 .article-next-links{display:flex;flex-direction:column;align-items:flex-end;gap:1rem}
 
+/* Knowledge pages */
+.article-cover--graphic{position:relative;display:flex;min-height:70vh;align-items:flex-end;justify-content:flex-start;padding:clamp(2rem,5vw,5rem);overflow:hidden}
+.article-cover--graphic::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 78% 18%,rgba(255,255,255,.34),transparent 38%)}
+.article-cover--acid{background:var(--acid);color:var(--ink)}
+.article-cover--paper{background:var(--paper);color:var(--ink)}
+.article-cover--olive{background:var(--olive);color:var(--white)}
+.article-cover--orange{background:var(--orange);color:var(--ink)}
+.article-cover--indigo{background:var(--indigo);color:var(--white)}
+.article-cover--cherry{background:var(--cherry);color:var(--white)}
+.article-cover-word{position:relative;z-index:2;max-width:7ch;font-family:var(--serif);font-size:clamp(4.4rem,8.3vw,10rem);line-height:.75;letter-spacing:-.055em}
+.article-cover-word em{display:block;font-family:var(--sans);font-size:.58em;font-style:normal;font-weight:700;line-height:.88;letter-spacing:-.075em;color:var(--acid)}
+.article-cover--acid .article-cover-word em,.article-cover--paper .article-cover-word em{color:var(--indigo)}
+.article-cover-mark{position:absolute;z-index:2;right:clamp(1.5rem,3vw,3rem);top:clamp(1.5rem,3vw,3rem);font-size:.62rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase}
+.article-answer{margin:2.75rem 0;padding:clamp(1.5rem,2.5vw,2.5rem);background:var(--paper);border-left:.65rem solid var(--indigo)}
+.article-answer>span{display:block;margin-bottom:1.25rem;font-size:.58rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase}
+.article-answer p{font-family:var(--serif);font-size:clamp(1.7rem,2.7vw,3rem);line-height:1.02}
+.article-table{margin:2.75rem 0;border-top:1px solid currentColor}
+.article-table-row{display:grid;grid-template-columns:minmax(8rem,.68fr) minmax(0,1.32fr);gap:clamp(1.25rem,3vw,3rem);padding:1.4rem 0;border-bottom:1px solid currentColor}
+.article-table-row strong{font-family:var(--serif);font-size:clamp(1.45rem,2vw,2.25rem);font-weight:400;line-height:1}
+.article-table-row p{font-size:.9rem}
+.article-faq{margin-top:2.75rem;border-top:1px solid currentColor}
+.article-faq details{padding:1.35rem 0;border-bottom:1px solid currentColor}
+.article-faq summary{cursor:pointer;font-family:var(--serif);font-size:clamp(1.55rem,2.3vw,2.55rem);line-height:1}
+.article-faq details p{margin-top:1rem;font-size:.92rem}
+.download-panel{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(15rem,.9fr);gap:clamp(2rem,5vw,6rem);align-items:center;margin-top:3rem;padding:clamp(2rem,4vw,4rem);background:var(--indigo-deep);color:var(--white)}
+.download-panel h3{font-family:var(--serif);font-size:clamp(2.8rem,4.8vw,5.6rem);font-weight:400;line-height:.86}
+.download-panel h3 em{color:var(--acid)}
+.download-panel p{margin:1rem 0 1.8rem;font-size:.88rem}
+.download-panel a{display:inline-flex;width:max-content;padding-bottom:.5rem;border-bottom:1px solid currentColor;font-size:.62rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.download-panel img{width:100%;max-height:29rem;object-fit:contain;background:var(--white)}
+.field-note-media--graphic{position:relative;display:flex;align-items:flex-end!important;justify-content:flex-start!important;padding:1.3rem;background:var(--indigo-deep);color:var(--white)}
+.field-note-media--graphic::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 75% 20%,rgba(255,255,255,.28),transparent 42%)}
+.field-note-media--graphic span{position:relative;z-index:2;max-width:7ch;font-family:var(--serif);font-size:clamp(2.7rem,4.2vw,4.9rem);line-height:.8;letter-spacing:-.04em}
+.field-note-media--graphic em{display:block;color:var(--acid)}
+.field-note:nth-child(5n+2) .field-note-media--graphic{background:var(--olive)}
+.field-note:nth-child(5n+3) .field-note-media--graphic{background:var(--orange);color:var(--ink)}
+.field-note:nth-child(5n+4) .field-note-media--graphic{background:var(--cherry)}
+.field-note:nth-child(5n) .field-note-media--graphic{background:var(--paper);color:var(--ink)}
+
+/* Privacy and practical utility pages */
+.utility-hero{padding:clamp(9rem,13vw,14rem) var(--pad) clamp(5rem,8vw,8rem);background:var(--paper)}
+.utility-hero h1{max-width:9ch;margin-top:3rem;font-family:var(--serif);font-size:clamp(5rem,10vw,11.5rem);line-height:.76;letter-spacing:-.045em}
+.utility-hero h1 em{color:var(--indigo)}
+.utility-body{display:grid;grid-template-columns:minmax(11rem,.32fr) minmax(0,.68fr);gap:clamp(3rem,8vw,10rem);padding:var(--space-section) var(--pad)}
+.utility-body aside{font-size:.62rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.utility-copy{max-width:52rem}
+.utility-copy section{padding:0 0 clamp(3rem,5vw,5rem);margin-bottom:clamp(3rem,5vw,5rem);border-bottom:1px solid currentColor}
+.utility-copy h2{margin-bottom:1.5rem;font-family:var(--serif);font-size:clamp(2.8rem,4.6vw,5.2rem);font-weight:400;line-height:.86}
+.utility-copy p+p,.utility-copy ul+p,.utility-copy p+ul{margin-top:1rem}
+.utility-copy ul{padding-left:1.2rem}
+
 @media(max-width:1100px){
   .thinking-hub-hero{grid-template-columns:minmax(0,1fr) repeat(2,minmax(10rem,.35fr))}
   .resource-card{grid-template-columns:1fr;min-height:0}.resource-cover{min-height:34rem}.resource-copy{min-height:28rem}
@@ -466,6 +530,12 @@
   .article-pull{grid-column:auto;font-size:4.6rem}
   .article-next{grid-template-columns:1fr;gap:3rem}
   .article-next-links{align-items:flex-start}
+  .article-cover--graphic{min-height:105vw}
+  .article-cover-word{font-size:5.2rem}
+  .article-table-row{grid-template-columns:1fr;gap:.75rem}
+  .download-panel{grid-template-columns:1fr}
+  .download-panel img{max-height:24rem}
+  .utility-body{grid-template-columns:1fr;gap:2rem}
 }
 
 @media(max-width:390px){
