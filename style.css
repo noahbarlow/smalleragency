@@ -32,6 +32,7 @@ h1,h2,h3{font-weight:400;overflow-wrap:normal;word-break:normal;hyphens:none}
 em{font-weight:400}
 .skip-link{position:fixed;z-index:1000;left:1rem;top:1rem;padding:.75rem 1rem;background:var(--white);color:var(--ink);transform:translateY(-180%)}
 .skip-link:focus-visible{transform:none}
+.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
 .eyebrow{font-size:.68rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase}
 
 .site-header{position:absolute;z-index:30;top:0;left:0;width:100%;display:flex;align-items:flex-start;justify-content:space-between;padding:clamp(1.25rem,2.9vw,2.75rem) var(--pad);color:var(--white)}

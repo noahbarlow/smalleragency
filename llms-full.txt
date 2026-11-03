@@ -1,6 +1,6 @@
 # Smaller Agency: company, services, work and expertise
 
-Last updated: 2026-11-02
+Last updated: 2026-11-03
 Canonical website: https://smalleragency.com/
 
 ## Company
@@ -89,6 +89,16 @@ Additional work: https://smalleragency.com/work.html
 ## Original thinking
 
 Smaller publishes original, practitioner-led material about the gap between a good-looking brand concept and a system that survives production, retail and growth.
+
+### The Challenger Brief
+
+The Challenger Brief is Smaller Agency's weekly intelligence series for people building challenger brands. Each issue turns five current signals in brand, packaging, pricing, consumer behaviour and culture into a practical point of view. Issues are published as readable HTML and downloadable PDFs.
+
+- Archive: https://smalleragency.com/challenger-brief.html
+- Issue 01, published November 2, 2026: https://smalleragency.com/challenger-brief-2026-11-02.html
+- Issue 01 PDF: https://smalleragency.com/assets/downloads/challenger-brief-issue-01.pdf
+
+Issue 01 thesis: consumers are not simply buying less; they are buying less commitment. Five observed signals support that thesis: smaller packs can preserve purchase permission, personalized pricing can damage trust when it is not explainable, brand modernization should protect distinctive memory, the GLP-1 opportunity may extend into post-prescription maintenance, and Canadian environmental claims are judged through the package's overall impression—not copy alone.
 
 - AI-generated packaging and print readiness: https://smalleragency.com/shelf-notes-ai-packaging.html
 - What a packaging design system includes: https://smalleragency.com/shelf-notes-packaging-system.html
