@@ -436,7 +436,7 @@
 .article-project-cta-kicker{margin-bottom:clamp(4rem,8vw,8rem);font-size:.62rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase}
 .article-project-cta-main{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(18rem,.85fr);gap:clamp(3rem,8vw,10rem);align-items:end}
 .article-project-cta h2{max-width:8ch;font-family:var(--serif);font-size:clamp(5rem,9vw,10.5rem);font-weight:400;line-height:.76;letter-spacing:-.045em;overflow-wrap:normal;word-break:normal;hyphens:none}
-.article-project-cta h2 em{display:block;margin-top:.12em;font-family:var(--sans);font-style:normal;font-weight:700;line-height:.8;letter-spacing:-.075em}
+.article-project-cta h2 em{display:block;margin-top:.12em;font-family:var(--sans);font-style:normal;font-weight:700;line-height:1.02;letter-spacing:-.075em}
 .article-project-cta--acid h2 em{color:var(--indigo-deep)}
 .article-project-cta--indigo h2 em{color:var(--acid)}
 .article-project-cta-copy{padding-bottom:.45rem}
