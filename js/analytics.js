@@ -47,6 +47,18 @@
     if (!link) return;
     var href = link.getAttribute('href') || '';
     var label = (link.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 100);
+    var articleTopic = link.getAttribute('data-article-cta');
+
+    if (articleTopic) {
+      window.smallerTrack('article_project_cta_clicked', {
+        article_topic: articleTopic,
+        cta_role: link.getAttribute('data-cta-role') || 'unspecified',
+        link_url: href,
+        link_text: label,
+        page_path: location.pathname
+      });
+      return;
+    }
 
     if (href.indexOf('mailto:') === 0) {
       window.smallerTrack('contact_email_clicked', { link_text: label, page_path: location.pathname });
