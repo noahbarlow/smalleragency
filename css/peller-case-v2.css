@@ -89,10 +89,10 @@
 .pfv-photo--one img{object-position:center}
 .pfv-photo--two img{object-position:center}
 
-.pfv-system{background:var(--pfv-cream)}
+.pfv-system{background:#fff}
 .pfv-system .pfv-section-head h2 em{color:var(--pfv-wine)}
 .pfv-family-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(.8rem,1.2vw,1.25rem)}
-.pfv-family-grid picture{display:flex;align-items:center;justify-content:center;min-width:0;min-height:28rem;padding:clamp(1rem,2vw,2rem);background:var(--white);border:1px solid rgba(10,10,10,.18)}
+.pfv-family-grid picture{display:flex;align-items:center;justify-content:center;min-width:0;min-height:28rem;padding:clamp(1rem,2vw,2rem);background:#fff;border:1px solid rgba(10,10,10,.18)}
 .pfv-family-grid img{width:100%;height:auto;transition:transform .55s cubic-bezier(.22,.75,.14,1)}
 .pfv-family-grid picture:hover img{transform:scale(1.02)}
 .pfv-scale{display:grid;grid-template-columns:auto minmax(12rem,.7fr) minmax(15rem,1fr);gap:clamp(1.5rem,4vw,5rem);align-items:end;margin-top:clamp(4rem,7vw,7rem);padding:clamp(2rem,3vw,3.5rem);background:var(--pfv-acid);color:var(--pfv-ink)}
