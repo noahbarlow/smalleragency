@@ -192,12 +192,12 @@
   </url>
   <url>
     <loc>https://smalleragency.com/thinking.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://smalleragency.com/challenger-brief.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -261,4 +261,5 @@
     <priority>0.3</priority>
   </url>
   <url><loc>https://smalleragency.com/challenger-brief-2026-11-09.html</loc><lastmod>2026-11-09</lastmod></url>
+  <url><loc>https://smalleragency.com/challenger-brief-2026-11-16.html</loc><lastmod>2026-11-18</lastmod></url>
 </urlset>
