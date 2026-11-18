@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en-CA"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive"><meta name="referrer" content="no-referrer">
+<title>Private presentation | Smaller Agency</title>
+<link rel="icon" href="/favicon-v3.ico">
+<style>
+@font-face{font-family:Objectivity;src:url('/assets/fonts/objectivity-regular.woff2')}@font-face{font-family:Instrument;src:url('/assets/fonts/instrument-serif-regular.woff2')}
+*{box-sizing:border-box}body{margin:0;background:#f8f6f0;color:#171b54;font-family:Objectivity,Arial,sans-serif;min-height:100svh;display:flex;flex-direction:column}header,footer{padding:28px clamp(24px,6vw,88px)}header{border-bottom:1px solid #171b5420}header img{width:128px;height:auto;display:block}main{width:min(100% - 48px,680px);margin:auto;padding:64px 0} .eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase}h1{font:clamp(48px,9vw,78px)/1.04 Instrument,Georgia,serif;margin:24px 0}p{line-height:1.7;color:#4c4e65}label{display:block;font-size:14px;margin:30px 0 10px}.field{display:flex;border:1px solid #171b5470;background:#fff}input{font:inherit;font-size:18px;padding:16px;width:100%;min-width:0;border:0;background:transparent}input:focus-visible,button:focus-visible,a:focus-visible{outline:3px solid #4b64ef;outline-offset:3px}button,.button{font:inherit;cursor:pointer;background:#171b54;color:white;border:0;padding:17px 24px;text-decoration:none;display:inline-block;text-align:center}button:disabled{opacity:.65;cursor:wait}.toggle{font-size:12px;background:transparent;color:#171b54;padding:12px}#submit{margin-top:16px;width:100%}.actions{display:flex;gap:12px;flex-wrap:wrap}.secondary{background:transparent;color:#171b54;border:1px solid #171b54}#status{min-height:28px;font-size:14px}#status.error{color:#9f2525}footer{font-size:12px;color:#656578}footer a{color:inherit}.detail{font-size:13px} [hidden]{display:none!important}
+</style></head>
+<body><header><a href="/" aria-label="Smaller Agency home"><img src="/assets/logo.svg" alt="Smaller Agency"></a></header>
+<main><div class="eyebrow">Danone / Private presentation</div><h1>International<br>Delight.</h1><p>Creative direction, packaging concepts and shelf exploration.</p>
+<form id="gate"><label for="password">Enter your password to open the presentation.</label><div class="field"><input id="password" type="password" autocomplete="current-password" required spellcheck="false" autocapitalize="none"><button class="toggle" type="button" id="toggle" aria-controls="password" aria-pressed="false">Show</button></div><button id="submit" type="submit">Open presentation</button></form>
+<p id="status" role="status" aria-live="polite"></p>
+<section id="unlocked" hidden aria-label="Presentation downloads"><div class="actions"><a id="view" class="button" target="_blank" rel="noopener">View PDF</a><a id="download" class="button secondary" download="International-Delight-Creative-Direction.pdf">Download PDF</a></div><p class="detail">PDF · 33 MB<br>If the preview does not open, choose Download PDF.</p><button id="lock" class="toggle" type="button">Lock presentation</button></section>
+<noscript><p>JavaScript is needed to unlock this presentation. Please enable it or contact Noah for another delivery option.</p></noscript>
+</main><footer>Prepared for the Danone team. <a href="mailto:noah@smalleragency.com">Need a hand?</a></footer>
+<script>
+'use strict';
+const meta={"salt":"JlQZ8sC3xDZfrrkkcG+bDg==","iv":"N1LnDZ8Enkkhi8lU","checkIv":"d1ZttZEhMsIj90qV","check":"t5MJdNgCDSp6nbOa+FznmPxx/g4ExeWgApvDlX7RGGzfqvAdcWPimlOaUi0Po7amNvkJ"};
+const decode=s=>Uint8Array.from(atob(s),c=>c.charCodeAt(0));
+const gate=document.getElementById('gate'),password=document.getElementById('password'),submit=document.getElementById('submit'),status=document.getElementById('status'),unlocked=document.getElementById('unlocked');
+let objectURL=null;
+document.getElementById('toggle').addEventListener('click',e=>{const visible=password.type==='password';password.type=visible?'text':'password';e.currentTarget.textContent=visible?'Hide':'Show';e.currentTarget.setAttribute('aria-pressed',String(visible));});
+gate.addEventListener('submit',async e=>{
+e.preventDefault();submit.disabled=true;status.className='';status.textContent='Checking password…';
+let stage='password';
+try{
+if(!window.crypto?.subtle)throw new Error('browser');
+const material=await crypto.subtle.importKey('raw',new TextEncoder().encode(password.value.trim()),'PBKDF2',false,['deriveKey']);
+const key=await crypto.subtle.deriveKey({name:'PBKDF2',salt:decode(meta.salt),iterations:600000,hash:'SHA-256'},material,{name:'AES-GCM',length:256},false,['decrypt']);
+await crypto.subtle.decrypt({name:'AES-GCM',iv:decode(meta.checkIv)},key,decode(meta.check));
+stage='download';let complete=0;status.textContent='Opening presentation: 0%';
+const parts=await Promise.all(Array.from({length:8},async(_,i)=>{const response=await fetch('./presentation-'+i+'.bin',{credentials:'omit'});if(!response.ok)throw new Error('download');const bytes=new Uint8Array(await response.arrayBuffer());complete++;status.textContent='Opening presentation: '+Math.round(complete/8*90)+'%';return bytes;}));
+const all=new Uint8Array(parts.reduce((n,p)=>n+p.length,0));let offset=0;for(const part of parts){all.set(part,offset);offset+=part.length;}
+stage='decrypt';const pdf=await crypto.subtle.decrypt({name:'AES-GCM',iv:decode(meta.iv)},key,all);
+objectURL=URL.createObjectURL(new Blob([pdf],{type:'application/pdf'}));
+document.getElementById('view').href=objectURL;document.getElementById('download').href=objectURL;password.value='';gate.hidden=true;unlocked.hidden=false;status.textContent='Your presentation is ready.';document.getElementById('view').focus();
+}catch(error){status.className='error';status.textContent=error.message==='browser'?'Please open this page in a current version of Chrome, Edge, Safari or Firefox.':stage==='password'?'That password did not match. Please try again.':'The presentation could not be opened. Please try again, or contact Noah using the link below.';}
+finally{submit.disabled=false;}
+});
+document.getElementById('lock').addEventListener('click',()=>{if(objectURL)URL.revokeObjectURL(objectURL);objectURL=null;document.getElementById('view').removeAttribute('href');document.getElementById('download').removeAttribute('href');gate.hidden=false;unlocked.hidden=true;status.textContent='';password.focus();});
+</script></body></html>
